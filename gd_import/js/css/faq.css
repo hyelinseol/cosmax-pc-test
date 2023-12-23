@@ -1,0 +1,42 @@
+/* :::: 자주묻는질문 수동 css :::: */
+.faq_wrap {margin: 0 auto;}
+.faq_wrap #acco { background: #fff;	width:100%;	margin: 10px auto; }
+.faq_wrap #acco .line { overflow:hidden; border-bottom:1px solid #eee; color:#333; font-weight:300; }
+
+.faq_wrap #acco .line .title { font-size:14px; cursor:pointer; }
+.faq_wrap #acco .line .title .num { height:50px; line-height:50px; padding:0 20px; text-align:center; }
+.faq_wrap #acco .line .title .num a { display:inline-block; width:36px; height:36px; line-height:36px; background:#ff5c5c; color:#fff; font-weight:400; text-decoration:none; }
+.faq_wrap #acco .line .title .tit { height:50px; line-height:50px; }
+.faq_wrap #acco .line .title .tit a { color:#0b0a0a; text-decoration:none; }
+.faq_wrap #acco .line .title .tit a:hover { color:#555; }
+
+.faq_wrap #acco .line .contArea { display: none; padding:40px 30px; background:#fafafa; border-top:1px solid #eee;}
+.faq_wrap #acco .line .contArea p { line-height:22px; font-size:13px; margin:8px 0; }
+
+/* :::: 공지사항 :::: */
+.notice_wrap { margin:48px auto; }
+.notice_wrap .time { font-size:16px; color:# 0b0a0a; margin-left:16px; }
+.notice_wrap .consult { display:flex; }
+.notice_wrap .consult a { font-size:16px; color:#0b0a0a; padding:10px 24px; margin:0 10px 0 0; border:1px solid #eee; background:#d4dd69; border-radius:8px; }
+
+/* :::: 자주묻는질문 게시판 연동 css  ::::*/
+.boardCate { position: relative; width: 100%; padding: 0 0 20px; word-wrap: break-word; border-bottom: 2px solid #000; }
+.boardCate .board_menu { display:flex; }
+.boardCate .board_menu li { width: auto; text-align: center; padding: 0 20px; box-sizing: border-box; background: none; }
+.boardCate .board_menu li.on {  }
+.boardCate .board_menu li.on a { color: #ff585d; font-weight: 700; }
+.boardCate .board_menu li a { font-size: 16px; line-height: 48px; color: #666; }
+
+.boardList .line {overflow:hidden; border-bottom:1px solid #eee; color:#333; font-weight:300;}
+.boardList .line .checkbox {float:left; padding:0 10px 0 0;}
+.boardList .line .checkbox input {height:50px; line-height:50px;}
+
+.boardList .line .title { font-size:14px; cursor:pointer; }
+.boardList .line .title .num { height:50px; line-height:50px; padding:0 20px; text-align:center; }
+.boardList .line .title .num a { display:inline-block; width:36px; height:36px; line-height:36px; background:#ff5c5c; color:#fff; font-weight:400; text-decoration:none;}
+.boardList .line .title .tit { height:50px; line-height:50px;}
+.boardList .line .title .tit a { color:#0b0a0a; text-decoration:none;}
+.boardList .line .title .tit a:hover {color:#555;}
+
+.boardList .line .contArea {padding:48px 30px; background:#fafafa; border-top:1px solid #eee;}
+.boardList .line .contArea p {line-height:22px; font-size:13px !important; }

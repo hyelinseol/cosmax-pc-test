@@ -1,0 +1,14 @@
+.search #searchBarForm { position:relative; top:50%; transform:translateY(-50%); left:0; }
+.xans-layout-searchheader { width:160px; margin:0 4px; border-bottom:1px solid #222; }
+.xans-layout-searchheader fieldset { /*background:#f5f5f5;*/ }
+.xans-layout-searchheader #keyword  { width:124px; height:32px;  margin: 0 4px; border:0; line-height:24px; font-size:13px; color:#333; background:transparent; outline:none; box-sizing:border-box;}
+.xans-layout-searchheader i { position:relative; font-size:22px; color:#222; vertical-align:middle; cursor:pointer; }
+
+/*.xans-layout-searchheader fieldset .autoDrop { display:none; border:1px solid #565960; position:absolute; width: 187px; text-align:left; background:#fff; z-index:20; overflow:hidden; overflow-y:auto; max-height:100px;}
+.xans-layout-searchheader fieldset .autoDrop li a { display:block; padding:6px 10px; font-size:11px; color:#1c1c1c; font-family:GulimChe,Gulim; }
+.xans-layout-searchheader fieldset .autoDrop li a:hover,
+.xans-layout-searchheader fieldset .autoDrop li.selected a { text-decoration:none; color:#fff; background:#a1a4ae; }*/
+
+.popular{ margin:0 0 5px 12px;}
+.popular a { color: #ababab; padding: 0 5px; font-size: 14px; font-weight: 300;}
+.popular a:hover{color:#000;}

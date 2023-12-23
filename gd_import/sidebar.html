@@ -1,0 +1,82 @@
+<div id="sidebar">
+  <div class="menu_tit" module="Layout_stateLogon">
+    <h3>
+      {$name}님 <a href="/member/modify.html" class="icoMySet"></a>
+	  <p class="memGrade">정기결제회원</p>
+    </h3>
+  </div>
+  
+    
+  <div module="myshop_asyncbankbook">
+    <!--@css(/css/module/myshop/bankbook.css)-->
+	<div class="myInfoShort">
+		<div class="miBox full">
+			<a href="/myshop/mypage/review.html">
+			<p class="title">리뷰</p>
+			<!-- snap review script start contact mail : support@snapvi.co.kr -->
+			<strong class="snap_writeable_review_count"></strong>
+			<!-- snap review end -->
+			</a>
+		</div>
+		<div class="{$display_coupon|display} miBox full">
+			<a href="/myshop/coupon/coupon.html">
+			<p class="title">쿠폰</p>
+			<strong class="data">{$coupon_cnt}</strong>
+			</a>
+		</div>
+		<div class="miBox full">
+			 <a href="/myshop/mileage/historyList.html">
+			<p class="title">{$mileage_name}</p>
+			<strong class="data">{$avail_mileage} P</strong>
+			</a>
+		</div>
+	</div>
+  </div>
+
+  <div class="leftMyMenu">
+  	<ul>
+		<li>
+			<a href="/myshop/order/list.html" class="mico delivery">주문/배송조회</a>
+		</li>
+		<!-- <li>
+			<a href="#" class="mico photo">AI 사진 촬영</a>
+		</li>
+		<li>
+			<a href="/myshop/regular_delivery.html" class="mico subscribe">정기 결제 관리</a>
+		</li> -->
+		<li>
+			<a href="/board/consult/list.html?board_no=9" class="mico myqna">1:1 문의 내역</a>
+		</li>
+		<li>
+			<a href="/board/faq/faq_list.html?board_no=3" class="mico helpdesk">스킨·헤어 맞춤 상담</a>
+		</li>
+		<li>
+			<a href="//pf.kakao.com/_XxfRRxj/chat" class="mico gift">선물함</a>
+		</li>
+	</ul>
+  </div>
+  <p module="Layout_stateLogon" class="log"><a href="{$action_logout}">로그아웃</a></p>
+</div>
+
+<!-- 맞춤형 - 문진 -->
+<!--@import(/survey/common.html)-->
+<!--@js(/survey/js/survey_common.js)-->
+<!--@js(/survey/js/survey_mypage.js)-->
+<!--@js(/survey/js/survey_sidebar.js)-->
+<style>
+  .survey_hover {
+    cursor: pointer;
+  }
+</style>
+
+<!-- snap review script start contact mail : support@snapvi.co.kr -->
+<script>
+function onloadsnapscript() {
+    var snapInstance = new snapSolution("3waau"); snapInstance.loadScript('review_independent', () => {
+        snapinstanceindependent.catchMoreItemReviewCnt();
+    });
+}
+</script>
+<script async type='text/javascript' src='//sfre-srcs-service.snapfit.co.kr/js/snap_combine_script.js' defer='true' charset='utf-8'
+onload = 'onloadsnapscript()'></script>
+<!-- snap review end -->       

@@ -1,0 +1,102 @@
+#userStyle #header .titleArea h1 { background: #000; } 
+#userStyle #header .headerMenu .btnBasket .count { background: #ff5c5c; }
+
+#userStyle #mCafe24Order input[type="radio"] { background-image:url(/web/upload/mynomy/kr/layout/bg_radio.png); }
+#userStyle #mCafe24Order input:not(:disabled):checked[type="radio"] { background-image:url(/web/upload/mynomy/kr/layout/bg_radio_checked.png); }
+#userStyle #mCafe24Order input[type="checkbox"] { background-image:url(/web/upload/mynomy/kr/layout/bg_checkbox.svg); }
+#userStyle #mCafe24Order input:not(:disabled):checked[type="checkbox"] { background-image:url(/web/upload/mynomy/kr/layout/bg_checkbox_on.svg); }
+#userStyle #mCafe24Order .icoRequired { background:url("/web/upload/mynomy/kr/layout/bg_required.png") no-repeat 0 0; background-size: auto 6px; }
+
+
+#userStyle #mCafe24Order { background: #fff; border-left: 1px solid #ddd; border-right: 1px solid #ddd; }
+#userStyle #mCafe24Order .ec-base-tab ul { border-top:0; }
+#userStyle #mCafe24Order .ec-base-tab li { background:#fff; border-left: 0; border-right: 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+#userStyle #mCafe24Order .ec-base-tab li.selected { border-top:1px solid #0b0a0a; border-bottom:1px solid #0b0a0a; }
+#userStyle #mCafe24Order .ec-base-tab li.selected a { color: #fff; background: #0b0a0a; }
+#userStyle #mCafe24Order .ec-base-fold { border: 1px solid #ddd; border-width: 1px 0; }
+#userStyle #mCafe24Order .title h2 { font-weight: 400;}
+#userStyle #mCafe24Order .joinArea { background: #eee; }
+#userStyle #mCafe24Order .txtStrong { color: #ff5c5c; font-weight:700; }
+#userStyle #mCafe24Order .orderArea .totalPrice { background: #fff; }
+#userStyle #mCafe24Order .orderArea .totalPrice .title { background: #fff; }
+
+#userStyle #mCafe24Order .ec-base-fold.delivery > .title:after {top:11px;}
+#userStyle #mCafe24Order .ec-base-fold.delivery.selected > .title:after {top:19px;}
+
+#userStyle #mCafe24Order .orderArea .totalPrice .ec-base-table.gCellNarrow th { color: #666; }
+#userStyle #mCafe24Order .totalPay { background: #fff; border-top: 1px solid #ddd; }
+#userStyle #mCafe24Order .totalPay .txtEm { color:#ff5c5c; }
+#userStyle #mCafe24Order .payMethod > li.selected > label { border-color: #000; color: #fff; font-weight: 400; background: #000; }
+#userStyle #mCafe24Order .payMethod > li.selected > .inner { border: 1px solid #ddd; }
+#userStyle #mCafe24Order .txtEm { color: #000; }
+#userStyle #mCafe24Order .btnBasic { border: 1px solid #ddd; background: #eee; }
+#userStyle #mCafe24Order .btnBasic:hover { background: #ddd; }
+#userStyle #mCafe24Order .btnSubmit { border: 1px solid #000; background: #000; }
+#userStyle #mCafe24Order .btnSubmit:hover { background: #fff; color: #000; transition: all 0.3s ease; -khtml-transition: all 0.3s ease; -moz-transition: all 0.3s ease; -ms-transition: all 0.3s ease; -o-transition: all 0.3s ease; transition: all 0.3s ease; }
+
+#userStyle #mCafe24Order .autoDiscountLayer > h1 { background: #000; }
+#mCafe24Order .resultArea .message { background: url("/web/upload/mynomy/kr/layout/ico_resultarea_message.png") no-repeat center 0; background-size:38px 42px; }
+#mCafe24Order .txtEm {color:#FF5D5C;}
+#mCafe24Order .txtStrong {color:#FF5D5C;}
+#mCafe24Order.xans-order-result .orderArea .totalPrice .ec-base-table .txtStrong  {color:#FF5D5C;}
+
+input#ap-recommend-id {height:42px; padding:10px 11px; border:1px solid #E1E1E1; outline-style:none; line-height:14px; font-weight:400; box-sizing:border-box;}
+
+.reCommend {display:block; padding:16px !important;}
+.reCommend h2 {font-weight:400; font-size:16px; display:inline-block; margin-right:22px;}
+
+/* 230914 Add */
+#userStyle #mCafe24Order {background:#f7f7f7;}
+#userStyle #mCafe24Order #ec-jigsaw-area-orderProduct > .contents {padding:0; border-top:1px dashed #ccc; margin:0 16px; width:calc(100% - 32px);}
+#userStyle #mCafe24Order #ec-jigsaw-area-orderProduct > .contents .orderArea {padding-top:20px;}
+#userStyle #mCafe24Order #ec-jigsaw-area-discount > .contents {padding:0px; border-top:1px dashed #ccc; margin:0 16px; width:calc(100% - 32px);}
+#userStyle #mCafe24Order #ec-jigsaw-area-payment > .contents {padding:0px; border-top:1px dashed #ccc; margin:0 16px; width:calc(100% - 32px);}
+#userStyle #mCafe24Order #ec-jigsaw-area-paymethod > .contents {padding:0px; border-top:1px dashed #ccc; margin:0 16px; width:calc(100% - 32px);}
+#userStyle #mCafe24Order #ec-jigsaw-area-benefit > .contents {padding:0px; border-top:1px dashed #ccc; margin:0 16px; width:calc(100% - 32px);}
+
+#userStyle #mCafe24Order .segment.ec-shippingInfo-shippingMessage {padding:20px 16px;}
+
+#userStyle #mCafe24Order .orderArea .ec-base-prdInfo {margin:0 0 15px 0;}
+
+#userStyle #mCafe24Order .ec-base-prdInfo .thumbnail {width:120px; height:120px;}
+#userStyle #mCafe24Order .ec-base-prdInfo .thumbnail img {width:120px !important; height:120px !important;}
+#userStyle #mCafe24Order .ec-base-prdInfo .description .prdName {margin-bottom:5px;}
+#userStyle #mCafe24Order .ec-base-prdInfo .description .info {margin-bottom:0;}
+#userStyle #mCafe24Order .ec-base-prdInfo .description ul.info li {display:inline-block; margin-bottom:0;}
+#userStyle #mCafe24Order .ec-base-prdInfo .description ul.info li[title="옵션"] {display:block;}
+#userStyle #mCafe24Order .ec-base-prdInfo .description ul.info li[title="옵션"] > ul > li {display:inline-block;}
+#userStyle #mCafe24Order .ec-base-prdInfo .description ul.info li[title="옵션"] + li {margin-right:10px;}
+#userStyle #mCafe24Order .ec-base-prdInfo .description div[title="배송"] {display:none;}
+#userStyle #mCafe24Order .ec-base-prdInfo .description .proPrice {font-size:18px; font-weight:700; margin-top:5px;}
+#userStyle #mCafe24Order .ec-base-prdInfo .description .proPrice .proPrice_origin > span {font-size:14px; font-weight:400; text-decoration:line-through; color:#999;}
+
+#userStyle #mCafe24Order .orderArea .totalPrice {border-top:1px solid #ddd; padding-top:10px;}
+#userStyle #mCafe24Order .txtStrong {color:#666;}
+
+#userStyle #mCafe24Order .discountDetail {border:0; padding:10px 14px;}
+#userStyle #mCafe24Order .discountDetail:after {display:none;}
+#userStyle #mCafe24Order .discountDetail:first-child {padding:20px 14px 15px;}
+#userStyle #mCafe24Order .discountDetail:first-child .discountList .title .control {width:100%;}
+#userStyle #mCafe24Order .discountDetail .discountList .title .heading:after {display:none;}
+
+#userStyle #mCafe24Order .discountDetail .control .btnNormal {width:90px; border:1px solid #000; color:#666; box-sizing:border-box; flex:0 0 90px;}
+#userStyle #mCafe24Order .discountDetail .displayblock {display:flex; justify-content:space-between; align-items:center;}
+#userStyle #mCafe24Order .discountDetail .displayblock:after {display:none;}
+#userStyle #mCafe24Order .discountDetail .control {gap:10px; justify-content:flex-end; width:calc(100% - 130px);}
+#userStyle #mCafe24Order .discountDetail.mDiscountcodeSelect .control .inputTypeText {display:inline-block; width:100%;}
+#mileage_use_area input {max-width:30%;}
+#mCafe24Order .discountDetail .summary {font-size:14px;}
+#mCafe24Order .discountDetail .summary .txtEm {color:#FF5D5C !important;}
+#userStyle #mCafe24Order .totalPay {margin-top:15px; padding:25px 16px;}
+
+#userStyle #mCafe24Order #ec-jigsaw-area-payment .segment {padding:20px 16px 0;}
+
+#userStyle tr#ec-shop-payment_discount_list_view {display:none !important;}
+#userStyle #mCafe24Order .txtRed {color:#383838 !important;}
+#userStyle #mCafe24Order .totalPay.paymentPrice .txtStrong {color:#ff5c5c !important; font-weight:700;}
+#userStyle #mCafe24Order .payMethod {margin-top:0;}
+
+#userStyle #ec-jigsaw-area-benefit .segment {padding:20px 16px 0;}
+
+#userStyle #orderFixItem.ec-base-button.gFull {margin:0 16px;}
+#userStyle #mCafe24Order #orderFixItem.ec-base-button.gFull  .btnSubmit {border-radius: 4px; background: #FF5D5C; border: 0; color: #FFF; font-size: 18px; font-weight: 700;}

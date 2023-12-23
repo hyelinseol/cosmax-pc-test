@@ -1,0 +1,10 @@
+.xans-myshop-boardlist.ec-base-table { font-size: 14px; background:#fff; }
+.xans-myshop-boardlist .notice .subject { font-weight:bold; word-break:break-all; word-wrap:break-word; }
+.xans-myshop-boardlisthead { display:none; }
+
+.xans-myshop-boardpackage .boardCate { position: relative; margin:0 auto 48px; }
+.xans-myshop-boardpackage .boardCate .board_menu { display:flex; }
+.xans-myshop-boardpackage .boardCate .board_menu li { flex:1; height:40px; line-height:40px; border: 1px solid #eee; background:#fff; text-align: center; }
+.xans-myshop-boardpackage .boardCate .board_menu li.on { border:1px solid #0b0a0a; background:#0b0a0a; }
+.xans-myshop-boardpackage .boardCate .board_menu li.on a { color:#fff; font-weight:500; }
+.xans-myshop-boardpackage .boardCate .board_menu li a { display:block; font-size: 14px; color: #999; font-weight: 400; cursor:pointer; }

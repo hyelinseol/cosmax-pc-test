@@ -1,0 +1,8 @@
+.xans-myshop-couponserial { padding:1px 0 22px; background:#fff; }
+.xans-myshop-couponserial .title { margin:40px 0 10px; }
+.xans-myshop-couponserial .title h3 { color:#0b0a0a; font-size:24px; line-height:36px; font-weight: 700; text-align: center; margin:0 0 12px; }
+
+.xans-myshop-couponserial .couponSerial { text-align:center; }
+.xans-myshop-couponserial .couponSerial #coupon_code { height:34px; width:340px; font-size:15px; text-align:left; }
+.xans-myshop-couponserial .couponSerial .btnSubmitFix { margin:-1px 0 0; }
+.xans-myshop-couponserial .couponSerial p { padding:10px 0 0; font-size: 14px; line-height:21px; color:#999;  }

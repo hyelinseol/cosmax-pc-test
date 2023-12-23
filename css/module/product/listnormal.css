@@ -1,0 +1,44 @@
+.xans-product-normalmenu { margin:0; }
+.xans-product-normalmenu .title { margin:0 0 17px; }
+.xans-product-normalmenu .title h3 { font-weight:normal; font-size:20px; color:#2e2e2e; text-align:center; }
+.xans-product-normalmenu .function { overflow:hidden; margin:20px 0 0; text-align:right; line-height:38px; border-bottom:1px solid #eee; }
+.xans-product-normalmenu .function .btnCompare { display:inline-block; line-height: 24px; padding:0 8px; background: #222; border: 1px solid #222; color: #fff; }
+.xans-product-normalmenu .function .btnCompare:hover { color:#222; background: transparent; text-decoration:none; }
+.xans-product-normalmenu .prdCount { float:left; padding:0 0 0 8px; color:#333; }
+.xans-product-normalmenu ul#type { display:inline; margin:0 4px 0 0; }
+.xans-product-normalmenu ul#type li { display:inline; padding:0 6px 0 10px; background:url("//img.echosting.cafe24.com/skin/base_ko_KR/product/bg_result_type.gif") no-repeat 0 50%; }
+.xans-product-normalmenu ul#type li:first-child { background:none; }
+.xans-product-normalmenu ul#type li a { color:#333; }
+.xans-product-normalmenu ul#type li a:hover { color:#999; text-decoration:none; }
+.xans-product-normalmenu fieldset { margin:-1px 0 0; padding:7px 12px; border:1px solid #d7d5d6; text-align:right; background:#fbf9fa; }
+.xans-product-normalmenu fieldset select { height:24px; }
+
+/* add */
+.prdList {position:relative; margin:32px 0 140px 0 !important; display:flex; justify-content:flex-start; align-items:stretch; flex-wrap:wrap;}
+.prdList:after {clear:both; display:block; height:auto; overflow:hidden;}
+.prdList ul {display:flex; justify-content:flex-start; align-items:stretch;}
+.prdList ul li {float:left; width:32.666667%; margin-right:1%;}
+.prdList ul li:nth-child(3n) {margin-right:0;}
+.prdList ul li .prdBox {position:relative;}
+.prdList ul li .prdBox:after {content:''; clear:both; display:block; height:auto; overflow:hidden;}
+.prdList ul li .prdBox .thumb {position:relative; transition:.4s all; overflow:hidden;}
+.prdList ul li .prdBox .thumb img {max-width:100%; transition:.4s all;}
+.prdList ul li .prdBox:hover .thumb {background:#FFBBB1;}
+.prdList ul li .prdBox:hover .thumb img {transform:scale(1.1);}
+
+.prdList ul li .prdBox .prdDesc {display:block; height:auto; overflow:hidden; margin-top:48px;}
+.prdList ul li .prdBox .prdDesc .prdSubject {text-align:center; font-size:16px; color:#0B0A0A; font-weight:400;}
+.prdList ul li .prdBox .prdDesc .prdPrice {text-align:center; margin-top:10px; font-size:14px; font-weight:600;}
+.prdList ul li .prdBox .prdDesc .prdPrice .disPrice {display:inline-block; color:#FF585D; font-weight:700; margin-right:5px;}
+
+/* 230413 */
+
+.giftPrd {position:relative; margin:40px 0 60px;}
+.giftPrd.skin {margin-bottom:100px;}
+.giftPrd:after {content:''; clear:both; display:block; height:auto; overflow:hidden;}
+.giftPrd .mpTitle {color:#242424; font-size:40px; font-weight:700; font-family: "Gotham SSm A","Gotham SSm B"; position:relative; margin-bottom:26px; display:flex; align-items:center;}
+.giftPrd .prdList {justify-content:flex-start; margin:0 !important;}
+.giftPrd .ec-base-product {margin-top:0;}
+
+.ec-base-product .prdList .description .prdGift {position:absolute; right:4px; top:50%; transform:translate(0, -50%); display:flex; justify-content:center; align-items:center; height:48px; padding:0 12px; background:#FF5D5C; border-radius:4px; color:#FFF; font-size:14px; font-weight:500;}
+.ec-base-product .prdList .description .prdGift:before {content:''; display:inline-block; width:24px; height:24px; background:url(/web/renew_img/ico_list_gift.svg) no-repeat 50% 50%; margin-right:6px;}

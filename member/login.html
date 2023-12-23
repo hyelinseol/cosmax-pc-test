@@ -1,0 +1,195 @@
+<!--@layout(/layout/basic/layout2.html)-->
+<!--@js(/js/module/member/ch_talk_hide.js)--><!-- 채널톡 hide //-->
+<!--@js(/gd_import/js/loginChk.js)--><!-- 로그인유무체크 //-->
+<div class="path">
+  <span>현재 위치</span>
+  <ol>
+      <li><a href="/">홈</a></li>
+      <li title="현재 위치"><strong>로그인</strong></li>
+  </ol>
+</div>
+
+<div class="alignWrap single">
+<div module="member_login" class="ec-base-box typeThin align">
+  <!--@css(/css/module/member/login.css)-->
+  <!--
+      $defaultReturnUrl = /index.html
+      $forbidIpUrl = member/adminFail.html
+  -->
+  <div class="login">
+      <h3 class="boxTitle">회원로그인</h3>
+      <fieldset>
+          <legend>회원로그인</legend>
+          <label class="id ePlaceholder" title="{$login_id_type_text}">{$form.member_id}</label>
+          <label class="password ePlaceholder" title="비밀번호">{$form.member_passwd}</label>
+          <p class="security">
+              {$form.member_check_save_id}
+              {$form.member_check_secret_connect}
+          </p>            
+          <ul class="log_option">
+              <li><a href="/member/id/find_id.html">아이디찾기</a></li>
+              <li><a href="/member/passwd/find_passwd_info.html">비밀번호찾기</a></li>
+          </ul>
+          <a href="#none" class="btnLogin" onclick="{$action_func_login}">로그인</a>            
+
+		  <p class="link {$display_nomember|display}" id="noMemberWrap" style="display: none;">
+              <a href="{$returnUrl}" class="btnEm" onclick="{$action_nomember_order}">비회원 구매하기</a>
+          </p>
+
+		  <!-- <p class="link {$display_nomember|display}" id="noMemberWrap">
+              <a href="{$returnUrl}" class="btnEm" onclick="{$action_nomember_order}">비회원구매</a>
+          </p> -->
+
+    <div class="snsRegist">
+      <p class="snsTitle"><span>SNS 간편 로그인</span></p>
+      <div class="otherSns">
+        <span class="snsIco kakao"><a href="#none" onclick="{$kakao_func_login}"></a></span>
+        <span class="snsIco naver"><a href="#none" onclick="{$naver_func_login}"></a></span>
+        <span class="snsIco facebook"> <a href="#none" onclick="{$facebook_func_login}"></a></span>
+        <span class="snsIco apple"><a href="#none" onclick="{$apple_func_login}"></a></span>
+      </div>
+      <ul>
+                  <li class="{$display_google|display} btn_google">
+                      <a href="#none" onclick="{$google_func_login}">
+          <div class="snsLoginBox">
+            <span class="ico google"></span>Google로 로그인
+          </div>
+          </a>
+                  </li>
+              </ul>
+    </div>
+
+    <div class="loginBnr">
+      <a href="http://pf.kakao.com/_xixoxdwxj" target="_blank"><img src="/web/upload/mynomy/kr/layout/login_bnr_230612.jpg" /></a>
+    </div>
+
+    <div class="log_join">             
+              <a href="/member/join.html" class="btnNormal btnJoin">쉽고 빠른 회원가입</a>            
+              <a href="/survey?product_no=13" class="btnNormal btnQuiz">회원가입 전에 문진 먼저 해보기</a>
+          </div>
+
+
+    <div class="snsRegist" style="display:none;">
+      <p class="snsTitle"><span>SNS 간편 로그인</span></p>
+      <ul>
+        <li class="{$display_kakao|display} btn_kakao">
+                      <a href="#none" onclick="{$kakao_func_login}">
+          <div class="snsLoginBox">
+            <span class="ico kakao"></span>카카오로 로그인
+          </div>
+          </a>
+                  </li>
+        <li class="{$display_naver|display} btn_naver">
+                      <a href="#none" onclick="{$naver_func_login}">
+          <div class="snsLoginBox">
+            <span class="ico naver"></span>네이버로 로그인
+          </div>
+          </a>
+                  </li>
+        <li class="{$display_facebook|display} btn_facebook">
+                      <a href="#none" onclick="{$facebook_func_login}">
+          <div class="snsLoginBox">
+            <span class="ico facebook"></span>페이스북으로 로그인
+          </div>
+          </a>
+                  </li>    
+                  <li class="{$display_apple|display} btn_apple">
+                      <a href="#none" onclick="{$apple_func_login}">
+          <div class="snsLoginBox">
+            <span class="ico apple"></span>Apple로 로그인
+          </div>
+          </a>
+                  </li> 
+                  <li class="{$display_google|display} btn_google">
+                      <a href="#none" onclick="{$google_func_login}">
+          <div class="snsLoginBox">
+            <span class="ico google"></span>Google로 로그인
+          </div>
+          </a>
+                  </li>
+              </ul>
+    </div>
+          <div class="snsArea" style="display:none;">
+            <p>SNS 간편로그인 <span>간편하게 로그인 해보세요.</span></p>   
+              <!--<ul>
+                  <li class="{$display_naver|display} btn_naver">
+                      <a href="#none" onclick="{$naver_func_login}"><i class="xi-naver"></i>네이버</a>
+                  </li>
+                  <li class="{$display_facebook|display} btn_facebook pink">
+                      <a href="#none" onclick="{$facebook_func_login}"><i class="xi-facebook"></i>페이스북</a>
+                  </li>                           
+                  <li class="{$display_google|display} btn_google">
+                      <a href="#none" onclick="{$google_func_login}"><i class="xi-google"></i>구글</a>
+                  </li>
+                  <li class="{$display_kakao|display} btn_kakao">
+                      <a href="#none" onclick="{$kakao_func_login}"><i class="xi-kakaotalk"></i>카카오</a>
+                  </li>
+                  <li class="{$display_line|display} btn_line">
+                      <a href="#none" onclick="{$line_func_login}"><i class="xi-line-messenger"></i>라인</a>
+                  </li>
+                  <li class="{$display_apple|display} btn_apple">
+                      <a href="#none" onclick="{$apple_func_login}"><i class="xi-apple"></i>애플</a>
+                  </li>                
+                  <li class="{$display_yahoo|display} btn_yahoo">
+                      <a href="#none" onclick="{$yahoo_func_login}"><i class="xi-yahoo"></i>야후</a>
+                  </li>
+              </ul>-->
+              <ul>
+                  <li class="{$display_apple|display} btn_apple">
+                      <a href="#none" onclick="{$apple_func_login}"><i class="xi-apple"></i></a>
+                  </li> 
+                  <li class="{$display_google|display} btn_google">
+                      <a href="#none" onclick="{$google_func_login}"><i class="xi-google"></i></a>
+                  </li>
+                  <li class="{$display_naver|display} btn_naver">
+                      <a href="#none" onclick="{$naver_func_login}"><i class="xi-naver"></i></a>
+                  </li>
+                  <li class="{$display_kakao|display} btn_kakao">
+                      <a href="#none" onclick="{$kakao_func_login}"><i class="xi-kakaotalk"></i></a>
+                  </li>
+                  <li class="{$display_facebook|display} btn_facebook pink">
+                      <a href="#none" onclick="{$facebook_func_login}"><i class="xi-facebook"></i></a>
+                  </li>                           
+                  <li class="{$display_line|display} btn_line">
+                      <a href="#none" onclick="{$line_func_login}"><i class="xi-line-messenger"></i></a>
+                  </li>
+                  <li class="{$display_yahoo|display} btn_yahoo">
+                      <a href="#none" onclick="{$yahoo_func_login}"><i class="xi-yahoo"></i></a>
+                  </li>
+              </ul>
+          </div>
+      </fieldset>
+  </div>
+</div>
+
+<div module="MyShop_OrderHistoryNologin" class="ec-base-box typeThin align" style="display:none;">
+  <!--@css(/css/module/myshop/orderHistoryNologin.css)-->
+  <!--
+      $orderDetailUrl = /myshop/order/list.html
+  -->
+  <h3 class="boxTitle">비회원 로그인</h3>
+  <dl class="ec-base-desc gBlank20">
+      <dt>{$form_label.order_name}</dt><dd>{$form.order_name}</dd>
+      <dt>{$form_label.order_id}</dt><dd>{$form.order_id}</dd>
+      <dt>{$form_label.order_password}</dt><dd>{$form.order_password}</dd>
+  </dl>
+  <p class="ec-base-button gColumn"><button type="submit" class="btnNormal sizeM btnLoginquiry">조회</button></p>
+  <p>비회원의 경우, 주문시의 주문번호로 주문조회가 가능합니다.</p>
+</div>
+</div>    
+
+<script>
+if ($('.xans-member-login').val() != undefined) {
+  $('#member_id').attr('placeholder', '아이디를 입력해 주세요.');
+  $('#member_passwd').attr('placeholder', '비밀번호를 입력해 주세요.');
+}
+</script>
+
+<!-- snap common  start contact mail : support@snapvi.co.kr -->
+<div id='spm_page_type' style='display:none'>sq_login_page</div>
+<script async type="text/javascript" src="//cdn.snapfit.co.kr/js/spm_f_common.js" charset="utf-8"></script>
+<div id="spm_banner_main"></div>
+<!-- snap common end -->
+
+<!--@import(/survey/common.html)-->
+<!--@js(/survey/js/survey_member_login.js)-->

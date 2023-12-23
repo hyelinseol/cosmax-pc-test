@@ -1,0 +1,20 @@
+.regularDeliveryPayInfo { position:relative; margin:0 0 40px; border-top:2px solid #000;}
+.regularDeliveryPayInfo > .title { margin:0 0; font-size:16px; color:#0b0a0a; padding:0 0 20px 0px; border-bottom:2px solid #000; }
+.regularDeliveryPayInfo .ec-base-box { background:#fff; /*border: 1px solid #ddd; border-width: 1px 0;*/ padding:40px 50px;}
+.regularDeliveryPayInfo .ec-base-box .information { float:left; }
+.regularDeliveryPayInfo .ec-base-box .information .title { display:table-cell; height:24px; padding:0 15px 0 0; line-height:24px; font-size:16px; background:url(//img.echosting.cafe24.com/skin/base/common/ico_bar.gif) no-repeat 100% 6px; }
+.regularDeliveryPayInfo .ec-base-box .information .content { display:table-cell; }
+.regularDeliveryPayInfo .ec-base-box .information .status { position:relative;}
+.regularDeliveryPayInfo .ec-base-box .information .status .beforeTitle {font-size:24px; font-weight:700; color:#0B0A0A; margin-bottom:27px;}
+.regularDeliveryPayInfo .ec-base-box .information .status .beforeTitle span {display:block; color:#666; font-size:12px; font-weight:400; margin-top:8px;}
+.regularDeliveryPayInfo .ec-base-box .information .info { padding:13px 15px 0; color:#555; font-size: 14px; line-height:1.5; }
+.regularDeliveryPayInfo .ec-base-box .button {}
+.regularDeliveryPayInfo .ec-base-box .button > .btnEm {display:inline-block; background:#0B0A0A; width:196px; border-radius:4px; color:#FFF; font-size:16px; font-weight:500; height:56px; line-height:56px; padding:0 12px; position:relative; text-align:left;}
+.regularDeliveryPayInfo .ec-base-box .button > .btnEm:after {content:''; position:absolute; right:12px; top:50%; transform:translate(0, -50%); width:19px; height:14px; background:url(/web/renew_img/ico_list_ar.svg) no-repeat 50% 50%;}
+.regularDeliveryPayInfo .ec-base-box .button > .btnNormal {display:inline-block; background:#666; width:196px; border-radius:4px; color:#FFF; font-size:16px; font-weight:500; height:56px; line-height:56px; padding:0 12px; position:relative; text-align:left;}
+.regularDeliveryPayInfo .ec-base-box .button > .btnNormal:after {content:''; position:absolute; right:12px; top:50%; transform:translate(0, -50%); width:19px; height:14px; background:url(/web/renew_img/ico_list_ar.svg) no-repeat 50% 50%;}
+.regularDeliveryPayInfo .ec-base-box:after { content:''; display:block; clear:both; }
+.regularDeliveryPayInfo ul { margin:10px 0 0; color:#777; line-height:1.6; font-size: 13px; }
+.regularDeliveryPayInfo ul li {display:block; text-align:right; padding:0; color:#0B0A0A; font-size:12px; font-weight:400;}
+.regularDeliveryPayInfo .ec-base-tooltip { top:90px; right:25px; }
+.regularDeliveryPayInfo .ec-base-tooltip p + p { margin:10px 0 0; }

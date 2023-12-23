@@ -1,0 +1,74 @@
+<div class="keyvisual_main-wrap">
+	<div class="keyvisual_main">
+		<div class="txt-box">
+			<!-- <div class="tit">내 고민 해결<br />샴푸 만들기</div> -->
+			<div class="tit">1:1 맞춤케어로<br />두피 고민 해결</div>
+			<div class="btn-wrap">
+        <div class="two">
+          <!--
+				    <div class="btn-box">
+                        <div class="pop">1분이면 충분해요!</div>
+                        <button><span>헤어 퀴즈 시작하기<img src="/web/upload/mynomy/kr/main/ico_arrow_quiz.svg" alt="헤어퀴즈 시작하기 화살표" /></span></button>
+                        <button class="btn_details"><span>진단내역 보러가기<img src="/web/upload/mynomy/kr/main/ico_arrow_quiz.svg" alt="진단내역 보러가기 화살표" /></span></button>
+                    </div>
+                    -->
+
+          <div
+            id="survey_start"
+            class="btn-box survey_hover"
+            onclick="javascript:location.href='/survey?product_no=14'"
+          >
+            <div class="pop">쓰리와우 1분 진단!</div>
+            <button>
+              <a id="survey_start_href" href="/survey?product_no=14"
+                ><span
+                  >나만의 헤어케어 제품 만들기<img
+                    src="/web/upload/mynomy/kr/main/ico_arrow_quiz.svg"
+                    alt="" /></span
+              ></a>
+            </button>
+          </div>
+
+          <div
+            id="survey_order"
+            class="btn-box survey_hover"
+            style="display: none"
+            onclick="javascript:location.href='/myshop/index.html'"
+          >
+            <button class="btn_details">
+              <a id="survey_order_href" href="/myshop/index.html"
+                ><span
+                  >나의 구매내역 확인하기<img
+                    src="/web/upload/mynomy/kr/main/ico_arrow_quiz.svg"
+                    alt="" /></span
+              ></a>
+            </button>
+          </div>
+          <div
+            id="survey_diagnosis"
+            class="btn-box survey_hover"
+            style="display: none"
+            onclick="javascript:location.href='/myshop/mypage/diagnosis_list.html'"
+          >
+            <button class="btn_details">
+              <a id="survey_diagnosis_href" href="/myshop/mypage/diagnosis_list.html"
+                ><span
+                  >나의 진단내역 보러가기<img
+                    src="/web/upload/mynomy/kr/main/ico_arrow_quiz.svg"
+                    alt="" /></span
+              ></a>
+            </button>
+          </div>
+        </div>
+			</div>
+		</div>
+		<div class="swiper-wrapper">
+			<div class="swiper-slide" style="background-image: url('/web/upload/mynomy/kr/main/re_main01.jpg');"></div>
+			<div class="swiper-slide" style="background-image: url('/web/upload/mynomy/kr/main/re_main02.jpg');"></div>
+			<div class="swiper-slide" style="background-image: url('/web/upload/mynomy/kr/main/re_main03.jpg');"></div>
+		</div>
+		<div class="arrow-prev"><a href="#">이전</a></div>
+		<div class="arrow-next"><a href="#">다음</a></div>
+		<div class="pagination"></div>
+	</div>
+</div>

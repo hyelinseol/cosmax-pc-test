@@ -1,0 +1,51 @@
+.titleArea {margin:50px 0 !important;}
+.titleArea h2 {color:#000 !important; font-size:32px !important; font-weight:500 !important; letter-spacing:0px !important; font-family: "Gotham SSm A", "Gotham SSm B";}
+
+.titleArea.bbs { text-align:left; margin:0 !important; min-height:auto !important;}
+.titleArea.bbs h3 { display:inline-block; font-size: 24px; line-height:60px; color:#0b0a0a; font-weight: 700; border:0; padding:0; margin-bottom:12px;}
+
+/* :::: 공지사항 :::: */
+.notice_wrap { margin:48px auto; }
+.notice_wrap .time { font-size:16px; color:# 0b0a0a; margin-left:16px; }
+.notice_wrap .consult { display:flex; }
+.notice_wrap .consult a { font-size:16px; color:#0b0a0a; padding:10px 24px; margin:0 10px 0 0; border:1px solid #eee; background:#d4dd69; border-radius:8px; }
+
+/* :::: 자주묻는질문 게시판 연동 css  ::::*/
+.boardCate { position: relative; margin:0 auto 36px;}
+.boardCate .board_menu { display:flex; }
+.boardCate .board_menu li { flex:1; height:48px; line-height:48px; border: 1px solid #eee; border-right:0; background:#fff; text-align: center; }
+.boardCate .board_menu li:last-child {border-right:1px solid #eee;}
+.boardCate .board_menu li.on { border:1px solid #000; background:#000; }
+.boardCate .board_menu li.on a { color:#fff; font-weight:500; }
+.boardCate .board_menu li a { display:block; font-size: 16px; color: #999; font-weight: 400;}
+.boardCate .board_menu li a .review_count {display:inline-block; font-size:12px;} 
+
+.boardCate.event {display:none;}
+
+.boardList .line {overflow:hidden; border-bottom:1px solid #eee; color:#333; font-weight:300;}
+.boardList .line .checkbox {float:left; padding:0 10px 0 0;}
+.boardList .line .checkbox input {height:50px; line-height:50px;}
+
+.boardList .line .title { font-size:14px; cursor:pointer; }
+.boardList .line .title .num { height:50px; line-height:50px; padding:0 20px; text-align:center; }
+.boardList .line .title .num a { display:inline-block; width:36px; height:36px; line-height:36px; background:#ff5c5c; color:#fff; font-weight:400; text-decoration:none;}
+.boardList .line .title .tit { height:50px; line-height:50px;}
+.boardList .line .title .tit a { color:#0b0a0a; text-decoration:none;}
+.boardList .line .title .tit a:hover {color:#555;}
+
+.boardList .line .contArea {padding:48px 30px; background:#fafafa; border-top:1px solid #eee;}
+.boardList .line .contArea p {line-height:22px; font-size:13px !important; }
+
+/* FAQ 서브 카테고리 */
+.bbsSubField {position:relative; margin-bottom:20px;}
+.bbsSubField span a {display:inline-block; font-size:16px; color:#666; padding:10px 20px;}
+.bbsSubField span a.on {color:#FF5C5C; font-weight:600;}
+
+/* Comn Search */
+.xans-board-search {padding:20px; text-align:center;}
+.xans-board-search p {background:none !important; margin:0 !important; padding:0 !important;}
+.xans-board-search p:before {display:none;}
+.xans-board-search select {width: 100px !important; margin:0 2px !important; height: 40px; border: 1px solid #e6e6e6; font-size: 14px; font-family: "Pretendard"; padding: 0 10px; -webkit-appearance: none; -moz-appearance: none; appearance: none; background: #fff url(/web/upload/mynomy/kr/layout/arrow.png) no-repeat 92% 52%; cursor: pointer;}
+.xans-board-search input[type="text"] {width:400px !important; height:40px; line-height:38px; border:1px solid #e6e6e6; font-size:14px; font-family:"Pretendard"; padding:0; box-sizing:border-box; margin-left:2px;}
+.xans-board-search a.btnEmFix {height:38px; line-height:38px; background:#000; border:1px solid #000; box-sizing:border-box; color:#FFF; font-weight:400; margin-left:5px; padding:0 !important;}
+.xans-board-search a.btnEmFix:hover {background:#FFF; color:#000;}

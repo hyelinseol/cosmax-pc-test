@@ -1,0 +1,51 @@
+<li id="anchorBoxId_{$product_no}">
+  <div class="thumbnail">
+      <div class="prdImg img_zoom">
+        <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}">
+          <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+          <span module="product_Imagestyle">
+            <span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span>
+          </span>
+        </a>
+      </div>
+  </div>
+    <div class="description" ec-data-custom="{$product_custom}" ec-data-price="{$product_price|striptag}" ec-data-price3="{$disp_product_price|striptag}" ec-data-price4="{$product_sale_price|striptag}">
+        <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
+        <strong class="name">
+			<a href="{$link_product_detail}" class="{$product_name_display|display}">
+				{$product_name}
+
+				 <!-- {$product_custom}, {$product_price}, {$disp_product_price}, {$product_tax_type_text}, {$disp_sale_price}, {$product_sale_price} -->
+			</a>
+		</strong>
+        <ul module="product_ListItem" class="spec">
+            <li class="{$item_display|display} display{$item_title|striptag}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+        </ul>
+  </div>
+</li>
+
+<li id="anchorBoxId_{$product_no}">
+  <div class="thumbnail">
+      <div class="prdImg img_zoom">
+        <a href="{$link_product_detail}" name="anchorBoxName_{$product_no}">
+          <img src="{$image_medium}" id="{$image_medium_id}" alt="{$seo_alt_tag}" />
+          <span module="product_Imagestyle">
+            <span class="prdIcon {$icon_class_name}" style="background-image:url('{$icon_url}');"></span>
+          </span>
+        </a>
+      </div>
+  </div>
+    <div class="description" ec-data-custom="{$product_custom}" ec-data-price="{$product_price|striptag}" ec-data-price3="{$disp_product_price|striptag}" ec-data-price4="{$product_sale_price|striptag}">
+        <span class="chk"><input type="checkbox" class="{$product_compare_class} {$product_compare_display|display}" /></span>
+        <strong class="name">
+			<a href="{$link_product_detail}" class="{$product_name_display|display}">
+				{$product_name}
+
+				 <!-- {$product_custom}, {$product_price}, {$disp_product_price}, {$product_tax_type_text}, {$disp_sale_price}, {$product_sale_price} -->
+			</a>
+		</strong>
+        <ul module="product_ListItem" class="spec">
+            <li class="{$item_display|display} display{$item_title|striptag}"><strong class="title {$item_title_display|display}">{$item_title} :</strong> {$item_content}</li>
+        </ul>
+  </div>
+</li>

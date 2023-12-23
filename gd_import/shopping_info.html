@@ -1,0 +1,108 @@
+<div class="shoppinginfo">
+    <!-- * 검색창영역 * -->
+    <div class="search dp_none">
+        <div module="Layout_SearchHeader">
+            <!--@css(/css/module/layout/searchHeader.css)--> <!-- * 검색창 영역의 css를 변경하실 수 있습니다 _ 컬러변경 * -->
+            <!--
+                $product_page=/product/detail.html
+                $category_page=/product/list.html
+            -->
+            <fieldset>
+                <legend>검색</legend>
+                {$form.keyword}<i class="xi-search" onclick="{$action_search_submit}"></i>
+            </fieldset>
+        </div>
+    </div>
+    <!-- * 로그아웃 시 메뉴 * -->
+    <ul module="Layout_stateLogoff">
+        <li class="search"><a href="/product/search.html"><i class="xi-search"></i></a></li>
+        <li class="bbs">
+            <a href="/myshop/index.html"><i class="xi-user-o"></i></a>
+            <ul class="bbs-dp1">
+                <!-- * 멀티샵 아이콘 생성 시 위치 * -->
+                <li module="Layout_multishopList" class="thumb">
+                    <!--@css(/css/module/layout/multishopList.css)--> 
+                    <ul module="Layout_multishopListitem">
+                        <li>
+                            <a href="//{$shop_domain}/"><img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="//{$shop_domain}/"><img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" /></a>
+                        </li>
+                    </ul>       
+                    <div module="Layout_multishopListmultioption" class="multiOption">
+                        <a href="#none">
+                            <span module="Layout_multishopListmultioptionCountry" class="ship">
+                                <strong>Ship to</strong><span> : </span>
+                            </span>
+                            <span module="Layout_multishopListmultioptionLanguage" class="language">
+                                <strong>Language</strong><span> : {$language_name}</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="/member/login.html" class="log">로그인</a></li>
+                <li><a href="/member/join.html">회원가입</a></li>
+                <li><a href="/myshop/order/list.html">주문조회</a></li>
+                <li module="Layout_couponzoneBanner"><a href="/coupon/coupon_zone.html" class="couponzoneBanner">쿠폰존</a></li>
+                <li module="Layout_opdiaryBanner"><a href="/board/opdiary/list.html" class="opdiaryBanner">운영일지</a></li>
+                <li module="Layout_attendBanner">
+                    <!--
+                        $stamp_type_url = /attend/stamp.html
+                        $comment_type_url = /attend/comment.html
+                    -->
+                    <a href="{$attend_url}" class="attendBanner">출석체크</a>
+                </li>
+                <li module="Layout_giftBanner"><a href="/order/gift_list.html" class="giftBanner">고객사은품 안내</a></li>
+            </ul>
+        </li>
+        <li><a href="/order/basket.html"><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span><i class="xi-cart-o"></i></a></li>
+    </ul>
+    <!-- * 로그인 시 메뉴 * -->
+    <ul module="Layout_stateLogon">
+        <li class="search"><a href="/product/search.html"><i class="xi-search"></i></a></li>
+        <li class="bbs">
+            <a href="/myshop/index.html"><i class="xi-user-o"></i></a>
+            <ul class="bbs-dp1">
+                <!-- * 멀티샵 아이콘 생성 시 위치 * -->
+                <li module="Layout_multishopList" class="thumb">
+                    <!--@css(/css/module/layout/multishopList.css)--> 
+                    <ul module="Layout_multishopListitem">
+                        <li>
+                            <a href="//{$shop_domain}/"><img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" /></a>
+                        </li>
+                        <li>
+                            <a href="//{$shop_domain}/"><img src="//img.cafe24.com/img/common/global/{$language}_32x24.png" alt="" /></a>
+                        </li>
+                    </ul>       
+                    <div module="Layout_multishopListmultioption" class="multiOption">
+                        <a href="#none">
+                            <span module="Layout_multishopListmultioptionCountry" class="ship">
+                                <strong>Ship to</strong><span> : </span>
+                            </span>
+                            <span module="Layout_multishopListmultioptionLanguage" class="language">
+                                <strong>Language</strong><span> : {$language_name}</span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li><a href="{$action_logout}" class="log">로그아웃</a></li>
+                <li><a href="/member/modify.html">정보수정</a></li>
+                <li><a href="/myshop/order/list.html">주문조회</a></li>
+                <li module="Layout_couponzoneBanner"><a href="/coupon/coupon_zone.html" class="couponzoneBanner">쿠폰존</a></li>
+                <li module="Layout_opdiaryBanner"><a href="/board/opdiary/list.html" class="opdiaryBanner">운영일지</a></li>
+                <li module="Layout_attendBanner">
+                    <!--
+                        $stamp_type_url = /attend/stamp.html
+                        $comment_type_url = /attend/comment.html
+                    -->
+                    <a href="{$attend_url}" class="attendBanner">출석체크</a>
+                </li>
+                <li module="Layout_giftBanner"><a href="/order/gift_list.html" class="giftBanner">고객사은품 안내</a></li>
+                <li><a module="Layout_bookmark" href="/link/bookmark.html" target="_blank" onclick="winPop(this.href); return false;">즐겨찾기</a></li>
+                <li><a module="Layout_shortcut" href="/link/shortcut.html" target="_blank" onclick="winPop(this.href); return false;">바로가기</a></li>
+            </ul>                    
+        </li>
+        <li><a href="/order/basket.html"><span class="count {$basket_count_display|display} {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span><i class="xi-market"></i></a></li>
+    </ul>  
+</div> <!-- shoppinginfo 끝 -->

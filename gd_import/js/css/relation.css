@@ -1,0 +1,70 @@
+@media screen and (max-width: 1680px) {
+    
+    #quick {right: 1%;}  
+    .fixed_btn {right: 1%;} 
+}
+
+
+@media screen and (max-width: 1380px) {
+    
+    #quick {display:none;}
+    #header .xans-layout-logotop img { max-width:200px; }
+    
+    .ec-over-product .title h2, .ec-base-product .title h2, .sub_title h2 { font-size:36px; }
+    
+    
+    /*브랜드*/
+    .comArea { width: 100%;}
+    .com_img { width: 100%; }
+}
+
+
+@media screen and (max-width: 1280px) {
+    
+    #header .xans-layout-logotop img { max-width:160px; }
+    .fixed_btn .xans-layout-productrecent { display: none !important; }
+    
+    .escrow div span.tit { display:block; margin:0 0 10px; }
+    
+}
+
+
+@media screen and (max-width: 1199px) {
+    
+    .dp_none { display:none; }
+    #header .xans-layout-logotop img { max-width:120px; }
+    #header .shoppinginfo > ul > li.search i { display:block; }
+    
+    .topCategory #categoryMenu .menu { padding:0 24px; }
+    .topCategory #categoryMenu .menu > a { font-size:15px; }
+    /*.topCategory #categoryMenu .menu-dp1, .topCategory #categoryMenu .menu-dp2, 
+    .topCategory #categoryMenu .menu-dp3, .topCategory #categoryMenu .menu-dp4, .topCategory #categoryMenu .bbs-dp1 { width:140px; }*/
+    .topCategory #categoryMenu .menu-dp1 > li > a, .topCategory #categoryMenu .menu-dp2 > li > a, 
+    .topCategory #categoryMenu .menu-dp3 > li > a, .topCategory #categoryMenu .menu-dp4 > li > a,
+    .topCategory #categoryMenu .bbs-dp1 > li > a, #header .shoppinginfo .bbs-dp1 > li > a { font-size:13px; }
+    
+    .footer_cs .tit, .footer_bank .tit { font-size:18px; }
+    .footer_cs .tel { font-size:24px; line-height:32px; }  
+    .footer_cs span, .footer_bank p,
+    .footer_info .address span, .escrow div { font-size:13px; }
+    .ft_top .utilMenu li a { font-size:13px; }
+    
+    .ec-over-product .title h2, .ec-base-product .title h2, .sub_title h2 { font-size:32px; }
+    .ec-over-product .title h2 .sub, .ec-base-product .title h2 .sub, .sub_title .sub { font-size:15px; }
+    
+    .xans-product-menupackage .title h2 { font-size:28px; }
+    .ec-base-product .title h3, .ec-over-product .title h3 { font-size:22px; }
+    
+}
+
+
+@media screen and (max-width: 1023px) {
+    
+    #header .xans-layout-logotop img { max-width:100px; }
+}
+
+
+@media screen and (max-width: 995px) {
+    
+    .ec-base-product .prdList {min-width: 100%;}   
+}

@@ -1,0 +1,24 @@
+.xans-myshop-asyncbenefit { margin:0 0 20px; color:#353535;}
+.xans-myshop-asyncbenefit .thumbnail img { max-width:70px; max-height:70px; }
+.xans-myshop-asyncbenefit .description { min-height:70px; }
+.xans-myshop-asyncbenefit .ec-base-box.typeThinBg { margin-top:-1px; padding-left:110px; }
+.xans-myshop-asyncbenefit .invite > strong { display:block; }
+.xans-myshop-asyncbenefit .invite .copy { margin:8px 0 0; }
+.xans-myshop-asyncbenefit .invite #reco_url { width:439px; }
+.xans-myshop-asyncbenefit .invite ul { margin:8px 0 0; font-size:11px; line-height:1.25; color:#757575; }
+.xans-myshop-asyncbenefit .invite ul li { margin:3px 0 0; }
+
+.info .memberInfo:after{display:block; content:""; clear:both;}
+.info .memberInfo .profile{float:left; display:inline-block; width:10%;}
+.info .memberInfo .profile img{width:100%;}
+.info .memberInfo .memberInfo_txt{float:left; width:90%; padding: 20px 0 0 50px; box-sizing: border-box;}
+.info .memberInfo .memberInfo_txt .name{display: inline-block; font-size:23px; font-weight: 700 !important; margin-bottom:10px;}
+.info .memberInfo .memberInfo_txt p{display:inline-block; font-size:17px; padding-left: 10px;}
+.info .memberInfo .memberInfo_txt .setting_icon{font-size:13px;}
+.info .memberInfo .memberInfo_txt ul:after{display:block; content:""; clear:both;}
+.info .memberInfo .memberInfo_txt ul{margin-bottom:10px;}
+.info .memberInfo .memberInfo_txt ul li{float:left;}
+.info .memberInfo .memberInfo_txt ul .setting_icon{float:right;}
+.info .memberInfo .memberInfo_txt .info_btn .btn{display:inline-block; padding: 10px 30px; background:#000;margin-right:4px; border-radius:5px;}
+.info .memberInfo .memberInfo_txt .info_btn .btn a{color:#fff; font-size:14px;}
+

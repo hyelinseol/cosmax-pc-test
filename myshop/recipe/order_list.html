@@ -1,0 +1,226 @@
+<!--@layout(/layout/basic/mypage.html)-->
+<!--@css(/gd_import/css/myrecipe.css)-->
+<!--div class="path">
+    <span>현재 위치</span>
+    <ol>
+        <li><a href="/">홈</a></li>
+        <li><a href="/myshop/index.html">마이쇼핑</a></li>
+        <li title="현재 위치"><strong>주문/배송 조회</strong></li>
+    </ol>
+</div-->
+
+<div class="recipeTitle">
+    <h2>주문/배송 조회</h2>
+</div>
+
+<div module="myshop_orderstate">
+    <div class="state">
+        <ul class="order">
+            <li>
+                <a href="{$shppiedBeforeUrl}" class="count now">{$shppiedBeforeCount}</a>
+                <strong>처방 분석</strong>
+            </li>
+            <li>
+                <a href="{$shppiedStandbyUrl}" class="count">{$shppiedStandbyCount}</a>
+                <strong>맞춤 제조</strong>
+            </li>
+            <li>
+                <a href="{$shppiedBeginUrl}" class="count">{$shppiedBeginCount}</a>
+                <strong>품질 검사</strong>
+            </li>
+            <li>
+                <a href="{$shppiedComplateUrl}" class="count">{$shppiedComplateCount}</a>
+                <strong>배송중</strong>
+            </li>
+            <li>
+                <a href="{$shppiedComplateUrl}" class="count">{$shppiedComplateCount}</a>
+                <strong>배송완료</strong>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div module="Myshop_OrderHistoryHead">
+    <!--@css(/css/module/myshop/orderHistoryHead.css)-->
+    <fieldset class="ec-base-box">
+        <legend>검색기간설정</legend>
+        <div class="box">
+            <p>구매 기간</p>
+            <div class="right">    
+                <div class="ec-base-button">
+                    <a href="#none" class="btnDate{$month_style}" days="30">1개월</a>
+                    <a href="#none" class="btnDate{$three_style}" days="90">3개월</a>
+                    <a href="#none" class="btnDate{$six_style}" days="180">6개월</a>
+                    <a href="#none" class="btnDate{$twelve_style}" days="365">12개월</a>
+                </div>
+                <div class="selectBox">
+                    <select name="year">
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                    </select>
+                    년
+                    <select name="month">
+                        <option value="jan">01</option>
+                        <option value="feb">02</option>
+                        <option value="mar">03</option>
+                        <option value="apr">04</option>
+                        <option value="may">05</option>
+                        <option value="jun">06</option>
+                        <option value="jul">07</option>
+                        <option value="aug">08</option>
+                        <option value="sep">09</option>
+                        <option value="oct">10</option>
+                        <option value="nov">11</option>
+                        <option value="dec">12</option>
+                    </select>
+                    월
+                    <select name="day">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                    </select>
+                    일 ~ 
+                    <select name="year">
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                    </select>
+                    년
+                    <select name="month">
+                        <option value="jan">01</option>
+                        <option value="feb">02</option>
+                        <option value="mar">03</option>
+                        <option value="apr">04</option>
+                        <option value="may">05</option>
+                        <option value="jun">06</option>
+                        <option value="jul">07</option>
+                        <option value="aug">08</option>
+                        <option value="sep">09</option>
+                        <option value="oct">10</option>
+                        <option value="nov">11</option>
+                        <option value="dec">12</option>
+                    </select>
+                    월
+                    <select name="day">
+                        <option>01</option>
+                        <option>02</option>
+                        <option>03</option>
+                        <option>04</option>
+                        <option>05</option>
+                        <option>06</option>
+                        <option>07</option>
+                        <option>08</option>
+                        <option>09</option>
+                        <option>10</option>
+                        <option>20</option>
+                        <option>30</option>
+                    </select>
+                    일
+                </div>    
+            </div>
+        </div>
+        <div class="box">
+            <p>상품명 검색</p>
+            <div class="right">
+                <div module="Layout_SearchHeader">
+                    <!--
+                        $product_page=/product/detail.html
+                        $category_page=/product/list.html
+                    -->
+                    <fieldset>
+                        <legend>검색</legend>
+                        {$form.keyword}<!--i class="xi-search" onclick="{$action_search_submit}"></i-->
+                    </fieldset>
+                </div>
+            </div>    
+        </div>
+    </fieldset>
+    <div class="btnSearch"><a href="/">검색</a></div>
+</div>
+
+<div module="Myshop_OrderHistoryListitem" class="ec-base-table typeList">
+    <!--@css(/css/module/myshop/orderHistoryListItem.css)-->
+    <!--
+        $login_url = /member/login.html
+    -->
+
+    <div class="delivery_state {$list_display|display}">
+        <div class="delivery">
+            <div class="img_area">
+                <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+            </div>
+            <div class="contents">
+                <span class="state"><!-- {$status} -->처방 분석 중</span>
+                <p>MYN0MY 커스텀 샴푸</p>
+                <p class="model">#R2050</p>
+                <h4>{$product_name_link}</h4>
+                <div class="dBtn left">
+                    <a href="#none" class="btnRecipe btnFix sizeL {$direct_cancel_display|display}" onclick="{$action_direct_cancel}">결제 취소</a>
+                </div>
+            </div>
+            <div class="reusult_area">
+                <p class="date">결제일자 {$order_date}</p>
+                <span><a href="/"><i class="xi-angle-right-min"></i> 진단 결과 자세히 보기</a></span>
+            </div>    
+        </div>
+        <div class="delivery">
+            <div class="img_area">
+                <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+            </div>
+            <div class="contents">
+                <span class="state"><!-- {$status} -->배송 완료</span>
+                <p>MYN0MY 커스텀 샴푸</p>
+                <p class="model">#R2050</p>
+                <h4>{$product_name_link}</h4>
+                <div class="dBtn left">
+                    <a href="#none" class="btnFeed btnFix sizeL">피드백 하기</a>
+                    <a href="#none" class="btnRecipe btnFix sizeL">재 주문하기</a>
+                </div>
+            </div>
+            <div class="reusult_area">
+                <p class="date">결제일자 {$order_date}</p>
+                <span><a href="/"><i class="xi-angle-right-min"></i> 진단 결과 자세히 보기</a></span>
+            </div>    
+        </div>
+        <div class="delivery">
+            <div class="img_area">
+                <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+            </div>
+            <div class="contents">
+                <span class="state"><!-- {$status} -->배송 완료</span>
+                <p>MYN0MY 커스텀 샴푸</p>
+                <p class="model">#R2050</p>
+                <h4>{$product_name_link}</h4>
+                <div class="dBtn left">
+                    <a href="#none" class="btnRecipe btnFix sizeL">재 주문하기</a>
+                </div>
+            </div>
+            <div class="reusult_area">
+                <p class="date">결제일자 {$order_date}</p>
+                <span><a href="/"><i class="xi-angle-right-min"></i> 진단 결과 자세히 보기</a></span>
+            </div>    
+        </div>
+    </div>
+    <p class="message {$empty_display|display}">주문 내역이 없습니다.</p>
+</div>
+
+<div module="Myshop_OrderHistoryPaging" class="ec-base-paginate">
+    <a href="{$param_first}" class="first"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_first.gif" alt="첫 페이지" /></a>
+    <a href="{$param_prev}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_prev.gif" alt="이전 페이지" /></a>
+    <ol>
+        <li><a href="{$param_page}" class="{$param_class}">{$num}</a></li>
+        <li><a href="{$param_page}" class="{$param_class}">{$num}</a></li>
+    </ol>
+    <a href="{$param_next}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_next.gif" alt="다음 페이지" /></a>
+    <a href="{$param_last}" class="last"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_last.gif" alt="마지막 페이지" /></a>
+</div>

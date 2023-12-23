@@ -1,0 +1,96 @@
+<div module="Layout_footer">
+    <div class="footer_info">
+        <div class="ft_top">
+            <div class="inner">
+                <ul class="utilMenu">
+                    <!--li class="home"><a href="/index.html">홈</a></li-->
+                    <li><a href="/shopinfo/company.html">회사소개</a></li>
+                    <li><a href="/member/agreement.html">이용약관</a></li>
+                    <li><a href="/member/privacy.html">개인정보처리방침</a></li>
+                    <li><a href="/shopinfo/guide.html">이용안내</a></li>
+                </ul>
+                <ul class="footer_sns">
+                    <li><a href="//www.facebook.com" target="_blank"><i class="xi-facebook"></i></a></li>
+                    <li><a href="//www.instagram.com" target="_blank"><i class="xi-instagram"></i></a></li>
+                    <li><a href="//www.kakao.com/talk/ko" target="_blank"><i class="xi-kakaotalk"></i></a></li>
+                    <li><a href="//www.youtube.com" target="_blank"><i class="xi-youtube-play"></i></a></li>                    
+                </ul>
+            </div> 
+        </div>    
+        <div class="inner">
+            <div class="address">
+                <h3 class="tit">Store Info</h3>
+                <span>법인명 : {$company_name} </span> <span>대표자 : {$president_name}</span><br/>
+                <span>사업자등록번호 : {$company_regno} <font>{$biz_no_link}</font></span> <span>통신판매업 신고 {$network_regno}</span> <br />
+                <span>전화 : {$phone}</span> <span>팩스 : {$fax}</span> <br/>
+                <span>주소 : {$mall_zipcode} {$mall_addr1} {$mall_addr2}</span><br />
+                <span class="{$cpo_email|display}">개인정보관리책임 : <a href="mailto:{$cpo_email}">{$cpo_name}({$cpo_email})</a> </span> <span>Hosting by 카페24</span>
+                <!--span>Contact <strong><a href="mailto:{$email}">{$email}</a></strong> for more information.</span-->
+                <a href="//www.goodymall.co.kr/" target="_blank"><img src="/web/upload/mynomy/kr/layout/goodymall_logo.gif" style="margin:10px 0 0 5px;" alt="디자인저작권자:굿디몰디자인" /></a>
+            </div>
+            <div class="footer_bank">                
+                <h3 class="tit">Bank Info</h3>
+                <p>우리 1002-355-664254<br/>신한 1234-123-123456</p>
+                <p class="last">예금주 : 굿디몰디자인</p>
+                <!-- 참조화폐 설정시 노출되는 영역 -->
+                <div module="Layout_ReferenceCurrencyList" class="list">
+                    <!--@css(/css/module/layout/multiCurrency.css)-->
+                    <button type="button" class="toggle" id="reference_currency_button">
+                        <span class="btn-global">참조화폐</span>
+                        <span class="currencyNow">{$current_reference_currency_code} {$current_reference_currency_symbol}</span>
+                    </button>
+                    <ul module="Layout_ReferenceCurrencyListitem" class="multicurrencylistitem" id="reference_currency_list">
+                        <li class="">
+                            <a href="#">
+                                <span class="name">{$reference_currency_code}</span>
+                                <span class="unit">{$reference_currency_symbol}</span>
+                            </a>
+                        </li>
+                        <li class="">
+                            <a href="#">
+                                <span class="name">{$reference_currency_code}</span>
+                                <span class="unit">{$reference_currency_symbol}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer_cs" module="Layout_Info">
+                <h3 class="tit">CS Center</h3>
+                <p class="tel">{$phone}</p>
+                <p>{$runtime}</p>
+            </div>
+        </div>
+        <div class="escrow">
+            <div>
+                <span class="tit">구매안전서비스</span> 고객님은 안전거래를 위해 현금 등으로 결제시 저희 쇼핑몰이 가입한 PG에스크로 구매안전서비스를 이용하실 수 있습니다. 
+                <span><a href="#none">가입사실확인 <i class="xi-angle-right-min"></i></a></span>
+                <ul class="footer_icon">
+                    <li><img src="/web/upload/mynomy/kr/layout/footer_icon01.png" alt="아이콘01" /></li>
+                    <li><img src="/web/upload/mynomy/kr/layout/footer_icon02.png" alt="아이콘02" /></li>
+                    <li><img src="/web/upload/mynomy/kr/layout/footer_icon03.png" alt="아이콘03" /></li>
+                    <li><img src="/web/upload/mynomy/kr/layout/footer_icon04.png" alt="아이콘04" /></li>
+                </ul>
+            </div> 
+        </div>
+        <p class="copyright">Copyright &copy; 2022 {$mall_name}. All rights reserved.</p>
+    </div> <!-- footer_info 끝 -->    
+</div>
+
+
+<!-- * 스크롤시 나타나는 우측 하단버튼 * -->
+<div id="goBtn" class="fixed_btn">    
+    <!--------------------------------------------------------------------------------------------------
+        ■ 우측 sns 버튼 ■
+
+        1) 카카오채널 - 카카오채널 관리자센터에서 홈 생성 후, 발급받은 URL을 a태그에 삽입해 주시기 바랍니다.
+        2) 네이버 톡톡 - 네이버 톡톡센터에서 계정 생성 후 발급받은 배너 소스를 삽입해주시기 바랍니다.
+    ----------------------------------------------------------------------------------------------------->
+    <!--a href="//pf.kakao.com/_hxcTRK" target="_blank" class="sns_btn kakao_icon"><i class="xi-kakaotalk"></i><span>상담하기</span></a>
+    <a href="//partner.talk.naver.com" target="_blank" class="sns_btn naver_icon"><i class="xi-naver"></i><span>톡톡문의</span></a-->
+    
+    <!-- 스크롤 버튼 -->
+    <a href="#none" class="btn up fade"><i class="xi-angle-up"></i><span>맨위로</span></a>
+    <!--a href="#none" class="btn down fade"><i class="xi-angle-down"></i></a-->
+</div>

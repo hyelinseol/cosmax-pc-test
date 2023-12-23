@@ -1,0 +1,180 @@
+body#diagnosis { background:#f8f6f4; }
+body#diagnosis #wrap { /*height:calc(100vh - 80px);*/ overflow:hidden; }
+body#diagnosis #container { background:#f8f6f4; }
+body#diagnosis #contents{ background:#f8f6f4; max-width:1920px; width:100%; margin:0 auto; }
+
+#stepArea { position:relative; display:flex; justify-content: space-between; width:100%; background:#f8f6f4; }
+#stepArea > ul { display: flex; justify-content: flex-end; }
+.step { border-left:1px solid #000; }
+.step::after { content:""; display:block; clear:both; }
+.step.selected { width:calc(100% - 160px); }
+.step .menu { float:left; /*display:inline-block;*/ width:40px; height:100%; padding:14px 0; text-align:center; box-sizing:border-box; }
+.step .menu::after { content:""; display:block; clear:both; }
+.step .menu .title { font-size:14px; -webkit-transform: rotate(90deg); -ms-transform: rotate(90deg); transform: rotate(90deg); } 
+.step .menu span { display:inline-block; font-size:14px; margin:0 0 40px; }
+.step .progress { background:#c5d5b8; }
+
+.introWrap { position:relative; display:contents; }
+.introBox { position:relative; width:100%; max-width:1440px; min-height:480px; font-size:16px; margin:80px auto; padding:0 32px; box-sizing:border-box; }
+.contantWrap { position:relative; display:flex; align-items: center; width:100%; max-width:1294px; margin:80px auto; }
+
+.slideArea { position:relative; max-width:1294px; margin:0 auto; }
+
+/* 슬라이드 */
+.profileSlide.swiper-container { position:relative; padding-bottom:0px; margin:0 auto; }
+.profileSlide .swiper-slide { display: flex; flex-direction: row; justify-content: space-between; align-items: center; align-content: center; }
+.profileSlide .swiper-slide .img_area { max-width:500px; float:right; }
+.profileSlide .swiper-slide img { width:100%; } 
+/*.profileSlide a {line-height: 0;}*/
+
+/* 슬라이드에 HTML로 텍스트를 입력하실 때 사용하세요 */
+.profileSlide .swiper-slide .txt_area { /* position:absolute; top:50%; transform:translateY(-50%); display:inline-block;*/ display:flex; flex-direction: column; font-size:28px; font-weight:700; line-height:42px; letter-spacing: -0.03em; text-align:center; margin:0 auto; }
+.profileSlide .swiper-slide .txt_area h3 { font-size:40px; line-height:60px; font-weight:700; margin:0 0 20px; }
+.profileSlide .swiper-slide .txt_area p { font-weight:400; }
+.profileSlide .swiper-slide .txt_area p span {}
+
+/* 슬라이드 페이징 버튼 */
+.profileSlide .swiper-pagination { bottom: 16px; }
+.profileSlide .swiper-pagination-bullet { width:3px; height:16px; border-radius:0; background:#efeeed; opacity:1; }
+.profileSlide .swiper-pagination-bullet-active { background:#c5d5b8; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); -webkit-transition: 0.2s ease-in-out; transition: 0.2s ease-in-out; }
+.profileSlide.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet-active { margin:0 8px; }
+.profileSlide .swiper-button-prev { top:45%; left: 4%; }
+.profileSlide .swiper-button-next { top:45%; right: 4%; }
+
+.theme { position:absolute; bottom:-34px; right:14px; width:68px; height:68px; background:#0b0a0a url(/web/upload/mynomy/kr/diagnosis/theme.png) no-repeat 50% 50%; border-radius:100%; box-shadow:0 10px 10px 0 rgba(0,0,0,0.15); z-index:9; }
+
+.preferBox { position:relative; margin:auto; }
+
+.preferBox .prefer { position:relative; padding-bottom:0px; margin:0 auto; }
+.preferBox .prefer img_area { max-width:500px; }
+.preferBox .prefer img { width:100%; }
+
+.preferBox .prefer .txt { position:absolute; top:64px; right: -60px; font-size:44px; font-weight:700; line-height:66px;  color:#1d1d1b; letter-spacing: -0.03em; }
+
+/************** 내용 **************/
+/*.introBox { position:relative; min-height:240px; font-size:16px; margin:160px auto; padding:0 28px; box-sizing:border-box; }
+.introBox .txt { margin:40px auto 64px; letter-spacing:-0.03em; text-align:center; }
+.introBox.selectArea  .txt { margin:0 auto; }
+.introBox .txt p { font-size:24px; line-height:36px;  }
+.introBox .txt span { display:block; font-size:14px; line-height:21px; color:#908775; margin:0 0 20px; }
+.introBox .scroll { position:relative; text-align:center; margin:160px 0 0; }
+.introBos .scroll p { font-size:16px; line-height:24px; color:#0b0a0a; }
+.introBox .scroll .arrow { position:relative; display:inline-block; margin:10px 0 0; }
+.introBox .scroll .arrow a { display:block; width:24px; height:24px; }
+.introBox .scroll .arrow span { display:inline-block; content: ""; position: absolute; width:14px; height: 1px; background-color: #0b0a0a; }
+.introBox .scroll .arrow span:nth-child(2n-1) { left:0; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); -webkit-transition: 0.2s ease-in-out; transition: 0.2s ease-in-out; }
+.introBox .scroll .arrow span:nth-child(2n) { left:10px; -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); -webkit-transition: 0.2s ease-in-out; transition: 0.2s ease-in-out; }
+.introBox .scroll .arrow span, .introBox .scroll .arrow span:nth-child(2) { top:7px; }
+.introBox .scroll .arrow span:nth-child(3), .introBox .scroll .arrow span:nth-child(4) { top:15px; }*/
+
+
+.contantBox { position:relative; width:100%; max-width:1440px; min-height:480px; font-size:16px; margin:80px auto; padding:0 32px; box-sizing:border-box; }
+.contantBox .txt { margin:40px auto 64px; }
+.contantBox.selectArea  .txt { margin:0 auto; }
+.contantBox .txt p { font-size:20px; line-height:30px; letter-spacing:-0.03em; text-align:center; }
+
+.contantBox .infoWrap { position:absolute; bottom:4%; left:0; width:100%; text-align:center; z-index:99; }
+.contantBox .infoWrap .info { display:inline-block; background:rgba(66,64,63,0.9) url(/web/upload/mynomy/kr_mobile/diagnosis/info.png) no-repeat 10px 50%; background-size:22px 23px; border-radius:30px; box-shadow:0 10px 4px 0 rgba(0,0,0,0.1); vertical-align:middle; }
+.contantBox .infoWrap .info p { font-size:14px; line-height:21px; letter-spacing:-0.03em; color:#fff; padding:12px 16px 12px 48px; }
+.contantBox .infoWrap .info p i { font-size: 12px; vertical-align: middle; line-height: 21px; margin:0 0 0 16px; }
+
+.selectBox { position:relative; margin:30px auto 140px; }
+.selectBox select { width:100%; height:60px; border:1px solid #eee; font-size:16px; font-family:'Pretendard'; padding:0 14px;  background: #fff url(//img.echosting.cafe24.com/skin/mobile/common/ico_select.gif) no-repeat 100% 49%; background-size: auto 56px; }
+.selectBox .age { text-align:right; margin:16px 0 0; }
+.selectBox .age span { color:#8e8e8e; }
+
+.selectArea { max-width:510px; margin:0 auto; }
+.selectArea .select { margin:28px auto; padding:28px 0 0; border-top:1px solid #c5c4c5; }
+.selectArea .select ul.view { display: flex; flex-flow: row wrap; justify-content: center; }
+.selectArea .select ul.view li { flex:none; min-height:42px; font-size:14px; line-height:18px; letter-spacing:-0.03em; margin:8px 4px; padding: 11px 12px; background:#fff; border:1px dashed #d1d1d1;  box-sizing:border-box;}
+.selectArea .select ul.view li.checked { position:relative; background:#c5d5b8; border:1px solid #c5d5b8; padding: 11px 36px 11px 12px; }
+.selectArea .select ul.view li.checked::before, .selectArea .select ul.view li.checked::after { content: ""; position: absolute; height: 2px; background-color: #111;}
+.selectArea .select ul.view li.checked::before { width: 6px; top:20px; right:18px; -webkit-transform: rotate(50deg); -ms-transform: rotate(50deg); transform: rotate(50deg); -webkit-transition: 0.2s ease-in-out; transition: 0.2s ease-in-out; }
+.selectArea .select ul.view li.checked::after { width: 12px; top:19px; right:9px; -webkit-transform: rotate(-50deg); -ms-transform: rotate(-50deg); transform: rotate(-50deg); -webkit-transition: 0.2s ease-in-out; transition: 0.2s ease-in-out; }
+
+/* 모래시계 - 샴푸 후 떡지는 시간 */
+.timeArea { display:flex; padding:40px 0; background:#fff; box-sizing:border-box; overflow:hidden; }
+.timeArea .img_area { position:relative; left:0; transform:translateX(-80%); flex:1; }
+.timeArea .img_area img { width:180%; }
+.timeArea .time_bar { display:flex; flex:1; justify-content:space-evenly; }
+.timeArea .time_bar ol { display:flex; flex-direction: column; justify-content: space-evenly; }
+.timeArea .time_bar ol li { font-size:14px; line-height:21px; letter-spacing:-0.03em; color:#94958f; }
+.timeArea .time_bar ol li.checked { color:#333; }
+.timeArea .time_bar .bar { position:relative; display:inline-block; width:4px; height:80%; background:#ddd; margin:auto 0; }
+.timeArea .time_bar .bar span { position:absolute; bottom:0; left:-10px; width:24px; height:24px; border-radius:100%; border:4px solid #c5d5b8; background:#fff; box-shadow:0 3px 5px 0 rgba(0 0 0 / 10%); box-sizing:border-box; }
+
+.select ul[class*="row"] { display:flex; flex-direction: column; position:relative; margin:0; }
+.select ul[class*="row"]:after { content:none; }
+.select ul[class*="row"] li { flex-direction: row; justify-content: space-between; margin:0 0 12px 0; min-height:8px; text-align:left; padding: 16px 20px; border:1px solid #eee; box-sizing: border-box; overflow:hidden; }
+.select ul[class*="row"] li .img_area { margin:0 0 0 20px; }
+
+/* select 공통 */
+.select { position:relative; }
+.select:after { content:""; display:block; clear:both; }
+.select ul { display:flex; flex-wrap: wrap; margin: 0 -9px 0 0; font-size:14px; line-height:21px; letter-spacing:-0.03em; word-break:break-all; }
+.select ul li { position: relative; display:flex; flex-direction: column; flex:1; justify-content: center; align-items: center; min-height:135px; margin: 0 9px 9px 0; padding:0 24px; box-sizing:border-box; color: #171717; text-align:center; background:#fff; }
+.select ul li i { font-size:46px; color:#ddd; margin:0 0 24px 0; } 
+.select ul li .img_area { width:56px; min-width:56px; margin:0 0 10px; }
+.select ul li .img_area img { width:100%; }
+.select .gFlex2 li { flex:0; flex-basis: calc(50% - 9px); }
+.select .gFlex3 li { flex:0; flex-basis: calc(33.333% - 9px); }
+.select .gFlex4 li { flex:0; flex-basis: calc(25% - 9px); }
+.select a { display:flex; flex-basis:100%; justify-content:center; flex-wrap:nowrap; align-items:center; padding:14px 6px; }
+.select a .number  { display:inline-block; padding-left:5px; }
+.select ul li.checked { background:#c5d5b8; }
+.select ul li.line_checked { border:2px solid #c5d5b8; box-shadow:0 4px 10px 0 rgba(0,0,0,0.1); }
+.select ul li.line_checked i { color:#c5d5b8; }
+
+/* 탈모확인 방법 팝업 */
+.infoBox { position: fixed; bottom:0; width:100%; color:#666; letter-spacing: -0.03em; background: #fff; padding: 23px 30px; border-radius: 20px 20px 0 0; box-sizing:border-box; z-index:99; }
+.infoBox h4 { text-align: center; font-size: 19px; line-height: 29px; color:#111; }
+.infoBox .close { position:absolute; width:32px; height:32px; line-height:32px; top:23px; right:30px; background:#f9f9f9; border-radius:100%; text-align:center; }
+.infoBox .imgBox { display: flex; width: 100%; height: 180px; margin: 20px auto; background: #f0f3ee; flex-direction: column; align-items: center; justify-content: space-evenly; }
+.infoBox .imgBox .img_area { max-width:120px; }
+.infoBox .imgBox img { width:100%; }
+.infoBox .imgBox p { font-size: 15px; line-height: 15px; }
+.infoBox ol { counter-reset: number 0; margin:0 0 16px 20px;}
+.infoBox ol li { position:relative; list-style: none;  font-size: 14px; line-height: 21px; margin:0 0 8px; }
+.infoBox ol li::before { position: absolute; top: 0; left: -16px; counter-increment: number 1; content: counter(number); color: #fff; z-index: 1; }
+.infoBox ol li::after { content: ''; position: absolute; top: 2px; left: -20px; display: inline-block; background-color: #c5d5b8; border-radius: 100%; width: 16px; height: 16px; }
+.infoBox .judge { display:flex; padding:20px 0 0; border-top:1px solid #e3e3e3; } 
+.infoBox .judge span { flex:1; }
+.infoBox .judge span font { display: inline-block; font-size: 13px; color: #c5d5b8; border: 1px solid #c5d5b8; border-radius: 4px; padding: 1px 4px; margin: 2px 0 0px; }
+.infoBox .judge p { flex:6; font-size:15px; line-height:23px; }
+
+
+/* 토스트 팝업 */
+.popWrap { position:absolute; top:10%; left:0; width:100%; text-align:center; z-index:99; }
+.popWrap .pop { display:inline-block; background:rgba(69,60,55,0.8); border-radius:8px; box-shadow:0 10px 4px 0 rgba(0,0,0,0.1); vertical-align:middle; }
+.popWrap .pop p { font-size:14px; line-height:21px; letter-spacing:-0.03em; color:#fff; padding:12px 48px; }
+
+
+
+
+
+/************** button **************/
+.btnPrev, .btnNext, .btnFunc { display:inline-block; font-size:16px; letter-spacing:-0.03em; text-align:center; height:48px; line-height:48px; -moz-box-sizing:border-box; box-sizing:border-box; }
+.btnNext:hover, .btnNext:active { box-shadow: 0 10px 10px 0 rgba(0,0,0,0.15); }
+.btnPrev { background:#878787; color:#fff; }
+.btnNext { background:#c5d5b8; color:#000; }
+.btnFunc { background:#414141; color:#fff; }
+
+/* dBtn */
+.dBtn { margin:40px auto; text-align:center; }
+.dBtn:after { content:""; display:block; clear:both; }
+
+/* gColumn */
+.dBtn[class*="gColumn"] { display:flex; position:relative; margin:28px -11px 0 0 ; }
+.dBtn[class*="gColumn"]:after { content:none; }
+.dBtn[class*="gColumn"] a,
+.dBtn[class*="gColumn"] button { flex:1; margin:0 11px 0 0; padding:0 8px; white-space:nowrap; }
+
+/* gFlex */
+.dBtn[class*="gColumn"] .gFlex2 { flex:2; }
+.dBtn[class*="gColumn"] .gFlex3 { flex:3; }
+.dBtn[class*="gColumn"] .gFlex4 { flex:4; }
+
+/* gFull */
+.dBtn.gFull { margin-bottom:0; }
+.dBtn.gFull a { padding:0 72px; }
+.dBtn.gFull [class*="btn"], [class*="btn"].gFull { width:100%; }

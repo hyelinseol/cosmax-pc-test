@@ -1,0 +1,34 @@
+.xans-myshop-orderhistoryhead fieldset img { vertical-align:middle; }
+.xans-myshop-orderhistoryhead fieldset .period { display:inline-block; margin:0 2px; font-size:0; vertical-align:middle; }
+.xans-myshop-orderhistoryhead fieldset .period a { padding:0; border:0; }
+.xans-myshop-orderhistoryhead fieldset .period img { margin:0 0 0 -1px; }
+.xans-myshop-orderhistoryhead fieldset .period img:hover { opacity: 0.6; }
+/*.xans-myshop-orderhistoryhead fieldset .fText { width:72px; height:22px; margin:0 0 0 2px; padding:0 6px; border:1px solid #d5d5d5; line-height:22px; font-size:12px; }*/
+.xans-myshop-orderhistoryhead fieldset button { width:14px; height:14px; margin:0 5px 0 2px; background:none; }
+.xans-myshop-orderhistoryhead fieldset button::after{content: ''; width: 6px; height: 3px; display: block; position: absolute; right: 0px; top:15px; 
+    background: url('/web/upload/mynomy/kr/layout/icon_wave.png') no-repeat center center;}
+.xans-myshop-orderhistoryhead .stateSelect { display:inline-block; margin:0 10px 0 0; /*padding:0 12px 0 0; background:url("//img.echosting.cafe24.com/skin/base/common/ico_bar.gif") no-repeat 100% 6px;*/ }
+.xans-myshop-orderhistoryhead .periodSelect { display:inline-block; margin:0 5px 0 2px; }
+.xans-myshop-orderhistoryhead .periodSelect:after { content:"년"; position:relative; top:1px; }
+.xans-myshop-orderhistoryhead ul { margin:0; color:#777; font-size: 13px; line-height:1.6; }
+.xans-myshop-orderhistoryhead ul li { padding:0 0 0 9px; background:url("//img.echosting.cafe24.com/skin/base/common/ico_square2.gif") no-repeat 4px 7px; }
+
+
+.stateSelect { position: relative; width: 100%; padding:10px 0 10px 0; word-wrap: break-word; border-top:2px solid #000; border-bottom:0px solid #000; }
+.stateSelect .order_status { display:flex; }
+.stateSelect li { width: auto; text-align:center; padding: 0 20px;  box-sizing: border-box; background:none;}
+.stateSelect li a { font-size:16px; line-height:30px; color:#666; }
+.stateSelect li.on a { color:#ff585d; font-weight:700; }
+
+/* 기간검색설정 추가 */
+.set { margin:0; }
+.set.xans-myshop-orderhistoryhead fieldset.ec-base-box { font-size:0px; padding:0 0 48px; border-bottom:2px solid #000; }
+.set.xans-myshop-orderhistoryhead fieldset .period { margin-right:10px; }
+.set.xans-myshop-orderhistoryhead fieldset .period a { display: inline-block; font-size:12px; line-height:40px; height:40px; color:#0b0a0a; padding:0 15px; background:#fff; border: 1px solid #e6e6e6; margin-left: -1px; box-sizing:border-box; }
+.set.xans-myshop-orderhistoryhead fieldset .period a:first-child { margin-left:0; }
+.set.xans-myshop-orderhistoryhead fieldset .period a.on { background:#0b0a0a; background: #989591; color:#fff; }
+.set.xans-myshop-orderhistoryhead select { width:140px; height:40px; border:1px solid #e6e6e6; font-size:14px; font-family:"Pretendard"; padding:0 10px; margin:0 10px 0 0; -webkit-appearance: none; -moz-appearance: none; appearance: none; background:#fff url(/web/upload/mynomy/kr/layout/arrow.png) no-repeat 92% 52%; cursor:pointer; }
+
+.set.xans-myshop-orderhistoryhead input[type=text], .set.xans-myshop-orderhistoryhead input[type=password] { height:40px; line-height:40px; border: 1px solid #e6e6e6; font-size: 14px; font-family: "Pretendard"; padding:0 12px; box-sizing:border-box; }
+.set.xans-myshop-orderhistoryhead input[type=text]::after{content: ''; width: 6px; height: 3px; display: block; position: absolute; right: 0px; top:15px; 
+background: url('/web/upload/mynomy/kr/layout/icon_wave.png') no-repeat center center;}

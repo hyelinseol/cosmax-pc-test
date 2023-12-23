@@ -1,0 +1,36 @@
+<!--@layout(/layout/basic/diagnosis.html)-->
+
+<div id="survey_area" style="display: none"></div>
+
+<style>
+  .select ul li.line_checked {
+    border: 2px solid #ff585d !important;
+    box-shadow: 0 4px 10px 0 rgb(0 0 0 / 10%);
+  }
+  /*
+  .contentBox.re_pre .inner.wide {
+    padding-bottom: 200px;
+  }
+  */
+  .contentBox.selectArea.re_pre .txt {
+    margin: 0px;
+  }
+  .selectArea .inner.scroll.wide::after {
+    height: 100px;
+    bottom: 0px;
+  }
+  .selectArea .inner.scroll.wide {
+    margin-bottom: 80px;
+    overflow: auto;
+  }
+  .contentBox.re_pre .inner.scroll {
+    overflow-y: auto;
+  }
+  .contentBox.re_pre .inner.scroll::after {
+    z-index: 0;
+  }
+</style>
+<!-- 맞춤형 - 문진 -->
+<!--@import(/survey/common.html)-->
+<!--@js(/survey/js/survey_common.js)-->
+<!--@js(/survey/js/survey_more.js)-->

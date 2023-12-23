@@ -1,0 +1,519 @@
+<!--@layout(/layout/basic/mypage.html)-->
+<!--@css(/gd_import/css/mypage.css)-->
+
+<div module="layout_logincheck">
+  <!--
+      $url = /member/login.html
+  -->
+</div>
+
+<div class="myArea">
+  <div class="titleArea left">
+    <h3>진단내역</h3>
+  </div>
+  <!--@js(/gd_import/js/tab.js)-->
+  <div module="Myshop_OrderHistoryHead" class="set">
+    <!--@js(/gd_import/js/cate.js)-->
+    <!--@css(/css/module/myshop/orderHistoryHead.css)-->
+    <div class="order_history ship">
+      <!-- <div class="order_top">
+          <div class="order_share select">
+            <p class="call">전체</p>
+            <h3 class="points">3</h3>
+          </div>
+          <div class="order_share">
+            <p class="call">진단중</p>
+            <h3 class="points">3</h3>
+          </div>
+          <div class="order_share">
+            <p class="call">진단완료</p>
+            <h3 class="points">3</h3>
+          </div>
+          <div class="order_share">
+            <p class="call">구매완료</p>
+            <h3 class="points">0</h3>
+          </div>
+        </div> -->
+      <div class="field_line ship" style="display: none">
+        <fieldset class="ec-base-box">
+          <legend>검색기간설정</legend>
+          <div class="stateSelect {$status_bar_display|display}">{$form.order_status}</div>
+          <span class="period">
+            <a
+              href="javascript:void(0);"
+              class="on"
+              id="survey_search_6month"
+              days="180"
+              onclick="surveyChangeSearchForm(180)"
+              >최근 6개월</a
+            >
+            <a
+              href="javascript:void(0);"
+              id="survey_search_3month"
+              days="90"
+              onclick="surveyChangeSearchForm(90)"
+              >최근 3개월</a
+            >
+            <a
+              href="javascript:void(0);"
+              id="survey_search_1month"
+              days="30"
+              onclick="surveyChangeSearchForm(30)"
+              >최근 1개월</a
+            >
+          </span>
+          <p class="contact_date">
+            <input id="survey_search_from" type="text" value="2022.10.10" />
+            <!-- <span class="ic_calen"></span> -->
+          </p>
+          <span class="date_wave">~</span>
+          <p class="contact_date">
+            <input id="survey_search_to" type="text" value="2022.10.10" />
+            <!-- <span class="ic_calen" onclick="surveyDatePickerClick('survey_search_to');"></span> -->
+          </p>
+          <select id="survey_search_status" name="date" style="display:none;">
+            <option value="" selected="">주문상태 전체</option>
+            <option value="diagnosis_ing">주문상태 진단중</option>
+            <option value="diagnosis_completion">주문상태 진단완료</option>
+            <option value="buy_completion">주문상태 구매완료</option>
+          </select>
+          <!-- <select name="date">
+              <option selected="">2022년 03월</option>
+              <option>2022년 04월</option>
+              <option>2022년 05월</option>
+              <option>2022년 06월</option>
+              <option>2022년 07월</option>
+              <option>2022년 08월</option>
+              <option>2022년 09월</option>
+            </select> -->
+        </fieldset>
+        <button type="" class="btn_field" onclick="surveySearch();">조회</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="treatHis padTop diagnosisList" style="display: none">
+    <!-- LOOP //-->
+    <div class="treatHisBox" style="display: none">
+      <span class="labelFb"></span>
+      <p class="trTitle">
+        #글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+        임다글자수는 열자제한 임다글자수는 열자제한 임다
+      </p>
+      <div class="treatInfo">
+        <div class="treatInfoCon">
+          <div class="inBox">
+            <p class="treatPart">
+              샴푸 <span class="treatLevel"><em>Lv3.</em>지성용</span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="inBox">
+            <p class="treatPart">
+              트리트먼트 <span class="treatLevel">Lv3.<em>극손상모용</em></span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="scent">
+            <span class="scentImg"
+              ><img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png"
+            /></span>
+            Wild Black Berry
+          </div>
+        </div>
+        <div class="treatThumb">
+          <div class="img">
+            <img src="/web/upload/mynomy/kr/layout/img_prd02.png" alt="상품이미지" />
+          </div>
+          <p class="treatCate">헤어케어</p>
+        </div>
+      </div>
+      <div class="treatBtns">
+        <div class="viewResult">
+          <a href="#none">
+            <p class="treatDate">진단일 : 2022.07.27</p>
+            <p class="goResult">진단결과보기</p>
+          </a>
+        </div>
+        <a href="#none" class="btnSq black">구매하기</a>
+      </div>
+    </div>
+    <!-- LOOP //-->
+    <!-- LOOP //-->
+    <div class="treatHisBox" style="display: none">
+      <span class="labelFb"></span>
+      <p class="trTitle">
+        #글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+        임다글자수는 열자제한 임다글자수는 열자제한 임다
+      </p>
+      <div class="treatInfo">
+        <div class="treatInfoCon">
+          <div class="inBox">
+            <p class="treatPart">
+              샴푸 <span class="treatLevel"><em>Lv3.</em>지성용</span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="inBox">
+            <p class="treatPart">
+              트리트먼트 <span class="treatLevel">Lv3.<em>극손상모용</em></span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="scent">
+            <span class="scentImg"
+              ><img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png"
+            /></span>
+            Wild Black Berry
+          </div>
+        </div>
+        <div class="treatThumb">
+          <div class="img">
+            <img src="/web/upload/mynomy/kr/layout/img_prd02.png" alt="상품이미지" />
+          </div>
+          <p class="treatCate">헤어케어</p>
+        </div>
+      </div>
+      <div class="treatBtns">
+        <div class="viewResult">
+          <a href="#none">
+            <p class="treatDate">진단일 : 2022.07.27</p>
+            <p class="goResult">진단결과보기</p>
+          </a>
+        </div>
+        <a href="#none" class="btnSq black">구매하기</a>
+      </div>
+    </div>
+    <!-- LOOP //-->
+    <!-- LOOP //-->
+    <div class="treatHisBox" style="display: none">
+      <span class="labelFb"></span>
+      <p class="trTitle">
+        #글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+        임다글자수는 열자제한 임다글자수는 열자제한 임다
+      </p>
+      <div class="treatInfo">
+        <div class="treatInfoCon">
+          <div class="inBox">
+            <p class="treatPart">
+              샴푸 <span class="treatLevel"><em>Lv3.</em>지성용</span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="inBox">
+            <p class="treatPart">
+              트리트먼트 <span class="treatLevel">Lv3.<em>극손상모용</em></span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="scent">
+            <span class="scentImg"
+              ><img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png"
+            /></span>
+            Wild Black Berry
+          </div>
+        </div>
+        <div class="treatThumb">
+          <div class="img">
+            <img src="/web/upload/mynomy/kr/layout/img_prd02.png" alt="상품이미지" />
+          </div>
+          <p class="treatCate">헤어케어</p>
+        </div>
+      </div>
+      <div class="treatBtns">
+        <div class="viewResult">
+          <a href="#none">
+            <p class="treatDate">진단일 : 2022.07.27</p>
+            <p class="goResult">진단결과보기</p>
+          </a>
+        </div>
+        <a href="#none" class="btnSq black">구매하기</a>
+      </div>
+    </div>
+    <!-- LOOP //-->
+    <!-- LOOP //-->
+    <div class="treatHisBox" style="display: none">
+      <span class="labelFb"></span>
+      <p class="trTitle">
+        #글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+        임다글자수는 열자제한 임다글자수는 열자제한 임다
+      </p>
+      <div class="treatInfo">
+        <div class="treatInfoCon">
+          <div class="inBox">
+            <p class="treatPart">
+              샴푸 <span class="treatLevel"><em>Lv3.</em>지성용</span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="inBox">
+            <p class="treatPart">
+              트리트먼트 <span class="treatLevel">Lv3.<em>극손상모용</em></span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="scent">
+            <span class="scentImg"
+              ><img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png"
+            /></span>
+            Wild Black Berry
+          </div>
+        </div>
+        <div class="treatThumb">
+          <div class="img">
+            <img src="/web/upload/mynomy/kr/layout/img_prd02.png" alt="상품이미지" />
+          </div>
+          <p class="treatCate">헤어케어</p>
+        </div>
+      </div>
+      <div class="treatBtns">
+        <div class="viewResult">
+          <a href="#none">
+            <p class="treatDate">진단일 : 2022.07.27</p>
+            <p class="goResult">진단결과보기</p>
+          </a>
+        </div>
+        <a href="#none" class="btnSq black">구매하기</a>
+      </div>
+    </div>
+    <!-- LOOP //-->
+    <!-- LOOP //-->
+    <div class="treatHisBox" style="display: none">
+      <span class="labelFb"></span>
+      <p class="trTitle">
+        #글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+        임다글자수는 열자제한 임다글자수는 열자제한 임다
+      </p>
+      <div class="treatInfo">
+        <div class="treatInfoCon">
+          <div class="inBox">
+            <p class="treatPart">
+              샴푸 <span class="treatLevel"><em>Lv3.</em>지성용</span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="inBox">
+            <p class="treatPart">
+              트리트먼트 <span class="treatLevel">Lv3.<em>극손상모용</em></span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="scent">
+            <span class="scentImg"
+              ><img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png"
+            /></span>
+            Wild Black Berry
+          </div>
+        </div>
+        <div class="treatThumb">
+          <div class="img">
+            <img src="/web/upload/mynomy/kr/layout/img_prd02.png" alt="상품이미지" />
+          </div>
+          <p class="treatCate">헤어케어</p>
+        </div>
+      </div>
+      <div class="treatBtns">
+        <div class="viewResult">
+          <a href="#none">
+            <p class="treatDate">진단일 : 2022.07.27</p>
+            <p class="goResult">진단결과보기</p>
+          </a>
+        </div>
+        <a href="#none" class="btnSq black">구매하기</a>
+      </div>
+    </div>
+    <!-- LOOP //-->
+    <!-- LOOP //-->
+    <div class="treatHisBox" style="display: none">
+      <span class="labelFb"></span>
+      <p class="trTitle">
+        #글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+        임다글자수는 열자제한 임다글자수는 열자제한 임다
+      </p>
+      <div class="treatInfo">
+        <div class="treatInfoCon">
+          <div class="inBox">
+            <p class="treatPart">
+              샴푸 <span class="treatLevel"><em>Lv3.</em>지성용</span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="inBox">
+            <p class="treatPart">
+              트리트먼트 <span class="treatLevel">Lv3.<em>극손상모용</em></span>
+            </p>
+            <p class="treatCode">9000000312</p>
+          </div>
+          <div class="scent">
+            <span class="scentImg"
+              ><img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png"
+            /></span>
+            Wild Black Berry
+          </div>
+        </div>
+        <div class="treatThumb">
+          <div class="img">
+            <img src="/web/upload/mynomy/kr/layout/img_prd02.png" alt="상품이미지" />
+          </div>
+          <p class="treatCate">헤어케어</p>
+        </div>
+      </div>
+      <div class="treatBtns">
+        <div class="viewResult">
+          <a href="#none">
+            <p class="treatDate">진단일 : 2022.07.27</p>
+            <p class="goResult">진단결과보기</p>
+          </a>
+        </div>
+        <a href="#none" class="btnSq black">구매하기</a>
+      </div>
+    </div>
+    <!-- LOOP //-->
+
+    <div class="btn-more" onclick="addView()" style="display: none">
+      <button>
+        <span>더보기</span><img src="/web/upload/mynomy/kr/layout/arrow.png" alt="화살표" />
+      </button>
+    </div>
+  </div>
+  <p class="message displaynone">진단 내역이 없습니다.</p>
+
+  <!--
+  <div class="btn-more" onclick="addView()" style="display: none">
+    <button>
+      <span>더보기</span><img src="/web/upload/mynomy/kr/layout/arrow.png" alt="화살표" />
+    </button>
+  </div>
+  -->
+
+  <div class="survey_progress progress" style="display: none">
+    <!-- <a href="#none" class="see_more"> 더보기<span class="arr">></span> </a> -->
+    <div class="prog_txt">
+      <h3>진단중</h3>
+      <p>
+        진단을 끝까지 완료하지 않아<br />임시저장된 진단이 있어요.<br />진단을 마무리하고 나만의
+        처방 결과를 알아보세요!
+      </p>
+    </div>
+    <div class="prog_quiz">
+      <dl class="prog_dl">
+        <dt>
+          <img
+            class="survey_progress_hair_img"
+            src="/web/upload/mynomy/kr/layout/thum_prd01.png"
+            alt="상품이미지"
+            style="width: 100%"
+          />
+        </dt>
+        <dd>
+          <p class="survey_progress_hair_date date">2022.07.28</p>
+          <a href="#none" class="survey_progress_hair_link sentence">
+            <span>헤어케어퀴즈</span>
+            <strong>이어하기</strong>
+            <span class="arr_top"></span>
+          </a>
+        </dd>
+      </dl>
+    </div>
+    <!-- <div class="mBtn gColumn">
+          <a href="#none" class="btnBl">진단 이어하기 <i class="xi-long-arrow-right"></i></a>
+        </div> -->
+  </div>
+
+  <div class="survey_diagnosis_start progress" style="display: none">
+    <div class="prog_txt">
+      <h3>진단을 시작해보세요!</h3>
+      <p>
+        아직 진단 받으신 내역이 없네요.<br />
+        3onU 만의 검증된 처방 로직으로<br />
+        나에게 딱 맞는 제품을 만나보세요!<br />
+      </p>
+    </div>
+    <div class="prog_quiz">
+      <dl class="prog_dl">
+        <dt>
+          <img
+            src="/web/upload/mynomy/kr/layout/thum_prd01.png"
+            alt="상품이미지"
+            style="width: 100%"
+          />
+        </dt>
+        <dd>
+          <a href="#" class="survey_diagnosis_start_link sentence">
+            <span>헤어케어퀴즈</span>
+            <strong>시작하기</strong>
+            <span class="arr_top"></span>
+          </a>
+        </dd>
+      </dl>
+    </div>
+  </div>
+</div>
+<!-- myArea 끝 -->
+<!-- 맞춤형 - 문진 -->
+<!--@import(/survey/common.html)-->
+<!--@js(/survey/js/survey_common.js)-->
+<!--@js(/survey/work/survey_mypage.js)-->
+<!--@js(/survey/js/survey_diagnosis_list.js)-->
+<style>
+  .treatHis .treatHisBox .labelFb {
+    background: url("http://ecudemo236777.cafe24.com/web/upload/mynomy/kr/diagnosis/label_feedback.svg")
+      no-repeat 50% 50%;
+  }
+  .diagnosisList {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .treatHis .btn-more {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 20;
+    text-align: center;
+    padding-top: 0px;
+    margin: unset;
+    bottom: 0;
+  }
+
+  .diagnosisList:after {
+    content: "";
+    position: absolute;
+    top: 92.4%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    background: #f8f6f4;
+  }
+
+  .diagnosisList2:after {
+    content: "";
+    position: absolute;
+    top: unset;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 4;
+    background: #f8f6f4;
+  }
+
+  .survey_progress {
+    margin-top: 20px;
+  }
+
+  .treatHis .btn-more {
+    position: unset;
+  }
+
+  .diagnosisList:after {
+    position: unset;
+  }
+  .message {
+    padding: 50px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #555;
+    font-weight: 400;
+  }
+</style>

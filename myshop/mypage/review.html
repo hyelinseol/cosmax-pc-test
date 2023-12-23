@@ -1,0 +1,237 @@
+<!--@layout(/layout/basic/mypage.html)-->
+<!--@css(/gd_import/css/mypage.css)-->
+
+<!-- snap review script start contact mail : support@snapvi.co.kr -->
+<style>
+	#prdReview .nodata {display:none;}
+	.snapreview_hidden {display:none !important;}
+</style>
+<!-- snap review end -->
+
+<div module="layout_logincheck">
+  <!--
+        $url = /member/login.html
+    -->
+</div>
+
+<div class="myArea">
+<div module="Board_ListPackage_4">
+    <div module="board_title_4">
+        <div class="titleArea left">
+            <h3>내 리뷰<!--{$board_title} {$board_adult_icon}--></h3>
+        </div>
+    </div>
+
+    <div class="boardSort">
+        <span module="board_category_4">{$form.board_category}</span>
+        <span module="board_ReplySort_4">{$reply_sort}</span>
+    </div>
+    <!--@js(/gd_import/js/tab.js)-->
+    <div class="prdTab snapreview_hidden">
+        <ul class="menu gFlex2">
+            <li><a href="#none">작성 가능한 리뷰</a></li>
+            <li><a href="#none">작성한 리뷰</a></li>
+        </ul>
+        <ul class="con">
+            <li>
+                <ul>
+                    <li class="diagnosis_review unwritten">
+                        <div class="top">
+                            <span class="date">2022-07-20</span>
+                            <a href="#none" class="detail_view">상세보기<i class="xi-angle-right-min"></i></a>
+                        </div>    
+                        <div class="mid">
+                            <div class="thumbnail">
+                                <a><img src="/web/upload/mynomy/kr/layout/product01.png"/></a>
+                            </div>
+                            <div class="info">
+                                <h4 class="prdName">마이노미 샴푸</h4>
+                                <h3 class="nickName"># 룰루랄라라랄</h3>
+                                <div class="option">
+                                    <p class="type"><i class="xi-check-min"></i> OSDL</p>
+                                    <p class="solution"><i class="xi-check-min"></i> 딥클렌징 집중</p>
+                                    <p class="fragrance"><i class="xi-check-min"></i> forest dawn</p>
+                                </div>
+                            </div>    
+                            <div class="mBtn gColumn">
+                                <span class="point">최대적립 1000P<span class="tail"></span></span>
+                                <a href="#none" class="btn3">리뷰 작성</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="diagnosis_review unwritten">
+                        <div class="top">
+                            <span class="date">2022-07-20</span>
+                            <a href="#none" class="detail_view">상세보기<i class="xi-angle-right-min"></i></a>
+                        </div>    
+                        <div class="mid">
+                            <div class="thumbnail">
+                                <a><img src="/web/upload/mynomy/kr/layout/product02.png"/></a>
+                            </div>
+                            <div class="info">
+                                <h4 class="prdName">마이노미 트리트먼트</h4>
+                                <h3 class="nickName"># 룰루랄라라랄</h3>
+                                <div class="option">
+                                    <p class="type"><i class="xi-check-min"></i> OSDL</p>
+                                    <p class="solution"><i class="xi-check-min"></i> 딥클렌징 집중</p>
+                                    <p class="fragrance"><i class="xi-check-min"></i> forest dawn</p>
+                                </div>
+                            </div>    
+                            <div class="mBtn gColumn">
+                                <span class="point">최대적립 1000P<span class="tail"></span></span>
+                                <a href="#none" class="btn3">리뷰 작성</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <ul module="board_list_4">
+                    <!--
+                        $product_name_cut = 30
+                        $login_page_url = /member/login.html
+                        $deny_access_url = /index.html
+                        -->
+                    <li class="diagnosis_review">
+                        <div class="top">
+                            <span class="date">2022-07-20</span>
+                            <a href="#none" class="detail_view">상세보기<i class="xi-angle-right-min"></i></a>
+                        </div>    
+                        <div class="mid">
+                            <div class="thumbnail">
+                                <a><img src="/web/upload/mynomy/kr/layout/product02.png"/></a>
+                            </div>
+                            <div class="info">
+                                <h4 class="prdName">마이노미 트리트먼트</h4>
+                                <h3 class="nickName"># 룰루랄라라랄</h3>
+                                <div class="option">
+                                    <p class="type"><i class="xi-check-min"></i> OSDL</p>
+                                    <p class="solution"><i class="xi-check-min"></i> 딥클렌징 집중</p>
+                                    <p class="fragrance"><i class="xi-check-min"></i> forest dawn</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="summary">
+                                <span class="{$point_display|display} point"><img src="/web/upload/mynomy/kr/layout/star{$point_count}.png" alt="{$point_count}점"></span>
+                                <span class="{$date_display|display}"><span class="txtNum">작성일자 : {$write_date}</span></span>
+                                <div class="subject left txtBreak">
+                                    <span class="{$spread_display|display}">
+                                        <a href="#none" onclick="{$action_content_spread}"><img src="//img.echosting.cafe24.com/skin/base/board/btn_unfold.gif" alt="내용 보기" /></a>
+                                    </span>
+                                    {$icon_re} <a href="{$link_board_detail}" style="{$link_color}">{$subject}</a> {$icon_lock}{$icon_new}{$icon_hit}{$icon_file}<span class="txtEm">{$comment_count}</span>
+                                </div>
+                            </div>   
+                            <div class="mBtn gColumn">
+                                <a href="#none" class="btn4">리뷰 수정</a>
+                                <a href="#none" class="btn3">리뷰 보기</a>
+                            </div>
+                        </div>    
+                    </li>
+                    <li class="diagnosis_review">
+                        <div class="top">
+                            <span class="date">2022-07-20</span>
+                            <a href="#none" class="detail_view">상세보기<i class="xi-angle-right-min"></i></a>
+                        </div>    
+                        <div class="mid">
+                            <div class="thumbnail">
+                                <a><img src="/web/upload/mynomy/kr/layout/product01.png"/></a>
+                            </div>
+                            <div class="info">
+                                <h4 class="prdName">마이노미 샴푸</h4>
+                                <h3 class="nickName"># 룰루랄라라랄</h3>
+                                <div class="option">
+                                    <p class="type"><i class="xi-check-min"></i> OSDL</p>
+                                    <p class="solution"><i class="xi-check-min"></i> 딥클렌징 집중</p>
+                                    <p class="fragrance"><i class="xi-check-min"></i> forest dawn</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bottom">
+                            <div class="summary">
+                                <span class="{$point_display|display} point"><img src="/web/upload/mynomy/kr/layout/star{$point_count}.png" alt="{$point_count}점"></span>
+                                <span class="{$date_display|display}"><span class="txtNum">작성일자 : {$write_date}</span></span>
+                                <div class="subject left txtBreak">
+                                    <span class="{$spread_display|display}">
+                                        <a href="#none" onclick="{$action_content_spread}"><img src="//img.echosting.cafe24.com/skin/base/board/btn_unfold.gif" alt="내용 보기" /></a>
+                                    </span>
+                                    {$icon_re} <a href="{$link_board_detail}" style="{$link_color}">{$subject}</a> {$icon_lock}{$icon_new}{$icon_hit}{$icon_file}<span class="txtEm">{$comment_count}</span>
+                                </div>
+                            </div>   
+                            <div class="mBtn gColumn">
+                                <a href="#none" class="btn4">리뷰 수정</a>
+                                <a href="#none" class="btn3">리뷰 보기</a>
+                            </div>
+                        </div>    
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    
+    
+    <div class="typeList gBorder">
+
+        
+        <p class="message {$empty_display|display} snapreview_hidden" module="board_empty_4">{$empty_message}</p>
+    </div>
+
+    
+    
+    <!--div module="board_ButtonList_4" class="{$write_display|display} ec-base-button typeBG">
+        <span class="gRight">
+            <a href="/board/product/write.html{$param_write}" class="btnSubmitFix sizeS {$write_display|display}">글쓰기</a>
+        </span>
+    </div-->
+</div>
+
+<div module="board_paging_4" class="ec-base-paginate">
+    <a href="{$param_prev}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_prev.gif" alt="이전 페이지" /></a>
+    <ol>
+        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+        <li><a href="{$param_num}" class="{$param_class}">{$page_num}</a></li>
+    </ol>
+    <a href="{$param_next}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_next.gif" alt="다음 페이지" /></a>
+</div>
+
+<!--div module="board_search_4">
+    <!--css(/css/module/board/search.css)-->
+    <!--fieldset class="boardSearch">
+        <legend>게시물 검색</legend>
+        <p class="category {$form.product_category_selector_display|display}">{$form.product_category_selector}</p>
+        <p>{$form.search_date} {$form.search_key} {$form.search} <a href="#none" class="btnEmFix" onclick="{$action_search}">찾기</a></p>
+    </fieldset>
+</div-->
+
+<!-- 관리자 전용 메뉴 -->
+<div module="board_catemove_4">
+    <!--@css(/css/module/board/catemove.css)-->
+    <p>
+        {$board_catemove_selectbox}
+        <a href="#none" class="btnNormal" onclick="{$action_category_move}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_icon_move.gif" alt="" /> {$category_move}</a>
+    </p>
+</div>
+
+<div module="board_function_4">
+    <!--@css(/css/module/board/function.css)-->
+    <p>
+        {$board_function_selectbox}
+        <a href="#none" class="btnNormal" onclick="{$action_article_move}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_icon_move.gif" alt="" /> {$article_move}</a>
+        <a href="#none" class="btnNormal" onclick="{$action_article_copy}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_icon_copy.gif" alt="" /> {$article_copy}</a>
+        {$board_function_help}
+    </p>
+</div>
+<!-- // 관리자 전용 메뉴 -->
+    
+<!-- snap review script start contact mail : support@snapvi.co.kr -->
+<span name="snapreview_my_page" class="snap_widget" id="17"></span>
+<!-- snap review end -->
+
+<!-- snap review script start contact mail : support@snapvi.co.kr -->
+<script>
+function onloadsnapscript () { var snapInstance = new snapSolution("3waau"); snapInstance.loadScript('review_independent'); }
+</script>
+<script async type='text/javascript' src='//sfre-srcs-service.snapfit.co.kr/js/snap_combine_script.js' defer='true' charset='utf-8'
+onload = 'onloadsnapscript()'></script>
+<!-- snap review end -->       

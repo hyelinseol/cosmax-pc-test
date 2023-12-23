@@ -1,0 +1,13 @@
+<div class="shoppinginfo">
+    <!-- * 로그아웃 시 메뉴 * -->
+    <ul module="Layout_stateLogoff">
+        <li><a href="/order/basket.html" class="cart"><img src="/web/upload/mynomy/kr/layout/ico_recart.svg" alt="장바구니"><span class="count {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a></li>
+        <li><a href="/member/login.html" class="log"><img src="/web/upload/mynomy/kr/layout/ico_relog.svg" alt="로그인"></a></li>
+    </ul>
+    <!-- * 로그인 시 메뉴 * -->
+    <ul module="Layout_stateLogon">
+        <!--li><a href="{$action_logout}" class="log">Logout</a></li-->
+        <li><a href="/order/basket.html" class="cart"><img src="/web/upload/mynomy/kr/layout/ico_recart.svg" alt="장바구니"><span class="count {$basket_count_display_class}"><span class="{$basket_count_class}">{$basket_count}</span></span></a></li>
+        <li><a href="/myshop/index.html" class="log"><img src="/web/upload/mynomy/kr/layout/ico_relog.svg" alt="로그인"></a></li>
+    </ul>  
+</div> <!-- shoppinginfo 끝 -->

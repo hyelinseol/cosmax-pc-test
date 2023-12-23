@@ -1,0 +1,45 @@
+.xans-myshop-orderhistorylistitem .title { display: flex; align-items: center; justify-content: space-between; margin:20px 0 20px 10px; }
+.xans-myshop-orderhistorylistitem .title h3 { font-size:24px; line-height:1.0; font-weight: 700; color:#0b0a0a; padding:0; margin:0; }
+.xans-myshop-orderhistorylistitem .title .more a { font-size:16px; line-height:24px; color:#666; }
+.xans-myshop-orderhistorylistitem .txtEm { color:#ff585d; font-weight:700; }
+.xans-myshop-orderhistorylistitem.ec-base-table table { margin:0; background:#fff; border-bottom: 1px solid #eee;}
+.xans-myshop-orderhistorylistitem.ec-base-table.typeList td { padding:16px 0;}
+.xans-myshop-orderhistorylistitem.ec-base-table.typeList .center td.left { padding:16px 0 16px 40px;}
+.xans-myshop-orderhistorylistitem.ec-base-table thead th { color:#0b0a0a; padding:19px 0; border-bottom:0; }
+.xans-myshop-orderhistorylistitem.ec-base-table td { font-size:14px; line-height:21px; color:#999; }
+.xans-myshop-orderhistorylistitem.ec-base-table td .line { text-decoration:underline; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.product::after { content:""; display:block; clear:both; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.number { letter-spacing:-1px; word-break:keep-all; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.number a { color:#999; }
+.xans-myshop-orderhistorylistitem.ec-base-table .gift { display:block; font-size:14px; line-height:21px; color:#0b0a0a; font-weight:700; margin:0 0 16px; width:100%;}
+.xans-myshop-orderhistorylistitem.ec-base-table .gift img { vertical-align:bottom; }
+.xans-myshop-orderhistorylistitem.ec-base-table .gift span { color:#666; font-weight:400; margin-left:24px; }
+.xans-myshop-orderhistorylistitem.ec-base-table .thumb { float:left; margin-right:12px; }
+.xans-myshop-orderhistorylistitem.ec-base-table .thumb img { width:80px; }
+.xans-myshop-orderhistorylistitem.ec-base-table .info { float:left; min-height:80px; display:flex; flex-direction:column; justify-content:center; }
+.xans-myshop-orderhistorylistitem.ec-base-table .name .ec-set-product-name { display:block; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.product .name a { font-size:12px; line-height:18px; color:#666; font-weight:400; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.product .nickName { font-size:14px; line-height:21px; color:#0b0a0a; font-weight:700; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.product .model { font-size:10px; line-height:15px; color:#666; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.product .price { display:block; font-size:12px; line-height:18px; color:#0b0a0a; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.product div.option,
+.xans-myshop-orderhistorylistitem.ec-base-table td.product ul.option > li { margin:9px 0 0; color:#757575; line-height:16px; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.product ul.option > li > strong { display:block; color:#353535; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.product div.option span.file a,
+.xans-myshop-orderhistorylistitem.ec-base-table td.product ul.option > li > span.file a { margin:0 0 0 4px; padding:0 0 0 11px; color:#757575; text-decoration:underline; background:url("//img.echosting.cafe24.com/skin/base/common/ico_file.gif") no-repeat 0 2px; }
+.xans-myshop-orderhistorylistitem.ec-base-table td.number [class^="btn"],
+.xans-myshop-orderhistorylistitem.ec-base-table td.state [class^="btn"] { margin:1px 0; }
+
+.xans-myshop-orderhistorylistitem { position: relative; overflow: hidden; }
+.xans-myshop-orderhistorylistitem:after { content: ''; position: absolute; top: 95.4%; bottom: 0; left: 0; right: 0; z-index: 4; background:#f8f6f4; /*background: linear-gradient(transparent 10%,#f8f6f4 60%);*/ }
+.xans-myshop-orderhistorylistitem.active:after { display: none; }
+.xans-myshop-orderhistorylistitem .btn-more { position: absolute; bottom: 0; left: 0; right: 0; z-index: 20; text-align:center; }
+.xans-myshop-orderhistorylistitem .btn-more button { width: 280px; height: 52px; padding: 0; margin: auto; background: #fff; border:1px solid #d1d1d1; border-radius:8px; cursor: pointer; }
+.xans-myshop-orderhistorylistitem .btn-more button span { position: relative; display: inline-block; font-size: 16px; font-weight: 400; color: #0b0a0a; font-family: 'Pretendard'; margin-right:10px; }
+
+
+
+
+
+
+

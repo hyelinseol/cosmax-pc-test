@@ -1,0 +1,62 @@
+<!--@layout(/layout/basic/mypage.html)-->
+<!--@css(/gd_import/css/myrecipe.css)-->
+<!--div class="path">
+    <span>현재 위치</span>
+    <ol>
+        <li><a href="/">홈</a></li>
+        <li><a href="/myshop/index.html">마이쇼핑</a></li>
+        <li title="현재 위치"><strong>관심상품</strong></li>
+    </ol>
+</div-->
+
+<div class="recipeTitle">
+    <h2>저장된 레시피</h2>
+</div>
+
+<div module="myshop_wishlist" class="ec-base-table typeList">
+    <!--@css(/css/module/myshop/wishlist.css)-->
+    <!--
+        $login_page = /member/login.html
+        $count = 10
+        $use_per_add_option = yes
+    -->
+    
+    <div module="myshop_wishlistitem" class="recipe_state">
+        <div class="box">
+            <span class="mark"></span>
+            <div class="img_area">
+                <div class="thumb"><a href="{$link_product_detail}"><img src="{$image_medium}" alt="" /></a></div>
+            </div>
+            <div class="contents">
+                <p>MYN0MY 커스텀 샴푸</p>
+                <p class="model">#R2050</p>
+                <h4>{$product_name}</h4>
+                <div class="dBtn left">
+                    <a href="#none" class="btnRecipe sizeL">레시피 결과 자세히 보기</a>
+                    <a href="#none" onclick="{$act_basket}" class="btnRecipe sizeL {$disp_basket|display}">장바구니 담기</a>
+                    <a href="#none" onclick="{$act_order}" class="btnRecipe sizeL {$disp_order|display}">바로 구매하기</a>
+                </div>
+            </div>
+            <div class="reusult_area">
+                <p class="date">저장일자 2022-05-20</p>
+                <span><a href="#none" class="btnDel sizeM {$class_del}" rel="{$rel_del}"><i class="xi-minus"></i> 레시피 삭제</a></span>
+            </div>    
+        </div>
+    </div>
+
+    <p class="message {$empty_display|display}">저장된 레시피가 없습니다.</p>
+</div>
+
+<div module="myshop_wishlistpaging" class="ec-base-paginate">
+    <a href="{$param_first}" class="first"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_first.gif" alt="첫 페이지" /></a>
+    <a href="{$param_before}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_prev.gif" alt="이전 페이지" /></a>
+    <ol>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+        <li><a href="{$param}" class="{$param_class}">{$no}</a></li>
+    </ol>
+    <a href="{$param_next}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_next.gif" alt="다음 페이지" /></a>
+    <a href="{$param_last}" class="last"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_last.gif" alt="마지막 페이지" /></a>
+</div>

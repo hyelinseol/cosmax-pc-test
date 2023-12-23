@@ -1,0 +1,39 @@
+.newSec {background:#FFF; position:relative; padding:40px 0;}
+.newSec.bgGray {background:transparent;}
+.newSec .nsInner {width:100%; max-width:1280px; margin:0 auto;}
+.nsInner.flexSec {display:flex; justify-content:space-between; align-items:stretch; gap:20px;}
+
+.mainPrd .mpTitle a {color:#242424; font-size:24px; font-weight:700; font-family: "Gotham SSm A","Gotham SSm B"; position:relative; line-height:48px; display:flex; align-items:center;}
+.mainPrd .mpTitle a:after {content:''; display:inline-block; width:40px; height:48px; background:url(/web/renew_img/ar_tail_more.svg) no-repeat 50% 50%; margin-top:2px;}
+.mainPrd.skin {width:414px;}
+.mainPrd.hair {width:845px;}
+
+.mainPrd.skin .mPrdSet {flex-direction:column;}
+.mainPrd.skin .mPrdSet .mPrdBox {width:100%; margin-bottom:35px;}
+.mainPrd.hair .mPrdSet {flex-wrap:wrap;}
+.mainPrd.hair .mPrdSet .mPrdBox {width:49%; margin-right:2%; margin-bottom:35px;}
+.mainPrd.hair .mPrdSet .mPrdBox:nth-child(2n) {margin-right:0;}
+
+.ec-base-product .spec li {text-align:left;}
+
+.nsTitle {width:100%; max-width:1280px; margin:0 auto 40px; position:relative; text-align:center; color:#000; font-size:40px; font-weight:600; letter-spacing:-1px;}
+.nsTitle .more a {position:absolute; right:0; top:50%; transform:translate(0, -50%); color:#666; font-size:14px; font-weight:400;}
+.nsTitle .more a:after {content:''; display:inline-block; width:6px; height:10px; background:url(/web/renew_img/ar_main_more.svg) no-repeat 50% 50%; margin-left:8px;}
+
+.mPrdSet {position:relative; width:100%; padding:0px; box-sizing:border-box; display:flex; justify-content:space-between;}
+.mPrdSet .mPrdBox {width:50%; margin-right:12px;}
+.mPrdSet .mPrdBox:last-child {margin-right:0;}
+.mPrdSet .mPrdBox a {display:block;}
+.mPrdSet .mPrdBox .prdImg {display:block; position:relative; transition:.4s all;}
+.mPrdSet .mPrdBox .prdImg:after {content:''; display:block; padding-bottom:100%;}
+.mPrdSet .mPrdBox .prdImg img {position:absolute; left:50%; top:50%; transform:translate(-50%, -50%); width:100%;
+	image-rendering: -moz-crisp-edges;         /* Firefox */
+	image-rendering: -o-crisp-edges;         /* Opera */
+	image-rendering: -webkit-optimize-contrast;/* Webkit 표준 X */
+	image-rendering: crisp-edges;
+	-ms-interpolation-mode: nearest-neighbor;  /* IE 표준 X */
+}
+.mPrdSet .mPrdBox .description {margin-top:12px; text-align:left;}
+.mPrdSet .mPrdBox .description strong span {color:#0B0A0A !important; font-weight:700 !important; font-size:16px !important; line-height:1.5;}
+.section01 .section-wrap-full .ec-base-product .xans-product-listitem .display판매가 span {font-size: 14px !important;color: #0B0A0A !important; font-weight:700 !important; line-height:1.5;}
+.ec-base-product .xans-product-listitem .display판매가 span {font-size:14px !important;}

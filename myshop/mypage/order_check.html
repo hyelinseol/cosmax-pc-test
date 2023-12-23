@@ -1,0 +1,540 @@
+<!--@layout(/layout/basic/mypage.html)-->
+<!--@css(/gd_import/css/mypage.css)-->
+
+<div class="myArea">
+    <div module="myshop_orderstate">
+    <!--@css(/css/module/myshop/orderState.css)-->
+        <div class="title">
+            <h3>주문/배송 조회 <!--span class="desc">(최근 <em>3개월</em> 기준)</span--></h3>
+        </div>
+        <div class="state">
+            <ul class="order">            
+                <li>
+                    <a href="{$shppiedBeforeUrl}" class="count">{$shppiedBeforeCount}</a>
+                    <strong>처방 분석</strong>
+                </li>
+                <li>
+                    <a href="{$shppiedBeforeUrl}" class="count">{$shppiedBeforeCount}</a>
+                    <strong>조제준비</strong>
+                </li>
+                <li>
+                    <a href="{$shppiedStandbyUrl}" class="count">{$shppiedStandbyCount}</a>
+                    <strong>맞춤조제중</strong>
+                </li>
+                <li>
+                    <a href="{$shppiedBeginUrl}" class="count">{$shppiedBeginCount}</a>
+                    <strong>배송중</strong>
+                </li>
+                <li>
+                    <a href="{$shppiedComplateUrl}" class="count">{$shppiedComplateCount}</a>
+                    <strong>배송완료</strong>
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <div module="Myshop_OrderHistoryHead" class="set">
+		<!--@js(/gd_import/js/cate.js)-->
+        <!--@css(/css/module/myshop/orderHistoryHead.css)-->
+        <fieldset class="ec-base-box">
+            <legend>검색기간설정</legend>
+            <!--div class="stateSelect {$status_bar_display|display}">
+                {$form.order_status}
+            </div-->
+            <span class="period">
+                <a href="#none" class="on" days="180">최근 6개월</a>
+                <a href="#none" days="90">최근 3개월</a>
+                <a href="#none" days="30">최근 1개월</a>
+            </span>
+            <select name="date">
+                <option selected="">2022년 03월</option>
+                <option>2022년 04월</option>
+                <option>2022년 05월</option>
+                <option>2022년 06월</option>
+                <option>2022년 07월</option>
+                <option>2022년 08월</option>
+                <option>2022년 09월</option>
+            </select>           
+        </fieldset>
+
+        <div class="stateSelect">
+            <ul class="order_status">
+                <li class="on"><a href="#none">전체</a></li>
+                <li><a href="#none">처방분석중</a></li>
+                <li><a href="#none">조제준비중</a></li>
+                <li><a href="#none">맞춤조제중</a></li>
+                <li><a href="#none">배송중</a></li>
+                <li><a href="#none">배송완료</a></li>
+                <li><a href="#none">취소/교환/반품</a></li>
+            </ul>        
+        </div>
+    </div>
+    
+    <div module="Myshop_OrderHistoryListitem" class="ec-base-table typeList">
+        <!--@css(/css/module/myshop/orderHistoryListItem.css)-->
+        <!--
+            $login_url = /member/login.html
+        -->
+
+        <!--div class="title">
+            <h3>{$list_title}</h3>
+        </div-->
+
+        <table border="1" summary="">
+            <caption>{$list_title}</caption>
+            <colgroup>
+                <col style="width:112px;" />
+                <col style="width:112px;" />
+                <col style="width:auto;" />
+                <col style="width:160px;" />
+                <col style="width:160px;" />
+            </colgroup>           
+            <thead>
+                <tr>
+                    <th scope="col">구매일</th>
+                    <th scope="col">주문번호</th>
+                    <th scope="col">상품정보</th>
+                    <th scope="col">진행상황</th>
+                    <th scope="col">리뷰 및 구매</th>
+                </tr>
+            </thead>
+            <tbody class="center {$list_display|display}">
+                <tr> <!-- 1번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                        <!--a href="#none" class="btnNormal {$direct_cancel_display|display}" onclick="{$action_direct_cancel}">주문취소</a>
+                        <a href="cancel.html{$param_apply}" class="btnNormal {$apply_cancel_display|display}">취소신청</a>
+                        <a href="exchange.html{$param_apply}" class="btnNormal {$apply_exchange_display|display}">교환신청</a>
+                        <a href="return.html{$param_apply}" class="btnNormal {$apply_return_display|display}">반품신청</a-->
+                    </td>
+                    <td class="product left">
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <h3 class="nickName">#울랄라더운여름용이양</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p>
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <!--div class="option {$option_display|display}">{$option_str}</div>
+                            <ul class="option" module="Myshop_optionSet">
+                                <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+                                <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+                            </ul-->
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->배송완료</p>                        
+                        <a href="#none" class="btnLine">배송조회</a>
+                        <a href="#none" class="btnLine">반품신청</a>
+                        
+                        <!--p class="{$shipping_company_display|display}"><a href="{$shipping_company_link}" target="{$shipping_company_target}">{$shipping_company}</a></p>
+                        <p class="{$invoice_no_display|display}"><a href="#none" class="line" onclick="{$shipping_trace_popup}">[{$invoice_no}]</a></p>
+                        <a href="/board/product/write.html{$param_postscript}" class="btnSubmit {$postscript_display|display}">구매후기</a>
+                        <a href="#none" class="btnNormal {$withdraw_cancel_display|display}" onclick="{$action_withdraw_cancel}">취소철회</a>
+                        <a href="#none" class="btnNormal {$withdraw_exchange_display|display}" onclick="{$action_withdraw_exchange}">교환철회</a>
+                        <a href="#none" class="btnNormal {$withdraw_return_display|display}" onclick="{$action_withdraw_return}">반품철회</a-->
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">내 리뷰 보기</a>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                <tr> <!-- 2번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                        <!--a href="#none" class="btnNormal {$direct_cancel_display|display}" onclick="{$action_direct_cancel}">주문취소</a>
+                        <a href="cancel.html{$param_apply}" class="btnNormal {$apply_cancel_display|display}">취소신청</a>
+                        <a href="exchange.html{$param_apply}" class="btnNormal {$apply_exchange_display|display}">교환신청</a>
+                        <a href="return.html{$param_apply}" class="btnNormal {$apply_return_display|display}">반품신청</a-->
+                    </td>
+                    <td class="product left">
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <h3 class="nickName">#주영이꺼야</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p>
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <!--div class="option {$option_display|display}">{$option_str}</div>
+                            <ul class="option" module="Myshop_optionSet">
+                                <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+                                <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+                            </ul-->
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->처방분석중</p>
+                        <a href="#none" class="btnLine">취소요청</a>
+                        <!--p class="{$shipping_company_display|display}"><a href="{$shipping_company_link}" target="{$shipping_company_target}">{$shipping_company}</a></p>
+                        <p class="{$invoice_no_display|display}"><a href="#none" class="line" onclick="{$shipping_trace_popup}">[{$invoice_no}]</a></p>
+                        <a href="/board/product/write.html{$param_postscript}" class="btnSubmit {$postscript_display|display}">구매후기</a>
+                        <a href="#none" class="btnNormal {$withdraw_cancel_display|display}" onclick="{$action_withdraw_cancel}">취소철회</a>
+                        <a href="#none" class="btnNormal {$withdraw_exchange_display|display}" onclick="{$action_withdraw_exchange}">교환철회</a>
+                        <a href="#none" class="btnNormal {$withdraw_return_display|display}" onclick="{$action_withdraw_return}">반품철회</a-->
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                <tr> <!-- 3번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <h3 class="nickName">#엄마내마음이야</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p>
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->구매완료</p>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">내 리뷰 보기</a>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                <tr> <!-- 4번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="gift"><img src="/web/upload/mynomy/kr/layout/gift.svg" alt="선물 아이콘" />TO : 이설희님<span>선물수락</span></div>
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <h3 class="nickName">#서리꺼야</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p>
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->구매완료</p>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">리뷰 작성하기</a>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                <tr> <!-- 5번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <h3 class="nickName">#주영이꺼야</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p>
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->취소요청</p>
+                        <a href="#none" class="btnLine">취소요청 철회</a>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                <tr> <!-- 6번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <h3 class="nickName">#이건아빠꺼야</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p>
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->환불완료</p>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                <tr> <!-- 7번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="gift"><img src="/web/upload/mynomy/kr/layout/gift.svg" alt="선물 아이콘" />TO : 이설희님<span>선물취소</span></div>
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <h3 class="nickName">#이건엄마꺼야</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p>
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->취소완료</p>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                <tr> <!-- 8번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="gift"><img src="/web/upload/mynomy/kr/layout/gift.svg" alt="선물 아이콘" />TO : 이설희님<span>구매완료</span></div>
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <!--h3 class="nickName">#울랄라더운여름용이양</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p-->
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->구매완료</p>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                <tr> <!-- 9번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="gift"><img src="/web/upload/mynomy/kr/layout/gift.svg" alt="선물 아이콘" />TO : 이설희님<span>구매완료</span></div>
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <!--h3 class="nickName">#울랄라더운여름용이양</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p-->
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->구매완료</p>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                <tr> <!-- 10번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="gift"><img src="/web/upload/mynomy/kr/layout/gift.svg" alt="선물 아이콘" />TO : 이설희님<span>구매완료</span></div>
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <!--h3 class="nickName">#울랄라더운여름용이양</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p-->
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->구매완료</p>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                
+                <tr> <!-- 11번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <h3 class="nickName">#울랄라더운여름용이양</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p>
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->구매완료</p>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                
+                <tr> <!-- 12번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <h3 class="nickName">#울랄라더운여름용이양</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p>
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->구매완료</p>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+                
+                
+                <tr> <!-- 13번째 -->
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p>{$order_icon}</p>
+                        {$order_date}
+                    </td>
+                    <td {$rowspan} class="number {$display_column|display}">
+                        <p><a href="detail.html{$param_detail}" class="line">[{$order_id}]</a></p>
+                    </td>
+                    <td class="product left">
+                        <div class="thumb"><a href="/product/detail.html{$param}"><img src="{$product_image}" onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a></div>
+                        <div class="info">
+                            <strong class="name">{$product_name_link}</strong>
+                            <h3 class="nickName">#울랄라더운여름용이양</h3>
+                            <p class="model">(ONM31S06150000000001CSP1ONM0001)</p>
+                            <div class="price">
+                                <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div>
+                                 / {$quantity}개
+                            </div>    
+                            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+                        </div>   
+                    </td>
+                    <td class="state">
+                        <p class="txtEm"><!--{$status}-->구매완료</p>
+                    </td>
+                    <td>
+                        <a href="#none" class="btnLine">재구매하기</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="message {$empty_display|display}">주문 내역이 없습니다.</p>
+        <div class="btn-more"><button><span>더보기</span><img src="/web/upload/mynomy/kr/layout/arrow.png" alt="화살표" /></button></div>
+    </div>
+
+    <!--div module="Myshop_OrderHistoryPaging" class="ec-base-paginate">
+        <a href="{$param_first}" class="first"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_first.gif" alt="첫 페이지" /></a>
+        <a href="{$param_prev}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_prev.gif" alt="이전 페이지" /></a>
+        <ol>
+            <li><a href="{$param_page}" class="{$param_class}">{$num}</a></li>
+            <li><a href="{$param_page}" class="{$param_class}">{$num}</a></li>
+        </ol>
+        <a href="{$param_next}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_next.gif" alt="다음 페이지" /></a>
+        <a href="{$param_last}" class="last"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_last.gif" alt="마지막 페이지" /></a>
+    </div-->
+</div> <!-- //myArea -->

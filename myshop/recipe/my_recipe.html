@@ -1,0 +1,248 @@
+<!--@layout(/layout/basic/mypage.html)-->
+<!--@css(/gd_import/css/myrecipe.css)-->
+<!--div class="path">
+    <span>현재 위치</span>
+    <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치">MY 레시피</li>
+    </ol>
+</div-->
+
+<!--div class="titleArea">
+    <h2>MY 레시피</h2>
+</div-->
+
+<div module="layout_logincheck">
+<!--
+    $url = /member/login.html
+-->
+</div>
+
+<div module="myshop_asyncbenefit" class="member_type">
+    <div class="ec-base-box typeMember gMessage">
+        <span class="set"><i class="xi-cog"></i></span>
+        <div class="information">
+            <p class="thumbnail"><img src="{$group_image}" alt="" onerror="this.src='//img.echosting.cafe24.com/skin/base/member/img_member_default.gif';" class="{$group_image_tag_class}" /></p>
+            <div class="description">
+                <p class="welcome"><span>{$member_name}</span> 님 반가워요.</p>
+                <div class="state">
+                    <span>#32세 여성</span> <span>#두피관리</span> <span>#머릿결</span> 
+                    <p>내 두피와 모발 상태는 <span>#OSDL</span></p>
+                </div>
+            </div>
+        </div>
+     </div>
+</div>
+
+<div module="myshop_asyncbenefit" class="journey_state">
+    <div class="title">
+        <h3><span>{$member_name}</span> 님과 함께한 MYNOMY 여정</h3>
+    </div>
+    <div class="journey">
+        <ul class="history">
+            <li class="selected">
+                <div class="inner">
+                    <span class="date">5/1</span>
+                    <h4># 서리의 두번째 샴푸</h4>
+                    <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                </div>    
+            </li>
+            <li>
+                <div class="inner">
+                    <span class="date">4/20</span>
+                    <h4># 엄마 샴푸</h4>
+                    <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                </div>    
+            </li>
+            <li>
+                <div class="inner">
+                    <span class="date">4/18</span>
+                    <h4># 엄마 샴푸2</h4>
+                    <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                </div>    
+            </li>
+            <li>
+                <div class="inner">
+                    <span class="date">4/17</span>
+                    <h4># 아빠 샴푸</h4>
+                    <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                </div>    
+            </li>
+            <li>
+                <div class="inner">
+                    <span class="date">4/16</span>
+                    <h4># 삼촌 샴푸</h4>
+                    <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                </div>    
+            </li>
+            <li>
+                <div class="inner">
+                    <span class="date">4/7</span>
+                    <h4># 누나 샴푸</h4>
+                    <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                </div>    
+            </li>
+            <li>
+                <div class="inner">
+                    <span class="date">4/5</span>
+                    <h4># 동생 샴푸</h4>
+                    <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                </div>    
+            </li>
+            <li>
+                <div class="inner">
+                    <span class="date">4/1</span>
+                    <h4># 서리 샴푸</h4>
+                    <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                </div>    
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="solution_state">
+    <div class="solution open">
+        <span class="down"><a href="/"><i class="xi-caret-down"></i></a></span>
+        <div class="short"><span>2022-05-01</span> <span>#서리의 두번째 샴푸</span></div>
+        <div class="inner">
+            <span class="mark"></span>
+            <div class="img_area">
+                <div class="thumb"><img src="/web/upload/mynomy/kr/diagnosis/solution01.png" alt="진단 샴푸" /></div>
+            </div>
+            <div class="diagnosis">
+                <p class="date">2022-05-01 진단</p>
+                <h4>#서리의 두번째 샴푸</h4>
+                <p>쉽게 떡지는 서리님께, 세정력이 강한 샴푸와 모발 손상을 케어하기 위해 영양을 추가한 트리트먼트를 처방했어요!</p>
+                <span><a href="/"><i class="xi-angle-right-min"></i> 진단 결과 자세히 보기</a></span>
+                <div class="dBtn left"><a href="/myshop/recipe/feedback_recipe.html" class="btnFeed gFull sizeL">피드백 하기</a></div>
+            </div>
+            <div class="bar_area">
+                <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                <div class="result">
+                    <div><span>지성</span><span>중성</span><span>건성</span></div>
+                    <div class="bar"><span class="checked">Oily</span><span>Normal</span><span>Dry</span></div>
+                </div>
+                <div class="result">
+                    <div><span>민감성</span><span>저항성</span></div>
+                    <div class="bar"><span class="checked">Sensitive</span><span>Resistance</span></div>
+                </div>
+                <div class="result">
+                    <div><span>건강모</span><span>손상모</span></div>
+                    <div class="bar"><span class="checked">Healthy</span><span>Damaged</span></div>
+                </div>
+                <div class="result">
+                    <div><span>탈모 고민 있음</span><span>탈모 고민 없음</span></div>
+                    <div class="bar"><span class="checked">Hair Loss</span><span>Hair Growth</span></div>
+                </div>
+            </div>
+        </div>    
+    </div>  
+    <div class="solution">
+        <span class="down"><a href="/"><i class="xi-caret-down"></i></a></span>
+        <div class="short"><span>2022-04-20</span> <span>#엄마 샴푸</span></div>
+        <div class="inner">
+            <span class="mark"></span>
+            <div class="img_area">
+                <div class="thumb"><img src="/web/upload/mynomy/kr/diagnosis/solution01.png" alt="진단 샴푸" /></div>
+            </div>
+            <div class="diagnosis">
+                <p class="date">2022-04-20 진단</p>
+                <h4>#엄마 샴푸</h4>
+                <p>쉽게 떡지는 엄마님께, 세정력이 강한 샴푸와 모발 손상을 케어하기 위해 영양을 추가한 트리트먼트를 처방했어요!</p>
+                <span><a href="/"><i class="xi-angle-right-min"></i> 진단 결과 자세히 보기</a></span>
+                <div class="dBtn left"><a href="/myshop/recipe/feedback_recipe.html" class="btnFeed gFull sizeL">피드백 하기</a></div>
+            </div>
+            <div class="bar_area">
+                <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                <div class="result">
+                    <div><span>지성</span><span>중성</span><span>건성</span></div>
+                    <div class="bar"><span class="checked">Oily</span><span>Normal</span><span>Dry</span></div>
+                </div>
+                <div class="result">
+                    <div><span>민감성</span><span>저항성</span></div>
+                    <div class="bar"><span class="checked">Sensitive</span><span>Resistance</span></div>
+                </div>
+                <div class="result">
+                    <div><span>건강모</span><span>손상모</span></div>
+                    <div class="bar"><span class="checked">Healthy</span><span>Damaged</span></div>
+                </div>
+                <div class="result">
+                    <div><span>탈모 고민 있음</span><span>탈모 고민 없음</span></div>
+                    <div class="bar"><span class="checked">Hair Loss</span><span>Hair Growth</span></div>
+                </div>
+            </div>
+        </div>    
+    </div>  
+    <div class="solution">
+        <span class="down"><a href="/"><i class="xi-caret-down"></i></a></span>
+        <div class="short"><span>2022-04-18</span> <span>#엄마 샴푸2</span></div>
+        <div class="inner">
+            <span class="mark"></span>
+            <div class="img_area">
+                <div class="thumb"><img src="/web/upload/mynomy/kr/diagnosis/solution01.png" alt="진단 샴푸" /></div>
+            </div>
+            <div class="diagnosis">
+                <p class="date">2022-04-18 진단</p>
+                <h4>#엄마 샴푸</h4>
+                <p>쉽게 떡지는 엄마님께, 세정력이 강한 샴푸와 모발 손상을 케어하기 위해 영양을 추가한 트리트먼트를 처방했어요!</p>
+                <span><a href="/"><i class="xi-angle-right-min"></i> 진단 결과 자세히 보기</a></span>
+                <div class="dBtn left"><a href="/myshop/recipe/feedback_recipe.html" class="btnFeed gFull sizeL">피드백 하기</a></div>
+            </div>
+            <div class="bar_area">
+                <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                <div class="result">
+                    <div><span>지성</span><span>중성</span><span>건성</span></div>
+                    <div class="bar"><span class="checked">Oily</span><span>Normal</span><span>Dry</span></div>
+                </div>
+                <div class="result">
+                    <div><span>민감성</span><span>저항성</span></div>
+                    <div class="bar"><span class="checked">Sensitive</span><span>Resistance</span></div>
+                </div>
+                <div class="result">
+                    <div><span>건강모</span><span>손상모</span></div>
+                    <div class="bar"><span class="checked">Healthy</span><span>Damaged</span></div>
+                </div>
+                <div class="result">
+                    <div><span>탈모 고민 있음</span><span>탈모 고민 없음</span></div>
+                    <div class="bar"><span class="checked">Hair Loss</span><span>Hair Growth</span></div>
+                </div>
+            </div>
+        </div>    
+    </div>    
+    <div class="solution">
+        <span class="down"><a href="/"><i class="xi-caret-down"></i></a></span>
+        <div class="short"><span>2022-04-17</span> <span>#아빠 샴푸</span></div>
+        <div class="inner">
+            <span class="mark"></span>
+            <div class="img_area">
+                <div class="thumb"><img src="/web/upload/mynomy/kr/diagnosis/solution01.png" alt="진단 샴푸" /></div>
+            </div>
+            <div class="diagnosis">
+                <p class="date">2022-04-17 진단</p>
+                <h4>#아빠 샴푸</h4>
+                <p>쉽게 떡지는 아빠님께, 세정력이 강한 샴푸와 모발 손상을 케어하기 위해 영양을 추가한 트리트먼트를 처방했어요!</p>
+                <span><a href="/"><i class="xi-angle-right-min"></i> 진단 결과 자세히 보기</a></span>
+                <div class="dBtn left"><a href="/myshop/recipe/feedback_recipe.html" class="btnFeed gFull sizeL">피드백 하기</a></div>
+            </div>
+            <div class="bar_area">
+                <p><span>#지성</span> <span>#민감성</span> <span>#건강모</span> <span>#탈모고민</span></p>
+                <div class="result">
+                    <div><span>지성</span><span>중성</span><span>건성</span></div>
+                    <div class="bar"><span class="checked">Oily</span><span>Normal</span><span>Dry</span></div>
+                </div>
+                <div class="result">
+                    <div><span>민감성</span><span>저항성</span></div>
+                    <div class="bar"><span class="checked">Sensitive</span><span>Resistance</span></div>
+                </div>
+                <div class="result">
+                    <div><span>건강모</span><span>손상모</span></div>
+                    <div class="bar"><span class="checked">Healthy</span><span>Damaged</span></div>
+                </div>
+                <div class="result">
+                    <div><span>탈모 고민 있음</span><span>탈모 고민 없음</span></div>
+                    <div class="bar"><span class="checked">Hair Loss</span><span>Hair Growth</span></div>
+                </div>
+            </div>
+        </div>    
+    </div>      
+</div>

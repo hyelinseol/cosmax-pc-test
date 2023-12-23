@@ -1,0 +1,1154 @@
+<!--@layout(/layout/basic/mypage.html)-->
+
+<div class="path">
+  <span>현재 위치</span>
+  <ol>
+    <li><a href="/">홈</a></li>
+    <li><a href="/myshop/index.html">마이쇼핑</a></li>
+    <li title="현재 위치"><strong>주문조회</strong></li>
+  </ol>
+</div>
+
+<!--div class="titleArea left">
+  <h3>주문조회</h3>
+</div-->
+
+<!--div module="Myshop_OrderHistoryTab" class="ec-base-tab">
+  <ul class="menu">
+      <li class="{$tab_class}"><a href="/myshop/order/list.html{$param}">주문내역조회 ({$total_orders})</a></li>
+      <li class="{$tab_class_cs}"><a href="/myshop/order/list.html{$param_cs}">취소/반품/교환 내역 ({$total_orders_cs})</a></li>
+      <li class="{$tab_class_past} {$is_past_list_display|display}"><a href="/myshop/order/list_past.html{$param_past}">과거주문내역 ({$total_orders_past})</a></li>
+      <li class="{$tab_class_old} {$old_list_display|display}"><a href="/myshop/order/list_old.html{$param_old}">이전 주문내역 ({$total_orders_old})</a></li>
+  </ul>
+</div-->
+
+<div module="myshop_orderstate">
+  <!--@css(/css/module/myshop/orderState.css)-->
+  <div class="order_inquire">
+    <div class="title">
+      <h3>
+        주문/배송 조회
+        <!--span class="desc">(최근 <em>3개월</em> 기준)</span-->
+      </h3>
+    </div>
+    <!-- <div class="adFeedBack">피드백루프 안내영역</div> -->
+    <!-- <div class="state">
+          <ul class="order">            
+              <li>
+                <strong>처방 분석</strong>
+                <a href="{$shppiedBeforeUrl}" class="count">{$shppiedBeforeCount}</a>
+              </li>
+              <li>
+                <strong>조제준비</strong>
+                <a href="{$shppiedBeforeUrl}" class="count active">{$shppiedBeforeCount}</a>
+              </li>
+              <li>
+                <strong>맞춤조제중</strong>
+                <a href="{$shppiedStandbyUrl}" class="count">{$shppiedStandbyCount}</a>
+              </li>
+              <li>
+                <strong>배송중</strong>
+                <a href="{$shppiedBeginUrl}" class="count">{$shppiedBeginCount}</a>
+              </li>
+              <li>
+                <span class="posFb"><img src="/web/upload/mynomy/kr/diagnosis/bi_feedback.png" /> 가능!</span>
+                <strong>배송완료</strong>
+                <a href="{$shppiedComplateUrl}" class="count">{$shppiedComplateCount}</a>
+              </li>
+            </ul>
+      </div> -->
+  </div>
+  <div module="Myshop_OrderHistoryHead" class="set">
+    <!--@js(/gd_import/js/cate.js)-->
+    <!--@css(/css/module/myshop/orderHistoryHead.css)-->
+    <div class="field_line ship">
+      <fieldset class="ec-base-box">
+        <legend>검색기간설정</legend>
+        <span class="period">
+          <a href="javascript:void(0);" id="survey_search_6month" days="180"
+            onclick="surveyChangeSearchForm(180, this)">최근 6개월</a>
+          <a href="javascript:void(0);" id="survey_search_3month" days="90"
+            onclick="surveyChangeSearchForm(90, this)">최근 3개월</a>
+          <a href="javascript:void(0);" id="survey_search_1month" days="30"
+            onclick="surveyChangeSearchForm(30, this)">최근 1개월</a>
+        </span>
+        <!--
+          <p class="contact_date">
+              <input type="text" value="2022.10.10">
+              <span class="ic_calen"></span>
+          </p>
+          <span class="date_wave">~</span>
+          <p class="contact_date">
+              <input type="text" value="2022.10.10">
+              <span class="ic_calen"></span>
+          </p>
+        -->
+
+        <p class="contact_date">
+          <input id="survey_search_from" type="text" onchange="event.preventDefault()" />
+          <!-- <span class="ic_calen"></span> -->
+        </p>
+        <span class="date_wave">~</span>
+        <p class="contact_date">
+          <input id="survey_search_to" type="text" onchange="event.preventDefault()" />
+          <!-- <span class="ic_calen"></span> -->
+        </p>
+
+        <select id="survey_search_status" name="order_status">
+          <option value="" selected="">전체</option>
+          <option value="analysis">처방 분석</option>
+          <option value="ready">조제준비</option>
+          <option value="prepare">맞춤조제중</option>
+          <option value="shipping">배송중</option>
+          <option value="complate">배송완료</option>
+        </select>
+      </fieldset>
+      <!-- <button type="" class="btn_field" onclick="surveySearch();">조회</button> -->
+      <div type="" class="survey_search_btn btn_field" onclick="surveySearch();">조회</div>
+    </div>
+  </div>
+</div>
+
+<!--
+<div class="stateSelect">
+  <ul class="order_status">
+      <li class="on"><a href="#none">전체</a></li>
+      <li><a href="#none">처방분석중</a></li>
+      <li><a href="#none">조제준비중</a></li>
+      <li><a href="#none">맞춤조제중</a></li>
+      <li><a href="#none">배송중</a></li>
+      <li><a href="#none">배송완료</a></li>
+      <li><a href="#none">취소/교환/반품</a></li>
+  </ul>        
+</div>
+-->
+<div class="stateSelect" style="display: none">
+  <ul class="order_status">
+    <!--
+    <li class="survey_all"><a href="/myshop/order/list.html">전체</a></li>
+    <li class="survey_shipped_before">
+      <a href="/myshop/order/list.html?order_status=shipped_before">처방분석중</a>
+    </li>
+    <li class="survey_shipped_before">
+      <a href="/myshop/order/list.html?order_status=shipped_before">조제준비중</a>
+    </li>
+    <li class="survey_shipped_standby">
+      <a href="/myshop/order/list.html?order_status=shipped_standby">맞춤조제중</a>
+    </li>
+    <li class="survey_shipped_begin">
+      <a href="/myshop/order/list.html?order_status=shipped_begin">배송중</a>
+    </li>
+    <li class="survey_shipped_complate">
+      <a href="/myshop/order/list.html?order_status=shipped_complate">배송완료</a>
+    </li>
+    <li class="survey_cs"><a href="/myshop/order/list.html?mode=cs">취소/교환/반품</a></li>
+    -->
+    <li class="survey_all"><a href="/myshop/order/list.html">전체</a></li>
+    <li class="survey_analysis">
+      <a href="/myshop/order/list.html?status=analysis">처방분석중</a>
+    </li>
+    <li class="survey_ready">
+      <a href="/myshop/order/list.html?status=ready">조제준비중</a>
+    </li>
+    <li class="survey_prepare">
+      <a href="/myshop/order/list.html?status=prepare">맞춤조제중</a>
+    </li>
+    <li class="survey_shipping">
+      <a href="/myshop/order/list.html?status=shipping">배송중</a>
+    </li>
+    <li class="survey_complate">
+      <a href="/myshop/order/list.html?status=complate">배송완료</a>
+    </li>
+    <li class="survey_cs"><a href="/myshop/order/list.html?mode=cs">취소/교환/반품</a></li>
+  </ul>
+</div>
+
+
+
+
+
+
+
+
+
+<div module="Myshop_OrderHistoryListitem" class="ec-base-table typeList" style="display: none">
+  <table border="1" summary="" class="bdrNone">
+    <colgroup>
+      <col style="width: 112px" />
+    </colgroup>
+    <tbody class="center {$list_display|display}">
+      <tr>
+        <td class="state">
+          <a href="#none" class="survey_shipping_search btnLineG survey_module_shipping" status="{$status}"
+            order_id="{$order_id}" style="display: none" onclick="{$shipping_trace_popup}">배송조회</a>
+          <a href="cancel.html{$param_apply}" class="survey_cancel btnLineG survey_module_cancel" status="{$status}"
+            order_id="{$order_id}">취소요청</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="state">
+          <a href="#none" class="survey_shipping_search btnLineG survey_module_shipping" status="{$status}"
+            order_id="{$order_id}" style="display: none" onclick="{$shipping_trace_popup}">배송조회</a>
+          <a href="cancel.html{$param_apply}" class="survey_cancel btnLineG survey_module_cancel" status="{$status}"
+            order_id="{$order_id}">취소요청</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="state">
+          <a href="#none" class="survey_shipping_search btnLineG survey_module_shipping" status="{$status}"
+            order_id="{$order_id}" style="display: none" onclick="{$shipping_trace_popup}">배송조회</a>
+          <a href="cancel.html{$param_apply}" class="survey_cancel btnLineG survey_module_cancel" status="{$status}"
+            order_id="{$order_id}">취소요청</a>
+        </td>
+      </tr>
+      <tr>
+        <td class="state">
+          <a href="#none" class="survey_shipping_search btnLineG survey_module_shipping" status="{$status}"
+            order_id="{$order_id}" style="display: none" onclick="{$shipping_trace_popup}">배송조회</a>
+          <a href="cancel.html{$param_apply}" class="survey_cancel btnLineG survey_module_cancel" status="{$status}"
+            order_id="{$order_id}">취소요청</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+
+
+
+
+
+
+<div 1module="Myshop_OrderHistoryListitem"
+  class="ec-base-table typeList survey_diagnosis_list xans-element- xans-myshop xans-myshop-orderhistorylistitem"
+  style="visibility: hidden">
+  <!--@css(/css/module/myshop/orderHistoryListItem.css)-->
+  <!--
+      $login_url = /member/login.html
+	    $count = 10000
+  -->
+
+  <!--div class="title">
+      <h3>{$list_title}</h3>
+  </div-->
+
+  <table border="1" summary="">
+    <caption>
+      {$list_title}
+    </caption>
+    <colgroup>
+      <col style="width: 112px" />
+      <col style="width: 112px" />
+      <col style="width: auto" />
+      <col style="width: 160px" />
+      <col style="width: 160px" />
+    </colgroup>
+    <thead>
+      <tr>
+        <th scope="col">구매일</th>
+        <th scope="col">주문번호</th>
+        <th scope="col">상품정보</th>
+        <th scope="col">진행상황</th>
+        <th scope="col">리뷰 및 구매</th>
+      </tr>
+    </thead>
+    <tbody class="survey_order_list center {$list_display|display}">
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 1번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+          <!--a href="#none" class="btnNormal {$direct_cancel_display|display}" onclick="{$action_direct_cancel}">주문취소</a>
+                  <a href="cancel.html{$param_apply}" class="btnNormal {$apply_cancel_display|display}">취소신청</a>
+                  <a href="exchange.html{$param_apply}" class="btnNormal {$apply_exchange_display|display}">교환신청</a>
+                  <a href="return.html{$param_apply}" class="btnNormal {$apply_return_display|display}">반품신청</a-->
+        </td>
+        <td class="product left">
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#울랄라더운여름용이양</h3>
+            <!-- <p class="model">(ONM31S06150000000001CSP1ONM0001)</p> -->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <!--
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+              <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+            </ul>
+            -->
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <!--td>{$quantity}</td>
+              <td class="right"><strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div></td-->
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+          <!-- <a href="#none" class="btnLineG">반품신청</a> -->
+          <!--p class="{$shipping_company_display|display}"><a href="{$shipping_company_link}" target="{$shipping_company_target}">{$shipping_company}</a></p>
+                  <p class="{$invoice_no_display|display}"><a href="#none" class="line" onclick="{$shipping_trace_popup}">[{$invoice_no}]</a></p>
+                  <a href="/board/product/write.html{$param_postscript}" class="btnSubmit {$postscript_display|display}">구매후기</a>
+                  <a href="#none" class="btnNormal {$withdraw_cancel_display|display}" onclick="{$action_withdraw_cancel}">취소철회</a>
+                  <a href="#none" class="btnNormal {$withdraw_exchange_display|display}" onclick="{$action_withdraw_exchange}">교환철회</a>
+                  <a href="#none" class="btnNormal {$withdraw_return_display|display}" onclick="{$action_withdraw_return}">반품철회</a-->
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+          <!--p class="{$detail_info_display|display}"><a href="#none" class="btnNormal" onclick="{$detail_info}">상세정보</a></p>
+                  <p class="{$hyphen_display|display}">-</p-->
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 2번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+          <!--a href="#none" class="btnNormal {$direct_cancel_display|display}" onclick="{$action_direct_cancel}">주문취소</a>
+                  <a href="cancel.html{$param_apply}" class="btnNormal {$apply_cancel_display|display}">취소신청</a>
+                  <a href="exchange.html{$param_apply}" class="btnNormal {$apply_exchange_display|display}">교환신청</a>
+                  <a href="return.html{$param_apply}" class="btnNormal {$apply_return_display|display}">반품신청</a-->
+        </td>
+        <td class="product left">
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#주영이꺼야</h3>
+            <!-- <p class="model">(ONM31S06150000000001CSP1ONM0001)</p> -->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <!-- 
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+              <li><strong>{$product_name}</strong>{$option_str} ({$qty}개)</li>
+            </ul>
+            -->
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <!--td>{$quantity}</td>
+              <td class="right"><strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong><div class="{$product_price_ref_display|display}">{$product_price_back_head}{$product_price_back}{$product_price_back_tail}</div></td-->
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+          <!--p class="{$shipping_company_display|display}"><a href="{$shipping_company_link}" target="{$shipping_company_target}">{$shipping_company}</a></p>
+                  <p class="{$invoice_no_display|display}"><a href="#none" class="line" onclick="{$shipping_trace_popup}">[{$invoice_no}]</a></p>
+                  <a href="/board/product/write.html{$param_postscript}" class="btnSubmit {$postscript_display|display}">구매후기</a>
+                  <a href="#none" class="btnNormal {$withdraw_cancel_display|display}" onclick="{$action_withdraw_cancel}">취소철회</a>
+                  <a href="#none" class="btnNormal {$withdraw_exchange_display|display}" onclick="{$action_withdraw_exchange}">교환철회</a>
+                  <a href="#none" class="btnNormal {$withdraw_return_display|display}" onclick="{$action_withdraw_return}">반품철회</a-->
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+          <!--p class="{$detail_info_display|display}"><a href="#none" class="btnNormal" onclick="{$detail_info}">상세정보</a></p>
+                  <p class="{$hyphen_display|display}">-</p-->
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 3번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#엄마내마음이야</h3>
+            <!-- <p class="model">(ONM31S06150000000001CSP1ONM0001)</p> -->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 4번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="gift" style="display: none">
+            <img src="/web/upload/mynomy/kr/layout/gift.svg" alt="선물 아이콘" />TO : 이설희님
+          </div>
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#엄마내마음이야</h3>
+            <!-- <p class="model">(ONM31S06150000000001CSP1ONM0001)</p> -->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 5번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#주영이꺼야</h3>
+            <!-- <p class="model">(ONM31S06150000000001CSP1ONM0001)</p> -->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 6번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#이건아빠꺼야</h3>
+            <!-- <p class="model">(ONM31S06150000000001CSP1ONM0001)</p> -->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 7번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="gift" style="display: none">
+            <img src="/web/upload/mynomy/kr/layout/gift.svg" alt="선물 아이콘" />TO : 이설희님
+          </div>
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#이건엄마꺼야</h3>
+            <!-- <p class="model">(ONM31S06150000000001CSP1ONM0001)</p> -->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 8번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="gift" style="display: none">
+            <img src="/web/upload/mynomy/kr/layout/gift.svg" alt="선물 아이콘" />TO : 이설희님
+          </div>
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#엄마내마음이야</h3>
+            <!--h3 class="nickName">#울랄라더운여름용이양</h3>
+          <p class="model">(ONM31S06150000000001CSP1ONM0001)</p-->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 9번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="gift" style="display: none">
+            <img src="/web/upload/mynomy/kr/layout/gift.svg" alt="선물 아이콘" />TO : 이설희님
+          </div>
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#엄마내마음이야</h3>
+            <!--h3 class="nickName">#울랄라더운여름용이양</h3>
+          <p class="model">(ONM31S06150000000001CSP1ONM0001)</p-->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 10번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="gift" style="display: none">
+            <img src="/web/upload/mynomy/kr/layout/gift.svg" alt="선물 아이콘" />TO : 이설희님
+          </div>
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#엄마내마음이야</h3>
+            <!--h3 class="nickName">#울랄라더운여름용이양</h3>
+          <p class="model">(ONM31S06150000000001CSP1ONM0001)</p-->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$ qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 11번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#울랄라더운여름용이양</h3>
+            <!-- <p class="model">(ONM31S06150000000001CSP1ONM0001)</p> -->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 12번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#울랄라더운여름용이양</h3>
+            <!-- <p class="model">(ONM31S06150000000001CSP1ONM0001)</p> -->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+
+      <tr class="survey_order_area" order_id="{$order_id}" option_str="{$option_str}" status="{$status}">
+        <!-- 13번째 -->
+        <td {$rowspan} class="number {$display_column|display}">
+          <p>{$order_icon}</p>
+          {$order_date}
+        </td>
+        <td {$rowspan} class="number {$display_column|display}">
+          <p><a href="detail.html{$param_detail}" class="line survey_order_no">[{$order_id}]</a></p>
+        </td>
+        <td class="product left">
+          <div class="thumb">
+            <a href="/product/detail.html{$param}"><img src="{$product_image}"
+                onerror="this.src='//img.echosting.cafe24.com/thumb/img_product_small.gif';" alt="" /></a>
+          </div>
+          <div class="info">
+            <strong class="name">{$product_name_link}</strong>
+            <h3 class="nickName" option_str="{$option_str}">#울랄라더운여름용이양</h3>
+            <!-- <p class="model">(ONM31S06150000000001CSP1ONM0001)</p> -->
+            <div class="price">
+              <strong>{$product_price_front_head}{$product_price_front}{$product_price_front_tail}</strong>
+              <div class="{$product_price_ref_display|display}">
+                {$product_price_back_head}{$product_price_back}{$product_price_back_tail}
+              </div>
+              / {$quantity}개
+            </div>
+            <ul class="option displaynone" module="Myshop_optionSet" style="display: none">
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+              <li>
+                <strong>{$product_name}</strong>
+                <div class="survey_set_order" qty="{$qty}">{$option_str}</div>
+                <!--({$qty}개)-->
+              </li>
+            </ul>
+            <p class="gBlank5 {$card_installment_display|display}">무이자할부 상품</p>
+          </div>
+        </td>
+        <td class="state">
+          <p class="txtEm">{$status}</p>
+          <a href="#none" class="survey_shipping_search btnLineG" status="{$status}" style="display: none">배송조회</a>
+          <a href="#none" class="survey_cancel btnLineG" status="{$status}" style="display: none">취소요청</a>
+        </td>
+        <td>
+          <a href="#none" class="btnLineG survey_review_show" status="{$status}" style="display: none">내 리뷰 보기</a>
+
+
+          <a href="#" class="btnLineG snap_review_write_btn" data-params="{$param_postscript}"
+            data-detail="{$detail_info}" status="{$status}" style="display: none">리뷰작성하기</a>
+          <a href="#none" class="btnRebuy" status="{$status}" order_id="{$order_id}" style="display: none"
+            option_str="{$option_str}" product_no="{$product_no}">재구매하기</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="message" style="display: none;">주문 내역이 없습니다.</p>
+  <div class="btn-more" onclick="addView()">
+    <button>
+      <span>더보기</span><img src="/web/upload/mynomy/kr/layout/arrow.png" alt="화살표" />
+    </button>
+  </div>
+</div>
+
+<!--div module="Myshop_OrderHistoryPaging" class="ec-base-paginate">
+  <a href="{$param_first}" class="first"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_first.gif" alt="첫 페이지" /></a>
+  <a href="{$param_prev}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_prev.gif" alt="이전 페이지" /></a>
+  <ol>
+      <li><a href="{$param_page}" class="{$param_class}">{$num}</a></li>
+      <li><a href="{$param_page}" class="{$param_class}">{$num}</a></li>
+  </ol>
+  <a href="{$param_next}"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_next.gif" alt="다음 페이지" /></a>
+  <a href="{$param_last}" class="last"><img src="//img.echosting.cafe24.com/skin/base/common/btn_page_last.gif" alt="마지막 페이지" /></a>
+</div-->
+
+<div class="floatBnr">
+  <div class="odrStatsExp" style="display: none">
+    <span class="osClose"></span>
+    <p class="osTitle">
+      3WAAU는 1:1 처방으로 생산되므로 ‘조제 준비중’ 단계부터는 주문 취소가 불가하며, 단순 변심으로
+      인한 교환 / 반품이 어렵습니다.
+    </p>
+    <div class="osBox">
+      <span class="ico stats01"></span>
+      <div class="osInfo">
+        <p class="inTitle">처방 분석중</p>
+        <p class="inDesc">
+          조제를 위해 고객님의 1:1 처방을 분석하는 단계입니다. 주문 취소는 처방 분석 중 단계에서만
+          가능합니다
+        </p>
+      </div>
+    </div>
+    <div class="osBox">
+      <span class="ico stats02"></span>
+      <div class="osInfo">
+        <p class="inTitle">조제 준비중</p>
+        <p class="inDesc">
+          고객님의 처방을 1:1 맞춤 조제하기 위해 준비하는 단계입니다. 고객님의 제품에 1:1 생산 QR
+          코드가 생성됩니다.
+        </p>
+      </div>
+    </div>
+    <div class="osBox">
+      <span class="ico stats03"></span>
+      <div class="osInfo">
+        <p class="inTitle">맞춤 조제중</p>
+        <p class="inDesc">
+          전문 설비를 통해 고객님의 1:1 처방이 조제되는 단계입니다. 조제 후에는 꼼꼼한 품질 검사를
+          거쳐 출고됩니다.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="odrStats">
+    <a href="javascript:void(0);" class="viewodrStats"></a>
+  </div>
+</div>
+
+<!-- 맞춤형 - 문진 -->
+<!--@import(/survey/common.html)-->
+<!--@js(/survey/js/survey_common.js)-->
+<!--@js(/survey/js/survey_mypage.js)-->
+<!--@js(/survey/js/survey_order_list.js)-->
+<style>
+  #ui-datepicker-div {
+    z-index: 100 !important;
+  }
+
+  .survey_search_btn {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+  }
+
+  .survey_order_area2::after {
+    top: unset !important;
+  }
+
+  .survey_diagnosis_list:after {
+    /*top: unset;*/
+  }
+
+  .survey_order_no {
+    text-decoration: none !important;
+    cursor: pointer;
+  }
+
+  .survey_order_no:hover {
+    text-decoration: underline !important;
+  }
+</style>
+
+<style id="add_btn_style"></style>
+
+
+<!-- snap review script start contact mail : support@snapvi.co.kr -->
+<script>
+  function onloadsnapscript() {
+    var snapInstance = new snapSolution("3waau"); snapInstance.loadScript('review_independent', () => {
+      snapinstanceindependent.catchMoreItemReviewCnt();
+    });
+  }
+</script>
+<script async type='text/javascript' src='//sfre-srcs-service.snapfit.co.kr/js/snap_combine_script.js' defer='true'
+  charset='utf-8' onload='onloadsnapscript()'></script>
+<!-- snap review end -->

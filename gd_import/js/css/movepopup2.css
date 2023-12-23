@@ -1,0 +1,53 @@
+/* ----------------점선 NONE------------ */
+a:focus {outline:none;}
+a {blr:expression(this.onFocus=this.blur());}
+area:focus {outline:none;}
+area {blr:expression(this.onFocus=this.blur());}
+input:focus, img:focus, embed:focus, map:focus {outline:none;}
+
+
+#movepopup { z-index:3000; width:300px; padding:0px; overflow:hidden; /*background-color:#fff;*/ }
+.BannerBig {
+	overflow:hidden;
+	position:relative;
+	width: 289px;
+	height:299px;
+	/*margin-bottom:7px;*/
+	cursor:pointer;
+	clear:both;
+}
+.BannerBig .images { position:absolute; display:none; }
+
+.BannerSmall { 
+	width:301px;
+	cursor:pointer;
+	*zoom:1;
+}
+.BannerSmall:after { content:""; display:block; clear:both; }
+.BannerSmall li { 
+    background:#fff;
+	float:left;
+	border:1px solid #eaeaea; border-width:1px 1px 0 0; text-align:center;
+	/*margin:0 2px 5px;*/
+}
+.BannerSmall li:first-child {border-left:1px solid #eaeaea; width:98px;}
+.BannerSmall li:nth-of-type(4) {border-left:1px solid #eaeaea; width:98px;}
+.BannerSmall li a { 
+    color:#858585;
+    font-size:12px;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    width: 98px;
+    height: 95px;
+    line-height:16px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.BannerSmall li a:hover{text-decoration:none;}
+.BannerSmall li strong {
+    color:#474747;
+}
+.BannerSmall li.labelOverClass { /*opacity:0.8; border:1px solid #000;*/ background:#eaeaea; }
+
+
+.xans-popup-footer { letter-spacing:-1px; line-height:16px;}

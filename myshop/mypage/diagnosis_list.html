@@ -1,0 +1,251 @@
+<!--@layout(/layout/basic/mypage.html)-->
+<!--@css(/gd_import/css/mypage.css)-->
+
+<div module="layout_logincheck">
+  <!--
+    $url = /member/login.html
+-->
+</div>
+
+<div class="myArea">
+  <div class="titleArea left">
+    <h3>진단내역</h3>
+  </div>
+  <!--@js(/gd_import/js/tab.js)-->
+  <div module="Myshop_OrderHistoryHead" class="set">
+    <!--@js(/gd_import/js/cate.js)-->
+    <!--@css(/css/module/myshop/orderHistoryHead.css)-->
+    <div class="order_history ship">
+      <div class="treatCate">
+        <span><a id="type_all" href="/myshop/mypage/diagnosis_list.html">전체</a></span>
+        <span><a id="type_hair_care" href="/myshop/mypage/diagnosis_list.html?type=hair_care">헤어케어</a></span>
+        <span><a id="type_skin_care" href="/myshop/mypage/diagnosis_list.html?type=skin_care">에센스</a></span>
+      </div>
+      <div class="field_line ship">
+        <fieldset class="ec-base-box">
+          <legend>검색기간설정</legend>
+          <div class="stateSelect {$status_bar_display|display}">{$form.order_status}</div>
+          <span class="period">
+            <a href="javascript:void(0);" class="on" id="survey_search_6month" days="180"
+              onclick="surveyChangeSearchForm(180)">최근 6개월</a>
+            <a href="javascript:void(0);" id="survey_search_3month" days="90" onclick="surveyChangeSearchForm(90)">최근
+              3개월</a>
+            <a href="javascript:void(0);" id="survey_search_1month" days="30" onclick="surveyChangeSearchForm(30)">최근
+              1개월</a>
+          </span>
+          <div class="contact_date">
+            <input id="survey_search_from" type="text" value="2022.10.10" />
+            <!-- <span class="ic_calen"></span> -->
+          </div>
+          <span class="date_wave">~</span>
+          <div class="contact_date">
+            <input id="survey_search_to" type="text" value="2022.10.10" />
+          </div>
+          <select id="survey_search_status" name="date" style="display:none;">
+            <option value="" selected="">주문상태 전체</option>
+            <option value="diagnosis_ing">주문상태 진단중</option>
+            <option value="diagnosis_completion">주문상태 진단완료</option>
+            <option value="buy_completion">주문상태 구매완료</option>
+          </select>
+        </fieldset>
+        <button type="" class="btn_field" onclick="surveySearch();">조회</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="myshop_diagnosisState survey_diagnosis_start" style="display: none;">
+    <div class="trySurvey">
+      <p class="tsTitle">쓰리와우의 진단을 경험해보세요</p>
+      <div class="surveyKind">
+        <div class="tryBox">
+          <a class="survey_skin_care" href="#none">
+            <span class="thumb"><img src="/web/renew_img/ico_empty_skin.png" /></span>
+            <p class="tsDesc">내 피부타입<br />알아보기</p>
+          </a>
+        </div>
+        <div class="tryBox">
+          <a class="survey_hair_care" href="#none">
+            <span class="thumb"><img src="/web/renew_img/ico_empty_hair.png" /></span>
+            <p class="tsDesc">내 두피타입<br />알아보기</p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="treatHis survey_diagnosis_list" style="display: none;">
+    <!-- LOOP //-->
+    <div class="treatHisBox">
+      <span class="delHis"><a href="javascript:deleteSurveyDiagnosis('62f7af8375551c20f97c6c3ef929ec8d')"
+          title="진단내역 삭제"></a></span>
+      <div class="treatTitle">
+        <span class="labelFb"></span>
+        <p>
+          #글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+        </p>
+        <span class="treatDate">진단일 : 22.07.28</span>
+      </div>
+      <div class="treatInfo">
+        <div class="inBox">
+          <div class="thumb"><img src="/web/renew_img/thumb_shampoo.png" /></div>
+          <div class="thumbDesc">
+            <p class="treatPart">샴푸</p>
+            <p class="treatCode">9000000312</p>
+            <p class="treatLevel"><em>Lv3.</em>지성용</p>
+          </div>
+        </div>
+        <div class="inBox">
+          <div class="thumb"><img src="/web/renew_img/thumb_treatment.png" /></div>
+          <div class="thumbDesc">
+            <p class="treatPart">트리트먼트</p>
+            <p class="treatCode">9000000312</p>
+            <p class="treatLevel"><em>Lv3.</em>지성용</p>
+          </div>
+        </div>
+      </div>
+      <div class="treatBtns">
+        <a href="#none" class="btnSq full black">구매하기</a>
+      </div>
+    </div>
+    <!-- LOOP //-->
+    <!-- LOOP //-->
+    <div class="treatHisBox">
+      <span class="delHis"><a href="javascript:deleteSurveyDiagnosis('62f7af8375551c20f97c6c3ef929ec8d')"
+          title="진단내역 삭제"></a></span>
+      <div class="treatTitle">
+        <p>
+          #글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+        </p>
+        <span class="treatDate">진단일 : 22.07.28</span>
+      </div>
+      <div class="treatInfo">
+        <div class="inBox full">
+          <div class="thumb"><img src="/web/renew_img/thumb_shampoo.png" /></div>
+          <div class="thumbDesc">
+            <p class="treatPart">에센스</p>
+            <p class="treatCode">9000000312</p>
+            <p class="treatLevel"><!-- 총 5개 중 2개 타입만 노출 됩니다. //-->
+              <span class="sType purple">Hydrating</span>
+              <span class="sType orange">Illuminating</span>
+              <!-- 
+        <span class="sType yellow">Smoothing</span>
+        <span class="sType green">Pore Refreshing</span>
+        <span class="sType blue">Calming</span>
+        //-->
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="treatBtns">
+        <a href="#none" class="btnSq full black">구매하기</a>
+      </div>
+    </div>
+    <!-- LOOP //-->
+    <!-- LOOP //-->
+    <div class="treatHisBox">
+      <span class="delHis"><a href="javascript:deleteSurveyDiagnosis('62f7af8375551c20f97c6c3ef929ec8d')"
+          title="진단내역 삭제"></a></span>
+      <div class="treatTitle">
+        <span class="labelFb"></span>
+        <p>
+          #글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+        </p>
+        <span class="treatDate">진단일 : 22.07.28</span>
+      </div>
+      <div class="treatInfo">
+        <div class="inBox">
+          <div class="thumb"><img src="/web/renew_img/thumb_shampoo.png" /></div>
+          <div class="thumbDesc">
+            <p class="treatPart">샴푸</p>
+            <p class="treatCode">9000000312</p>
+            <p class="treatLevel"><em>Lv3.</em>지성용</p>
+          </div>
+        </div>
+        <div class="inBox">
+          <div class="thumb"><img src="/web/renew_img/thumb_treatment.png" /></div>
+          <div class="thumbDesc">
+            <p class="treatPart">트리트먼트</p>
+            <p class="treatCode">9000000312</p>
+            <p class="treatLevel"><em>Lv3.</em>지성용</p>
+          </div>
+        </div>
+      </div>
+      <div class="treatBtns">
+        <a href="#none" class="btnSq full black">구매하기</a>
+      </div>
+    </div>
+    <!-- LOOP //-->
+    <!-- LOOP //-->
+    <div class="treatHisBox">
+      <span class="delHis"><a href="javascript:deleteSurveyDiagnosis('62f7af8375551c20f97c6c3ef929ec8d')"
+          title="진단내역 삭제"></a></span>
+      <div class="treatTitle">
+        <p>
+          #글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+        </p>
+        <span class="treatDate">진단일 : 22.07.28</span>
+      </div>
+      <div class="treatInfo">
+        <div class="inBox full">
+          <div class="thumb"><img src="/web/renew_img/thumb_shampoo.png" /></div>
+          <div class="thumbDesc">
+            <p class="treatPart">에센스</p>
+            <p class="treatCode">9000000312</p>
+            <p class="treatLevel"><!-- 총 5개 중 2개 타입만 노출 됩니다. //-->
+              <span class="sType purple">Hydrating</span>
+              <span class="sType orange">Illuminating</span>
+              <!-- 
+        <span class="sType yellow">Smoothing</span>
+        <span class="sType green">Pore Refreshing</span>
+        <span class="sType blue">Calming</span>
+        //-->
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="treatBtns">
+        <a href="#none" class="btnSq full black">구매하기</a>
+      </div>
+    </div>
+    <!-- LOOP //-->
+  </div>
+
+  <div class="survey_progress progress" style="display: none;">
+    <div class="prog_txt">
+      <p>아직 완료되지 않은 진단이 있어요.</p>
+      <h3>진단을 완료해보세요!</h3>
+    </div>
+    <div class="prog_quiz">
+      <div class="progBox skin" style="display: none;">
+        <a href="#none" class="survey_progress_skin_link">
+          <strong>피부 진단</strong> 이어하기
+        </a>
+      </div>
+      <div class="progBox hair" style="display: none;">
+        <a href="#none" class="survey_progress_hair_link">
+          <strong>헤어 진단</strong> 이어하기
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!-- myArea 끝 -->
+
+<style>
+  .myshop_diagnosisState {
+    margin: 0 auto 4px;
+    position: relative;
+  }
+  #ui-datepicker-div {
+    display: none;
+  }
+  .btnSq.full.dis {
+    cursor: auto; 
+  }
+</style>
+<!-- 맞춤형 - 문진 -->
+<!--@import(/survey/common.html)-->
+<!--@js(/survey/js/class/Common.js)-->
+<!--@js(/survey/js/class/MyShop.js)-->
+<!--@js(/survey/js/survey_diagnosis_list.js)-->

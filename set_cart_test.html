@@ -1,0 +1,85 @@
+<!--@layout(/layout/basic/layout.html)-->
+
+<script type="text/javascript">
+    CAFE24API.init("PHOutdi3EleQxttT8mq0FE");
+    
+    function insertCart() {
+        var mall_id = CAFE24API.MALL_ID;
+        alert(mall_id);
+        
+        CAFE24API.addBundleProductsCart(
+            'A0000',
+            'P',
+            [
+                {
+                    'product_no' : 13,
+                    'quantity' : 1,
+                    'bundle_product_components': [
+                        {
+                            'product_no': 11,
+                            'variants_code': 'P000000L000A',
+                            'additional_option_values': [
+                                {
+                                    'key': "item_option_add",
+                                    'title': "맞춤형 샴푸 BOM",
+                                    'type': "text",
+                                    'value': "WAU31S06159000000033CSP1WAU0001"
+                                },
+                                {
+                                    'key': "item_option_add",
+                                    'title': "맞춤형 샴푸 이름",
+                                    'type': "text",
+                                    'value': "3WAAU 헤어케어"
+                                },
+                                {
+                                    'key': "item_option_add",
+                                    'title': "맞춤형 샴푸 해시코드",
+                                    'type': "text",
+                                    'value': "b1597063fb78de9c6327787a05de2d54"
+                                }
+                            ]
+                        },
+                        {
+                            'product_no': 12,
+                            'variants_code': 'P000000M000A',
+                            'additional_option_values': [
+                                {
+                                    'key': "item_option_add",
+                                    'title': "맞춤형 트리트먼트 BOM",
+                                    'type': "text",
+                                    'value': "WAU31S06159000000033CST1WAU0001"
+                                },
+                                {
+                                    'key': "item_option_add",
+                                    'title': "맞춤형 트리트먼트 이름",
+                                    'type': "text",
+                                    'value': "3WAAU 헤어케어"
+                                },
+                                {
+                                    'key': "item_option_add",
+                                    'title': "맞춤형 트리트먼트 해시코드",
+                                    'type': "text",
+                                    'value': "b1597063fb78de9c6327787a05de2d54"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ],
+            function(err,res) {
+                if (err) {
+                    // 오류 발생 시, Error 개체입니다.
+                    // name, message 속성을 확인할 수 있습니다.
+                    // res 개체를 통해 상세한 오류메세지 확인이 가능합니다.
+                    console.log(err);
+                } else {
+                    // res 개체를 통해 상세한 오류메세지 확인이 가능합니다.
+                    console.log(res);
+                }
+            }
+        );    
+    }
+</script>
+
+세트상품 장바구니 담기 테스트<br/>
+<a href="#none" class="btnNormal sizeL {$basket_display|display}" onclick="insertCart()">장바구니 담기</a>

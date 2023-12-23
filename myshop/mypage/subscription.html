@@ -1,0 +1,240 @@
+<!--@layout(/layout/basic/mypage.html)-->
+<!--@css(/gd_import/css/mypage.css)-->
+
+<div class="myArea">
+    <div class="titleArea left">
+        <h3>구독내역</h3>
+    </div>
+    <div class="slideWrap">
+        <div class="swiper-container cardSlide">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><a href="/"><img src="/web/upload/mynomy/kr/layout/card01.png" alt="card01" /></a></div>
+                <div class="swiper-slide addCard">
+                    <a href="/"><div class="add">
+                        <i class="xi-plus-square-o"></i>
+                        <p>구독 카드를 등록해주세요!</p>
+                        </div></a>
+                </div>
+            </div>
+        </div>
+        <!-- Initialize Swiper -->
+        <script>
+            var card_swiper = new Swiper('.cardSlide', {
+                speed: 600,
+                slidesPerView: 1,
+                spaceBetween: 0,
+                centeredSlides: true,
+                parallax: true,
+                loop: true,
+                /*pagination: {
+                    el: '.swiper-pagination-main',
+                    type: "fraction",
+                },*/
+            });
+        </script>
+    </div> 
+
+    <!--@js(/gd_import/js/tab.js)-->
+    <div class="prdTab">
+        <ul class="menu gFlex2">
+            <li><a href="#none">신청내역</a></li>
+            <li><a href="#none">구독내역</a></li>
+        </ul>
+        
+        <ul class="con">
+            <li>
+                <div class="diagnosisList">
+                    <ul class="diagnosis">
+                        <li class="prd">
+                            <div class="prd_mark">
+                                <span class="txt">
+                                    헤어<br />케어
+                                </span>
+                            </div>
+                            <div class="top">
+                                <img src="/web/upload/mynomy/kr/layout/img_prd01.png" alt="상품이미지" />
+                            </div>
+                            <div class="prd_conts">
+                                <div class="prd_midd">
+                                    <div class="title">
+                                        <span class="mini">진단일: 2022.07.28  구매일: 2022.07.28</span>
+                                        <h1>#글자수는열자제한임다</h1>
+                                    </div>
+                                    <div class="prd_info">
+                                        <dl class="ing">
+                                            <dt>샴푸</dt>
+                                            <dd>
+                                                <p>9000000312</p>
+                                                <p>
+                                                    <span class="level">Lv3</span>
+                                                    <span class="type">지성용</span>
+                                                </p>
+                                            </dd>
+                                        </dl>
+                                        <dl>
+                                            <dt>트리트먼트</dt>
+                                            <dd>
+                                                <p>9000000312</p>
+                                                <p>
+                                                    <span class="level">Lv3</span>
+                                                    <span class="type">극손상모용</span>
+                                                </p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="prd_frag">
+                                        <p class="fig">
+                                            <img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png" alt="" />
+                                            <span class="word">Wild Black Berry</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="prd_btline">
+                                    <button class="btn_prd half">리뷰 작성하기</button>
+                                    <button class="btn_prd half">재구매하기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="prd">
+                            <div class="prd_mark">
+                                <span class="txt">
+                                    헤어<br />케어
+                                </span>
+                            </div>
+                            <div class="top">
+                                <img src="/web/upload/mynomy/kr/layout/img_prd02.png" alt="상품이미지" />
+                            </div>
+                            <div class="prd_conts">
+                                <div class="prd_midd">
+                                    <div class="title">
+                                        <span class="mini">진단일: 2022.07.28  구매일: 2022.07.28</span>
+                                        <h1>#글자수는열자제한임다</h1>
+                                    </div>
+                                    <div class="prd_info">
+                                        <dl class="ing">
+                                            <dt>샴푸</dt>
+                                            <dd>
+                                                <p>9000000312</p>
+                                                <p>
+                                                    <span class="level">Lv3</span>
+                                                    <span class="type">지성용</span>
+                                                </p>
+                                            </dd>
+                                        </dl>
+                                        <dl class="ing">
+                                            <dt>트리트먼트</dt>
+                                            <dd>
+                                                <p>9000000312</p>
+                                                <p>
+                                                    <span class="level">Lv3</span>
+                                                    <span class="type">극손상모용</span>
+                                                </p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="prd_frag">
+                                        <p class="fig">
+                                            <img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png" alt="" />
+                                            <span class="word">Wild Black Berry</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="prd_btline">
+                                    <button class="btn_prd">구매하기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="prd">
+                            <div class="prd_mark">
+                                <span class="txt">
+                                    헤어<br />케어
+                                </span>
+                            </div>
+                            <div class="top">
+                                <img src="/web/upload/mynomy/kr/layout/img_prd03.png" alt="상품이미지" />
+                            </div>
+                            <div class="prd_conts">
+                                <div class="prd_midd">
+                                    <div class="title">
+                                        <span class="mini">진단일: 2022.07.28  구매일: 2022.07.28</span>
+                                        <h1>#글자수는열자제한임다</h1>
+                                    </div>
+                                    <div class="prd_info">
+                                        <dl>
+                                            <dt>샴푸</dt>
+                                            <dd>
+                                                <p>9000000312</p>
+                                                <p>
+                                                    <span class="level">Lv3</span>
+                                                    <span class="type">지성용</span>
+                                                </p>
+                                            </dd>
+                                        </dl>
+                                        <dl class="ing">
+                                            <dt>트리트먼트</dt>
+                                            <dd>
+                                                <p>9000000312</p>
+                                                <p>
+                                                    <span class="level">Lv3</span>
+                                                    <span class="type">극손상모용</span>
+                                                </p>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <div class="prd_frag">
+                                        <p class="fig">
+                                            <img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png" alt="" />
+                                            <span class="word">Wild Black Berry</span>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="prd_btline">
+                                    <button class="btn_prd half">리뷰 작성하기</button>
+                                    <button class="btn_prd half">재구매하기</button>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- <li class="item">
+                            <div class="top">
+                                <h4 class="name">마이노미헤어케어</h4>
+                                <h3 class="nickName">#울랄라더운여름용이양</h3>
+                                <p class="date"><span>진단일: 2022.07.28</span></p>
+                            </div>    
+                            <div class="mid"><img src="/web/upload/mynomy/kr/layout/product01.png" alt="상품이미지" /></div>
+                            <div class="bottom">
+                                <ul>
+                                    <li>샴푸 <figure><img src="/web/upload/mynomy/kr/layout/lv3.png" alt="" /><figcaption>지성용</figcaption></figure></li>
+                                    <li>트리트먼트 <figure><img src="/web/upload/mynomy/kr/layout/lv3.png" alt="" /><figcaption>극손상모용</figcaption></figure></li>
+                                    <li>향 <figure><img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png" alt="" /><figcaption>Wild Black Berry</figcaption></figure></li>
+                                </ul>    
+                            </div>
+                            <div class="mBtn gColumn">
+                                <a href="#none" class="btnWt">구매하기</a>
+                            </div>
+                        </li>           
+                        <li class="item shampoo">
+                            <div class="top">
+                                <h4 class="name">마이노미샴푸</h4>
+                                <h3 class="nickName">#주영이꺼여름용</h3>
+                                <p class="date"><span>구매일: 2022.08.04</span> <span>진단일: 2022.07.28</span></p>
+                            </div>    
+                            <div class="mid"><img src="/web/upload/mynomy/kr/layout/product01.png" alt="상품이미지" /></div>
+                            <div class="bottom">
+                                <ul>
+                                    <li>샴푸 <figure><img src="/web/upload/mynomy/kr/layout/lv3.png" alt="" /><figcaption>지성용</figcaption></figure></li>
+                                    <li>향 <figure><img src="/web/upload/mynomy/kr/diagnosis/fragrance_slide03.png" alt="" /><figcaption>Wild Black Berry</figcaption></figure></li>
+                                </ul>    
+                            </div>
+                            <div class="mBtn gColumn">
+                                <a href="#none" class="btnWt">제구매하기</a>
+                                <a href="#none" class="btnWt">리뷰 쓰기</a>
+                            </div>
+                        </li> -->
+                    </ul>
+                </div>
+            </ii>
+			
+            <li><p class="empty">구독 내역이 없어요.</p></li>
+        </ul>
+    </div>
+</div>

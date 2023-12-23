@@ -1,0 +1,27 @@
+.xans-myshop-asyncbankbook { /*border: 1px solid #ddd; border-width: 1px 0;*/ margin:0 4px; padding:12px 0; background:#0b0a0a; border-radius:4px; }
+.xans-myshop-asyncbankbook ul { display:flex; }
+.xans-myshop-asyncbankbook ul li { width:50%; padding:0 14px; text-align:center; border-right:1px solid #fff; }
+.xans-myshop-asyncbankbook ul li:last-child { border:0; }
+.xans-myshop-asyncbankbook ul li a { color:#fff; }
+.xans-myshop-asyncbankbook ul li a > strong { display:block; }
+.xans-myshop-asyncbankbook .title { font-size:14px; line-height:21px; font-weight:400 !important; }
+.xans-myshop-asyncbankbook .data { font-size:18px; line-height:27px; }
+.xans-myshop-asyncbankbook .use { color:#000; }
+.xans-myshop-asyncbankbook a.btnNormal { float:right; margin:-2px 0 0; }
+
+#sidebar .log a {color:#999;}
+
+/*.xans-myshop-asyncbankbook { /*border: 1px solid #ddd; border-width: 1px 0; */ /*}
+.xans-myshop-asyncbankbook ul li{ padding: 20px 45px; background:#fff; box-sizing:border-box; border-radius:10px;}
+.xans-myshop-asyncbankbook .benefit:after { content:""; display:block; clear:both; }
+.xans-myshop-asyncbankbook .benefit li { float:left; width:48%; /*height:20px;*/ /*font-size:14px; line-height:1.6; vertical-align:top; }
+.xans-myshop-asyncbankbook .benefit li:first-child{margin-right:4%;}
+.xans-myshop-asyncbankbook .benefit p{width:100%; }
+.xans-myshop-asyncbankbook .my_list{display:flex; justify-content: space-between; margin: 15px 0;}
+.xans-myshop-asyncbankbook .my_list li{ width:30%;}
+.xans-myshop-asyncbankbook .title { font-weight:normal; box-sizing:border-box; text-align:right; font-size: 16px; font-weight: 800;}
+.xans-myshop-asyncbankbook .title img{padding-left:10px;}
+.xans-myshop-asyncbankbook .data { /* text-align:right;*/ /*box-sizing:border-box; font-size: 18px; font-weight: 500; color:#999;}
+.xans-myshop-asyncbankbook .data span{font-size:28px; font-weight: 800; color: #5E5047;}
+.xans-myshop-asyncbankbook .use { color:#000; }
+.xans-myshop-asyncbankbook a.btnNormal { /*float:right; *//*width:100%; margin:-2px 0 0; }*/

@@ -1,0 +1,40 @@
+/* 게시판 전체 공통 */
+.xans-board-title .title { min-height:30px; margin:10px 0 20px; border-bottom:1px solid #e8e8e8; }
+.xans-board-title .title h2 { display:inline-block; padding:0 0 0 12px; color:#2e2e2e; font-size:16px; *display:inline; *zoom:1; background:url("//img.echosting.cafe24.com/skin/base/layout/ico_heading.gif") 0 50% no-repeat; }
+.xans-board-title .title p { display:inline-block; margin:0 0 0 6px; padding:0 0 0 10px; color:#939393; vertical-align:bottom; background:url("//img.echosting.cafe24.com/skin/base/common/ico_bar.gif") no-repeat 0 0; *display:inline; *zoom:1; }
+.xans-board-title p.imgArea { margin:0 0 20px; }
+
+/* read */
+.xans-board-read .ec-base-table .etcArea li { display:inline-block; margin:0 0 8px; padding: 0 11px 10px 8px; vertical-align:top; line-height:22px; color:#555; }
+.xans-board-read .ec-base-table .etcArea li a { text-decoration:none; padding: 0 8px; }
+.xans-board-read .ec-base-table .detail { padding:30px 20px; border-top:1px solid #eaeaea; margin:0; word-break:break-all; line-height:normal; }
+.xans-board-read .ec-base-table .detail img {max-width:100% !important;}
+.xans-board-read .ec-base-table .detail ol,
+.xans-board-read .ec-base-table .detail ul { margin:15px 0; padding:0 0 0 40px; }
+.xans-board-read .ec-base-table .detail ol li { list-style:decimal; }
+.xans-board-read .ec-base-table .detail ul li { list-style:disc; }
+.xans-board-read .ec-base-table tr.attach a { padding:0 0 0 12px; background:url("//img.echosting.cafe24.com/skin/base/common/ico_file.gif") no-repeat 0 0; color:#8f8f8f; }
+.xans-board-read .ec-base-table tr.attach a:hover { text-decoration:underline; }
+
+.xans-board-read .ec-base-button { margin:10px 0 40px; }
+
+/* read - 상품 */
+.xans-board-read-4 .ec-base-table table { background:#fff; }
+.xans-board-product.ec-base-box.typeProduct { padding:24px 0; margin:0 0 20px; background:#fff; }
+.xans-board-product .information .icon_img { margin:0 1px 0 0; }
+.xans-board-product .information h3 { margin:17px 0 5px; font-size:14px; color:#222; }
+.xans-board-product .information .price { font-size:16px; font-weight:500; color:#0b0a0a; }
+.xans-board-product .information .button { margin:19px 0 0 0; padding:13px 0 0 0; border-top:1px solid #ddd; }
+
+/* 230615 추가 */
+.headImgSec {display:block; margin:0 auto;}
+.headImgSec .imgTop {display:block; position:relative;}
+.headImgSec .imgTop img {max-width:100%;}
+.headImgSec .imgBtm {display:block; position:relative;}
+.headImgSec .imgBtm a.absBtnReview {position:absolute; left:60px; bottom:28px;}
+
+.xans-board-read .ec-base-table .detail {clear:both; display:block; height:auto; overflow:hidden;}
+.xans-board-read .ec-base-table .detail.onlyReviewShow {display:block; overflow-x:auto; white-space:nowrap; padding-bottom:0;}
+.xans-board-read .ec-base-table .detail.onlyReviewShow br {display:none;}
+.xans-board-read .ec-base-table .detail.onlyReviewShow img {display:inline-block; width:40%; max-width:40% !important; margin-right:2%; padding-bottom:30px;}
+.xans-board-read .ec-base-table .detail.onlyReviewShow img:last-child {margin-right:0;}

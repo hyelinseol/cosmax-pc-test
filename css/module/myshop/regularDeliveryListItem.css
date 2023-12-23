@@ -1,0 +1,23 @@
+.xans-myshop-orderregularmanagehead.ec-base-tab { margin:0 0 48px; }
+.xans-myshop-orderregularmanagehead.ec-base-tab .menu { display:flex; margin:0; }
+.xans-myshop-orderregularmanagehead.ec-base-tab .menu li { width:50%; float: none; border: 0; color:#0b0a0a; background: #fff; border:1px solid #eee; margin: 0; text-align: center; padding: 0 20px; box-sizing: border-box; }
+.xans-myshop-orderregularmanagehead.ec-base-tab .menu li.selected { border:1px solid #0b0a0a; background:#0b0a0a; }
+.xans-myshop-orderregularmanagehead.ec-base-tab .menu li a { min-width:1px; font-size:14px; line-height:40px; color:#999; padding:0; }
+.xans-myshop-orderregularmanagehead.ec-base-tab .menu li.selected a { color:#fff; font-weight:500; }
+.xans-myshop-orderregularmanagehead.ec-base-tab .menu li.selected a::after { display:none; }
+
+.xans-myshop-orderregularmanagelist .title { margin:40px 0 10px 10px; }
+.xans-myshop-orderregularmanagelist .title h3 { color:#353535; font-size:12px; }
+.xans-myshop-orderregularmanagelist.ec-base-table { font-size: 14px; }
+.xans-myshop-orderregularmanagelist.ec-base-table table { margin:0; }
+.xans-myshop-orderregularmanagelist.ec-base-table td .line { text-decoration:underline; }
+.xans-myshop-orderregularmanagelist.ec-base-table td.number { letter-spacing:-1px; }
+.xans-myshop-orderregularmanagelist.ec-base-table td.thumb img { width:80px; }
+.xans-myshop-orderregularmanagelist.ec-base-table .name .ec-set-product-name { display:block; }
+.xans-myshop-orderregularmanagelist.ec-base-table td.product div.option,
+.xans-myshop-orderregularmanagelist.ec-base-table td.product ul.option > li { margin:9px 0 0; color:#757575; line-height:16px; }
+.xans-myshop-orderregularmanagelist.ec-base-table td.product ul.option > li > strong { display:block; color:#353535; }
+.xans-myshop-orderregularmanagelist.ec-base-table td.product div.option span.file a,
+.xans-myshop-orderregularmanagelist.ec-base-table td.product ul.option > li > span.file a { margin:0 0 0 4px; padding:0 0 0 11px; color:#757575; text-decoration:underline; background:url("//img.echosting.cafe24.com/skin/base/common/ico_file.gif") no-repeat 0 2px; }
+.xans-myshop-orderregularmanagelist.ec-base-table td.number [class^="btn"],
+.xans-myshop-orderregularmanagelist.ec-base-table td.state [class^="btn"] { margin:1px 0; }

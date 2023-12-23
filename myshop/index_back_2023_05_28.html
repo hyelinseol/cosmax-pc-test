@@ -1,0 +1,283 @@
+<!--@layout(/layout/basic/mypage.html)-->
+<!--div class="path">
+    <span>현재 위치</span>
+    <ol>
+        <li><a href="/">홈</a></li>
+        <li title="현재 위치">마이페이지</li>
+    </ol>
+</div-->
+
+<!--div class="titleArea">
+    <h2>마이페이지</h2>
+</div-->
+
+<div module="layout_logincheck">
+  <!--
+        $url = /member/login.html
+    -->
+</div>
+
+<!--div module="myshop_asyncbenefit">
+        <!--@css(/css/module/myshop/benefit.css)-->
+<!--div class="ec-base-box typeMember gMessage {$display_benefit|display}">
+            <div class="information">
+                <p class="thumbnail"><img src="{$group_image}" alt="" onerror="this.src='//img.echosting.cafe24.com/skin/base/member/img_member_default.gif';" class="{$group_image_tag_class}" /></p>
+                <div class="description">
+                    <span>저희 쇼핑몰을 이용해 주셔서 감사합니다. <strong class="txtEm">{$member_name}</strong> 님은 <strong>[<span class="{$displayGroupIcon|display}"><img src="{$group_icon}" alt="" class="{$group_icon_tag_class}" /></span>{$group_name}]</strong> 회원이십니다.</span>
+                    <p class="{$display_no_benefit|display} {$display_no_benefit_class}"><strong class="txtEm">{$dc_pay} {$dc_min_price}</strong> 구매시 <strong class="txtEm">{$dc_price}{$dc_type}</strong>을 {$use_dc} 받으실 수 있습니다. {$dc_max_percent}</p>
+                    <p class="{$display_with_all|display} {$display_with_all_class}"><strong class="txtEm">{$dc_pay} {$dc_min_price_mileage}</strong> 구매시 <strong class="txtEm">{$dc_price_mileage}{$dc_type_mileage}</strong>을 {$use_dc_mileage} 받으실 수 있습니다. {$dc_max_mileage_percent}</p>
+                    <div class="{$bGradeAutoDisplay|display} gBlank5" id="{$sGradeAutoDisplayId}">
+                        <p class="{$bChangeTypePrice|display} {$sAutoGradeDisplay}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt="" class="{$next_group_icon_tag_class}" /></span>{$sNextGrade}]</strong> 까지 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice})</p>
+                        <p class="{$bChangeTypeCount|display} {$sAutoGradeDisplay}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt="" class="{$next_group_icon_tag_class}" /></span>{$sNextGrade}]</strong> 까지 남은 구매건수는 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매건수 : {$sPeriodOrderCount})</p>
+                        <p class="{$bChangeTypePriceAndCount|display} {$sAutoGradeDisplay}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt="" class="{$next_group_icon_tag_class}" /></span>{$sNextGrade}]</strong> 까지 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong>, 남은 구매건수는 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
+                        <p class="{$bChangeTypePriceOrCount|display} {$sAutoGradeDisplay}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt="" class="{$next_group_icon_tag_class}" /></span>{$sNextGrade}]</strong> 까지 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong>, 또는 남은 구매건수 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
+                        <p class="{$bChangeMaxTypePrice|display}" id="{$sChangeMaxTypePriceId}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt="" class="{$next_group_icon_tag_class}" /></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice})</p>
+                        <p class="{$bChangeMaxTypeCount|display}" id="{$sChangeMaxTypeCountId}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt="" class="{$next_group_icon_tag_class}" /></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매건수는 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매건수 : {$sPeriodOrderCount})</p>
+                        <p class="{$bChangeMaxTypePriceAndCount|display}" id="{$sChangeMaxTypePriceAndCountId}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt="" class="{$next_group_icon_tag_class}" /></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong>, 남은 구매건수는 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
+                        <p class="{$bChangeMaxTypePriceOrCount|display}" id="{$sChangeMaxTypePriceOrCountId}"><strong>[<span class="{$bDisplayNextGroupIcon|display} {$sNextGroupIconClass}"><img src="{$group_icon}" alt="" class="{$next_group_icon_tag_class}" /></span>{$sNextGrade}]</strong> 등급을 유지하기 위해 남은 구매금액은 <strong>{$sGradeIncreasePrice}</strong>, 또는 남은 구매건수 <strong>{$sGradeIncreaseCount}</strong> 입니다. ({$sApplyPeriod} {$sGradePeriod} 구매금액 : {$sPeriodOrderPrice}｜구매건수 : {$sPeriodOrderCount})</p>
+                        <p class="txtInfo txt11">승급 기준에 따른 예상 금액이므로 총주문 금액과 다를 수 있습니다.</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+         <div class="invite ec-base-box typeThinBg gMerge {$display_reco|display}">
+            <strong class="txtEm">주소를 복사하여 친구를 쇼핑몰에 초대해보세요.</strong>
+            <p class="copy">
+                <input type="text" id="{$reco_url}" value="//{$shop_domain}/?reco_id={$member_id}" readonly="readonly" />
+                <a href="#none" onclick="{$copy_func}" class="btnSubmit">주소복사</a>
+            </p>
+            <ul>
+                <li>- 친구에게는 가입즉시 {$reco_mileage2}의 {$mileage_name}이 지급됩니다.</li>
+                <li>- {$reco_mileage}</li>
+            </ul>
+        </div>
+    </div-->
+
+<!--div module="myshop_asyncbankbook" class="ec-base-box gHalf">
+        <!--@css(/css/module/myshop/bankbook.css)-->
+<!--ul>
+            <li class="{$display_mileage|display}">
+                <strong class="title">가용{$mileage_name}</strong>
+                <strong class="data use">&nbsp;{$avail_mileage}</strong>
+                <a href="/myshop/mileage/historyList.html" class="btnNormal">조회</a>
+            </li>
+            <li>
+                <strong class="title">총{$mileage_name}</strong>
+                <strong class="data">{$total_mileage}</strong>
+            </li>
+            <li>
+                <strong class="title">사용{$mileage_name}</strong>
+                <strong class="data">{$used_mileage}</strong>
+            </li>
+            <li class="{$display_deposit|display}">
+               <strong class="title">{$deposit_name}</strong>
+               <strong class="data use">&nbsp;{$total_deposit}</strong>
+               <a href="/myshop/deposits/historyList.html" class="btnNormal">조회</a>
+            </li>
+            <li>
+                <strong class="title">총주문</strong>
+                <strong class="data">{$total_order_price}({$total_order_count}회)</strong>
+            </li>
+            <li class="{$display_coupon|display}">
+                <strong class="title">쿠폰</strong>
+                <strong class="data">{$coupon_cnt}<span>개</span></strong>
+                <a href="/myshop/coupon/coupon.html" class="btnNormal">조회</a>
+            </li>
+        </ul>
+    </div-->
+
+<div module="myshop_orderstate">
+	<div class="titleArea myMain">
+		<h3>
+			진행 중인 주문 <span>(최근 1개월)</span>
+			<span class="more"><a href="/myshop/order/list.html">더보기</a></span>
+		</h3>
+	</div>
+	<div class="state pdbm">
+		<ul class="order">
+			<li>
+				<a href="/myshop/order/list.html?status=analysis" class="survey_n10 count"></a>
+				<strong>처방 분석</strong>
+			</li>
+			<li>
+				<a href="/myshop/order/list.html?status=ready" class="survey_n20 count"></a>
+				<strong>조제준비</strong>
+			</li>
+			<li>
+				<a href="/myshop/order/list.html?status=prepare" class="survey_n21 count"></a>
+				<strong>맞춤조제중</strong>
+			</li>
+			<li>
+				<a href="/myshop/order/list.html?status=shipping" class="survey_n30 count"></a>
+				<strong>배송중</strong>
+			</li>
+			<li>
+				<a href="/myshop/order/list.html?status=complate" class="survey_n40 count"></a>
+				<strong>배송완료</strong>
+			</li>
+			<li class="active">
+				<a href="/myshop/order/list.html?status=complate" class="survey_n40 count"></a>
+				<strong>피드백루프</strong>
+				<span class="guideFb">제품을 업그레이드하고 재구매 해보세요!</span>
+			</li>
+		</ul>
+	</div>
+</div>
+
+<div class="myshop_diagnosisState survey_diagnosis_start">
+	<div class="title">
+		<h3>진단내역 <span>(최신순)</span></h3>
+		<span class="more"><a href="/myshop/mypage/diagnosis_list.html">더보기</a></span>
+	</div>
+	<div class="trySurvey">
+		<p class="tsTitle">쓰리와우의 진단을 경험해보세요</p>
+		<div class="surveyKind">
+			<div class="tryBox">
+				<a href="#none">
+				<span class="thumb"><img src="/web/renew_img/ico_empty_skin.png" /></span>
+				<p class="tsDesc">내 피부타입<br/>알아보기</p>
+				</a>
+			</div>
+			<div class="tryBox">
+				<a href="#none">
+				<span class="thumb"><img src="/web/renew_img/ico_empty_hair.png" /></span>
+				<p class="tsDesc">내 두피타입<br/>알아보기</p>
+				</a>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="myshop_diagnosisState">
+	<!--@css(/css/module/myshop/diagnosisState.css)-->
+	<div class="title">
+	    <h3>진단내역 <span>(최신순)</span></h3>
+		<span class="more"><a href="/myshop/mypage/diagnosis_list.html">더보기</a></span>
+	  </div>
+  <div class="treatHis">
+  	<!-- LOOP //-->
+    <div class="treatHisBox">
+	  <span class="delHis"><a href="javascript:deleteSurveyDiagnosis('62f7af8375551c20f97c6c3ef929ec8d')" title="진단내역 삭제"></a></span>
+	  <div class="treatTitle">
+	  	<span class="labelFb"></span>
+	  	<p>
+			#글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+		</p>
+		<span class="treatDate">진단일 : 22.07.28</span>
+	  </div>
+      <div class="treatInfo">
+        <div class="inBox">
+			<div class="thumb"><img src="/web/renew_img/thumb_shampoo.png" /></div>
+			<div class="thumbDesc">
+				<p class="treatPart">샴푸</p>
+				<p class="treatCode">9000000312</p>
+				<p class="treatLevel"><em>Lv.3</em>지성용</p>
+			</div>
+		  </div>
+		  <div class="inBox">
+			<div class="thumb"><img src="/web/renew_img/thumb_treatment.png" /></div>
+			<div class="thumbDesc">
+				<p class="treatPart">트리트먼트</p>
+				<p class="treatCode">9000000312</p>
+				<p class="treatLevel"><em>Lv.3</em>지성용</p>
+			</div>
+		  </div>   
+      </div>
+	  <div class="treatBtns">
+			<a href="#none" class="btnSq full black">구매하기</a>
+		</div>
+    </div>
+    <!-- LOOP //-->
+	<!-- LOOP //-->
+    <div class="treatHisBox">
+	  <span class="delHis"><a href="javascript:deleteSurveyDiagnosis('62f7af8375551c20f97c6c3ef929ec8d')" title="진단내역 삭제"></a></span>
+	  <div class="treatTitle">
+	  	<p>
+			#글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한 임다글자수는 열자제한
+		</p>
+		<span class="treatDate">진단일 : 22.07.28</span>
+	  </div>
+      <div class="treatInfo">
+        <div class="inBox full">
+			<div class="thumb"><img src="/web/renew_img/thumb_shampoo.png" /></div>
+			<div class="thumbDesc">
+				<p class="treatPart">에센스</p>
+				<p class="treatCode">9000000312</p>
+				<p class="treatLevel"><!-- 총 5개 중 2개 타입만 노출 됩니다. //-->
+					<span class="sType purple">Hydrating</span>
+					<span class="sType orange">Illuminating</span>
+					<!-- 
+					<span class="sType yellow">Smoothing</span>
+					<span class="sType green">Pore Refreshing</span>
+					<span class="sType blue">Calming</span>
+					//-->
+				</p>
+			</div>
+		  </div>
+      </div>
+	  <div class="treatBtns">
+			<a href="#none" class="btnSq full black">구매하기</a>
+		</div>
+    </div>
+    <!-- LOOP //-->
+  </div>
+</div>
+
+<div class="survey_progress progress">
+  <div class="prog_txt">
+    <p>아직 완료되지 않은 진단이 있어요.</p>
+	<h3>진단을 완료해보세요!</h3>
+  </div>
+  <div class="prog_quiz">
+  	<div class="progBox skin">
+		<a href="#none" class="survey_progress_skin_link">
+		<strong>피부 진단</strong> 이어하기
+		</a>
+	</div>
+	<div class="progBox hair">
+		<a href="#none" class="survey_progress_hair_link">
+		<strong>헤어 진단</strong> 이어하기
+		</a>
+	</div>
+  </div>
+</div>
+
+<div class="event_banner">
+  <!--@import(/smart-banner/shop1/smart-banner-admin-PC00006.html)-->
+</div>
+
+<!-- 맞춤형 - 문진 -->
+<!--@import(/survey/common.html)-->
+<!--@js(/survey/js/survey_common.js)-->
+<!--@js(/survey/js/survey_mypage.js)-->
+<!--@js(/survey/js/survey_myshop.js)-->
+
+<style>
+  .xans-myshop-orderhistorylistitem:after {
+    background: unset;
+  }
+
+  .survey_order_no {
+    text-decoration: none !important;
+    cursor: pointer;
+  }
+
+  .survey_order_no:hover {
+    text-decoration: underline !important;
+  }
+</style>
+
+<!-- 채티스 기프틴 스크립트 -->
+<!--@js(/js/module/myshop/chatis_gp_myshop_index.js)-->
+
+<!-- snap review script start contact mail : support@snapvi.co.kr -->
+<script>
+function onloadsnapscript () {
+    var snapInstance = new snapSolution("3waau"); snapInstance.loadScript('review_independent', () => {
+        snapinstanceindependent.catchMoreItemReviewCnt();
+    });
+}
+</script>
+<script async type='text/javascript' src='//sfre-srcs-service.snapfit.co.kr/js/snap_combine_script.js' defer='true' charset='utf-8'
+onload = 'onloadsnapscript()'></script>
+<!-- snap review end -->

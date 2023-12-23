@@ -1,0 +1,131 @@
+<!--@layout(/layout/basic/product_list.html)-->
+<!--@css(/css/module/product/menupackage.css)-->
+<div class="prdCateSec">
+	<div class="titleSec">
+		<p class="title">선물하기</p>
+	</div>
+
+	<div class="prdCate">
+		<div class="perCate">
+			<a href="/product/prd_list.html">
+			<div class="imgSec">
+				<span><img src="/web/renew_img/top_cate_all.png" /></span>
+			</div>
+			<p class="txt">전체보기</p>
+			</a>
+		</div>
+		<div data-cateno="50" class="perCate">
+			<a href="/product/list.html?cate_no=50">
+			<div class="imgSec">
+				<span><img src="/web/renew_img/top_cate_essence.png" /></span>
+			</div>
+			<p class="txt">고민별 추천 레시피</p>
+			</a>
+		</div>
+		<div data-cateno="42" class="perCate">
+			<a href="/product/list.html?cate_no=42">
+			<div class="imgSec">
+				<span><img src="/web/renew_img/top_cate_skin.png" /></span>
+			</div>
+			<p class="txt">맞춤형 스킨케어</p>
+			</a>
+		</div>
+		<div data-cateno="28" class="perCate">
+			<a href="/product/list.html?cate_no=26">
+			<div class="imgSec">
+				<span><img src="/web/renew_img/top_cate_hair.png" /></span>
+			</div>
+			<p class="txt">맞춤형 헤어케어</p>
+			</a>
+		</div>
+		<div class="perCate on">
+			<a href="/product/gift_list.html">
+			<div class="imgSec">
+				<span><img src="/web/renew_img/top_cate_gift.png" /></span>
+			</div>
+			<p class="txt">선물하기</p>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="cateVisualWrap">
+	<div class="cateVisual" style="display:block;">
+		<div class="cateTitle">
+			<p class="title">3WAAU 선물하기</p>
+			<p class="desc">
+				<strong>받으시는 분이 직접 진단하고 주소도 입력해요</strong><br/>
+				받으시는 분의 피부 타입을 몰라도, 주소를 몰라도<br/>
+				소중한 마음을 전달할 수 있어요
+			</p>
+		</div>
+		<span><img src="/web/renew_img/img_visual_gift.jpg" /></span>
+	</div>
+</div>
+<!--@css(/css/module/product/listnormal.css)-->
+<div class="catePrdWrap">
+	<div class="prdInner">
+		<p class="title">고민별 추천 레시피</p>
+		<div module="product_listmain_1" class="ec-base-product">
+			<!--
+				$count = 12
+					※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+					※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+				$basket_result = /product/add_basket.html
+				$basket_option = /product/basket_option.html
+			-->
+			<ul class="prdList grid4 gift">
+				<!--@import(/gd_import/prdList_gift.html)-->
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div class="catePrdWrap">
+	<div class="prdInner">
+		<p class="title">나만의 맞춤 레시피</p>
+		<div module="product_listmain_6" class="ec-base-product">
+			<!--
+				$count = 12
+					※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+					※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+				$basket_result = /product/add_basket.html
+				$basket_option = /product/basket_option.html
+			-->
+			<ul class="prdList grid4 gift">
+				<!--@import(/gd_import/prdList_gift.html)-->
+			</ul>
+		</div>
+		<div module="product_listmain_5" class="ec-base-product">
+			<!--
+				$count = 12
+					※ 상품진열갯수를 설정하는 변수입니다. 설정하지 않을 경우, 최대 200개의 상품이 진열 됩니다.
+					※ 진열된 상품이 많으면, 쇼핑몰에 부하가 발생할 수 있습니다.
+				$basket_result = /product/add_basket.html
+				$basket_option = /product/basket_option.html
+			-->
+			<ul class="prdList grid4 gift">
+				<!--@import(/gd_import/prdList_gift.html)-->
+			</ul>
+		</div>
+	</div>
+</div>
+
+<!-- prd Bnr S //-->
+<!--@import(/gd_import/bnr_detail_rolling.html)-->
+<!-- prd Bnr E //-->
+
+<!--@js(/gd_import/js/sub_comn.js)-->
+<!--@js(/gd_import/js/sale_price.js)-->
+<!--@js(/gd_import/js/product.js)-->
+
+<!-- snap common  start contact mail : support@snapvi.co.kr -->
+<div id='spm_page_type' style='display:none'>sq_product_list_page</div>
+<script async type="text/javascript" src="//cdn.snapfit.co.kr/js/spm_f_common.js" charset="utf-8"></script>
+<div id="spm_banner_main"></div>
+<!-- snap common end -->
+
+<!-- 맞춤형 - 문진 -->
+<!--@import(/survey/common.html)-->
+<!--@js(/survey/js/class/Common.js)-->
+<!--@js(/survey_essence/js/gift.js)-->

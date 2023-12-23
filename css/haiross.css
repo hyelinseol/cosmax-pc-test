@@ -1,0 +1,8 @@
+body#layout #contents { padding-bottom:0; }
+.haiross { font-size:0; line-height:0; }
+.haiross img { max-width:100%; }
+.haiross .haiross_button_1 { position:absolute; top:2%; right:45%; width:10%; height:1%; cursor: pointer; }
+.haiross a { position:absolute; }
+.haiross .haiross_button_2 { top:16.1%; left:40%; width:20%; height:1.6%; }
+.haiross .haiross_button_3 { bottom:1.8%; left:36.4%; width:12%; height:1.6%; }
+.haiross .haiross_button_4 { bottom:1.8%; left:48.4%; width:15%; height:1.6%; }

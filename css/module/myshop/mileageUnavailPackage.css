@@ -1,0 +1,21 @@
+.xans-myshop-mileageunavailpackage .ec-base-tab { padding: 0 0 20px; border-bottom: 2px solid #000; }
+.xans-myshop-mileageunavailpackage .ec-base-tab .menu { display:flex; margin:0; }
+.xans-myshop-mileageunavailpackage .ec-base-tab .menu li { float: none; border: 0; background: transparent; margin: 0; width: auto; text-align: center; padding: 0 20px; box-sizing: border-box; }
+.xans-myshop-mileageunavailpackage .ec-base-tab .menu li a { min-width:1px; font-size:16px; line-height:48px; color:#666; padding:0; }
+.xans-myshop-mileageunavailpackage .ec-base-tab .menu li.selected a { color:#ff5c5c; font-weight:700; }
+.xans-myshop-mileageunavailpackage .ec-base-tab .menu li.selected a::after { display:none; }
+
+.xans-myshop-summary.ec-base-box { color:#0b0a0a; margin:0 0 20px; border: 2px solid #000;  border-width: 2px 0; }
+.xans-myshop-summary ul:after { content:""; display:block; clear:both; }
+.xans-myshop-summary ul li { float:left; margin:5px 0; padding:0 45px; width:50%; height:20px; font-size:14px; line-height:1.6; vertical-align:top; box-sizing:border-box; }
+.xans-myshop-summary .title { float:left; width:50%; font-weight:normal; box-sizing:border-box; }
+.xans-myshop-summary .data { float:left; width:50%; padding:0 10px 0 10px; color: #0b0a0a; text-align:right; box-sizing:border-box; }
+
+.xans-myshop-unavaillist .ec-base-table { font-size: 14px; }
+.xans-myshop-unavaillist .ec-base-table table { margin:0; }
+.xans-myshop-unavaillist .title { overflow:hidden; margin:48px auto 0; padding:0 0 20px; border-bottom:2px solid #000; *zoom:1; }
+.xans-myshop-unavaillist .title h3 { float:left; font-size:16px; line-height:48px; color:#0b0a0a; }
+.xans-myshop-unavaillist .title p { float:right; font-size:16px; line-height:48px;  color:#666; }
+.xans-myshop-unavaillist td.payment,
+.xans-myshop-unavaillist td.sale,
+.xans-myshop-unavaillist td.mileage { color:#757575; }

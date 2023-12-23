@@ -1,0 +1,36 @@
+/* 게시판 전체 공통 */
+.xans-board-title .title { min-height:30px; margin:10px 0 20px; border-bottom:1px solid #e8e8e8; }
+.xans-board-title .title h2 { display:inline-block; padding:0 0 0 12px; color:#2e2e2e; font-size:16px; *display:inline; *zoom:1; background:url("//img.echosting.cafe24.com/skin/base/layout/ico_heading.gif") 0 50% no-repeat; }
+.xans-board-title .title p { display:inline-block; margin:0 0 0 6px; padding:0 0 0 10px; color:#939393; vertical-align:bottom; background:url("//img.echosting.cafe24.com/skin/base/common/ico_bar.gif") no-repeat 0 0; *display:inline; *zoom:1; }
+.xans-board-title p.imgArea { margin:0 0 20px; text-align: center; }
+.xans-board-title p.imgArea img { max-width: 100%; }
+
+.xans-board-listpackage .boardSort { display:block; margin:0 0 10px;}
+
+/* 갤러리형 탭메뉴 */
+ul.xans-board-listheader { text-align:right; margin:0 0 10px; }
+ul.xans-board-listheader li { display:inline; }
+
+/* list */
+.xans-board-listpackage { margin:0 0 10px; }
+.xans-board-listpackage .ec-base-table { clear:both; font-size: 14px; background:#fff; }
+.xans-board-listpackage .ec-base-table .subject img { margin:0 1px; }
+.xans-board-listpackage .ec-base-table .thumb a { overflow:hidden; }
+.xans-board-listpackage .ec-base-table .thumb img { width:80px; float:left; image-rendering: -webkit-optimize-contrast; }
+.xans-board-listpackage .ec-base-table .thumb span { float:left; /*width:80px;*/ padding:0 0 0 8px; text-align:left; margin-top:30px; width:158px; font-weight:400; overflow: hidden; text-overflow:ellipsis;  display:-webkit-box; -webkit-line-clamp:1; -webkit-box-orient:vertical; }
+.xans-board-buttonlist.ec-base-button.typeBG { border-top:0 none; padding: 10px 0;}
+
+/* 상품후기 아코디언형 */
+.xans-board-listpackage #content_view td { padding:9px 10px 20px; background:#f6f7f9; text-align:left; word-break:break-all; white-space:pre-wrap; }
+
+/* 상품후기 목록 추가 css */
+.xans-board-listpackage-4 .ec-base-table.gBorder td { border-left:0; }
+
+.xans-board-list-9 .answer { color:#0b0a0a; font-weight:600; }
+
+/* 230615 추가 */
+.headImgSec {display:block; margin:0 auto; width:1185px;}
+.headImgSec .imgTop {display:block; position:relative;}
+.headImgSec .imgTop img {max-width:100%;}
+.headImgSec .imgBtm {display:block; position:relative;}
+.headImgSec .imgBtm a.absBtnReview {position:absolute; left:60px; bottom:28px;}

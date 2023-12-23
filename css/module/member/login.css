@@ -1,0 +1,81 @@
+.xans-member-login.ec-base-box.typeThin { margin:0 0 20px; padding:0; }
+.xans-member-login .login { padding:49px 0; color:#2e2e2e; }
+.xans-member-login .login fieldset { position:relative; width:400px; margin:0 auto; }
+.xans-member-login .login fieldset .id,
+.xans-member-login .login fieldset .password { overflow:hidden; display:block; width:100%; margin:0 0 8px; border:1px solid #ddd; border-radius:0; color:#555; background:#fff; box-sizing: border-box; }
+.xans-member-login .login fieldset .id span,
+.xans-member-login .login fieldset .password span { height:32px; line-height:32px; padding:0 0 0 8px; color:#c9c9c9; }
+.xans-member-login .login fieldset input[type=text],
+.xans-member-login .login fieldset input[type=password] { width:100%; height:40px; line-height:40px; padding:2px 8px; border:0 none; color:#555; box-sizing: border-box; outline:none; }
+.xans-member-login .login fieldset .security { display: inline-block; padding:0 0 0 5px; color:#555; font-size:14px; }
+.xans-member-login .login fieldset .security img { vertical-align:inherit; }
+.xans-member-login .login fieldset ul.log_option { padding: 0; float: right; }
+.xans-member-login .login fieldset > a { position:relative; }
+.xans-member-login .login fieldset ul { overflow:hidden; margin:0; border:0; }
+.xans-member-login .login fieldset li { float:left; padding:0 9px 0 13px; }
+.xans-member-login .login fieldset li a { color:#555; font-size:13px; }
+.xans-member-login .login fieldset .link {display:block; text-align:center;}
+.xans-member-login .login fieldset .link a {display:block; color:#0b0a0a; font-size:16px; font-weight:400; height:48px; line-height:48px; border:1px solid #0b0a0a; padding:0;}
+.xans-member-login .login fieldset .link a:hover {background:#FFF;}
+
+.xans-member-login .login fieldset #noMemberWrap { border-top:0; margin-top:15px; }
+
+.alignWrap { display:flex; justify-content: space-around; background:transparent; }
+.alignWrap.single {justify-content:center;}
+
+.xans-member-login .log_join { display:flex; justify-content: space-between; padding:8px 0; }
+.xans-member-login .log_join a { position: relative; display: inline-block; width: 196px; height:48px; line-height:40px; font-size: 14px; font-weight: 400; color:#0b0a0a; margin: 0; background:#fff;  border: 1px solid #000; border-radius:0; transition: all 0.3s ease; z-index: 1; }
+.xans-member-login .log_join a:hover { background:#0b0a0a; color:#fff; }
+
+.xans-member-login .btnLogin { position: relative; display: inline-block; width: 100%; height:48px; line-height:48px; font-size: 16px; font-weight: 400; color:#fff; margin: 32px 0 0; background:#0b0a0a;  border: 1px solid #0b0a0a; border-radius:0; transition: all 0.3s ease; z-index: 1; }
+.xans-member-login .btnLogin:hover { background:#fff; color:#0b0a0a; }
+
+.xans-member-login .snsArea { display:grid; grid-template-columns: 160px auto; padding:24px 0 0; /* border-top:1px solid #eee;*/ }
+.xans-member-login .snsArea::after { content:""; display:block; clear:both; }
+.xans-member-login .snsArea p { display:inline-block; padding:12px 0 0; font-size:14px; font-weight:600; }
+.xans-member-login .snsArea p span { display:block; font-size:13px; font-weight:400; }
+
+.xans-member-login .login fieldset .snsArea ul { display:flex; flex-wrap:wrap; margin-left: auto; }
+.xans-member-login .login fieldset .snsArea li { width:80px; padding:0 0 16px 0; text-align:center; }
+.xans-member-login .login fieldset .snsArea li:hover { opacity:0.5; }
+.xans-member-login .login fieldset .snsArea li i { display:block; width: 48px; height: 48px; line-height: 48px; margin: 0 auto 8px; border-radius: 50%; border: 1px solid #000;font-size:24px; color:#333; }
+
+.snsRegist {display:block; height:auto; overflow:hidden; margin-top:34px;}
+.snsRegist .snsTitle {position:relative; text-align:center; margin-bottom:16px;}
+.snsRegist .snsTitle:after {content:''; position:absolute; left:0; top:50%; transform:translate(0, -50%); width:100%; height:1px; background:#D1D1D1;}
+.snsRegist .snsTitle span {color:#666; font-size:16px; font-weight:700; padding:0 16px; background:#f8f6f4; position:relative; z-index:10;}
+.snsRegist .otherSns {margin-top:12px; display:flex; justify-content:space-between; align-items:center;}
+.snsRegist .otherSns .snsIco {width:58px; height:58px; padding:0 1px; margin:0px;}
+.snsRegist .otherSns .snsIco a {display:block; width:100%; height:100%;}
+.snsRegist .otherSns .snsIco.naver {background:url(/web/upload/mynomy/kr/layout/login_sns_nv.svg) no-repeat 50% 50%; background-size:58px;}
+.snsRegist .otherSns .snsIco.apple {background:url(/web/upload/mynomy/kr/layout/login_sns_apple.svg) no-repeat 50% 50%; background-size:58px;}
+.snsRegist .otherSns .snsIco.kakao {background:url(/web/upload/mynomy/kr/layout/login_sns_ka.svg) no-repeat 50% 50%; background-size:58px;}
+.snsRegist .otherSns .snsIco.facebook {background:url(/web/upload/mynomy/kr/layout/login_sns_fb.svg) no-repeat 50% 50%; background-size:58px;}
+
+.snsRegist .btnGoogle {position:relative; background:#FFF; text-align:center;}
+.snsRegist .btnGoogle a {color:#391B1B; font-size:16px; font-weight:400; position:relative; display:flex; justify-content:center; align-items:center;}
+.snsRegist .btnGoogle a:before {content:''; display:inline-block; width:48px; height:48px; background: url(/web/upload/mynomy/kr/layout/sns_ico_google.svg) no-repeat 50% 50%;}
+
+.snsRegist li {display:block; height:48px; width:100%; float:none !important; padding:0 !important; margin-bottom:8px; box-sizing:border-box;}
+.snsRegist li.btn_kakao {background:#FAE64D;}
+.snsRegist li.btn_naver {background:#5AC467;}
+.snsRegist li.btn_facebook {background:#1877F2;}
+.snsRegist li.btn_apple {background:#000;}
+.snsRegist li.btn_google {background:#FFF; border:1px solid #C6C2C0; margin:24px 0;}
+
+.snsRegist li a {display:block;}
+.snsRegist li a .snsLoginBox {display:flex; align-items:center; justify-content:center; color:#FFF !important; font-size:16px; width:216px; height:100%; padding-left:0; box-sizing:border-box; margin:0 auto;}
+.snsRegist li a .snsLoginBox .ico {display:inline-block; width:48px; height:48px; margin-right:0px;}
+.snsRegist li a .snsLoginBox .ico.kakao {background:url(/web/upload/mynomy/kr/layout/sns_ico_kakao.svg) no-repeat 50% 50%;}
+.snsRegist li a .snsLoginBox .ico.naver {background:url(/web/upload/mynomy/kr/layout/sns_ico_naver.svg) no-repeat 50% 50%;}
+.snsRegist li a .snsLoginBox .ico.facebook {background:url(/web/upload/mynomy/kr/layout/sns_ico_facebook.svg) no-repeat 50% 50%;}
+.snsRegist li a .snsLoginBox .ico.apple {background:url(/web/upload/mynomy/kr/layout/sns_ico_apple.svg) no-repeat 50% 50%;}
+.snsRegist li a .snsLoginBox .ico.google {background:url(/web/upload/mynomy/kr/layout/sns_ico_google.svg) no-repeat 50% 50%;}
+.snsRegist li.btn_kakao a .snsLoginBox {color:#391B1B !important;}
+.snsRegist li.btn_google a .snsLoginBox {color:#0B0A0A !important;}
+
+#mCafe24SnsAgree {margin:0 !important; transform:translate(-50%, 0);}
+#mCafe24SnsAgree iframe {}
+
+.loginBnr {display:block; max-width:400px; margin:0 auto 16px;}
+.loginBnr img {max-width:100%;}

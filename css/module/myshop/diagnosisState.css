@@ -1,0 +1,34 @@
+.myshop_diagnosisState { margin:0 auto 4px; position:relative;}
+.myshop_diagnosisState:after {content:''; clear:both; display:block; height:auto; overflow:hidden;}
+.myshop_diagnosisState .title { display: flex; align-items: center; justify-content: space-between; margin:20px 0 20px 10px; }
+.myshop_diagnosisState .title h3 { font-size:24px; line-height:1.0; font-weight: 700; color:#0b0a0a; padding:0; margin:0; }
+.myshop_diagnosisState .title .more a { font-size:16px; line-height:24px; color:#666; }
+.myshop_diagnosisState .desc { padding:0 0 0 4px; font-size:14px; color:#0b0a0a; font-weight:400; }
+/* .myshop_diagnosisState .state { overflow:hidden; } */
+
+.myshop_diagnosisState .diagnosis { display:flex; flex-wrap:wrap; width:100%; max-width:932px; margin:0 auto; }
+.myshop_diagnosisState .diagnosis > li { width:300px; position:relative; padding:32px 38px; margin:0 16px 12px 0; background:#d6ddd1; border-radius:8px; box-sizing:border-box; }
+.myshop_diagnosisState .diagnosis > li:nth-child(3n) { margin-right:0; }
+
+.myshop_diagnosisState .diagnosis .item.shampoo { background:#d6ddd1; }
+.myshop_diagnosisState .diagnosis .item.treatment { background:#c3cabd; }
+
+.myshop_diagnosisState .diagnosis .name { font-size:14px; line-height:21px; color:#666; font-weight:400; }
+.myshop_diagnosisState .diagnosis .nickName { font-size:20px; line-height:30px; color:#0b0a0a; font-weight:700; margin:5px auto 9px; }
+.myshop_diagnosisState .diagnosis .date { font-size:12px; line-height:18px; color:#666; }
+.myshop_diagnosisState .diagnosis .date > span { margin-right:8px; }
+.myshop_diagnosisState .diagnosis .date > span:last-child { margin:0; }
+
+.myshop_diagnosisState .diagnosis .mid { width:156px; margin:10px auto;  }
+.myshop_diagnosisState .diagnosis .mid img { width:100%; }
+
+.myshop_diagnosisState .diagnosis .bottom { height:101px; padding:4px 0 0; border-top:1px solid #0b0a0a; box-sizing:border-box; }
+.myshop_diagnosisState .diagnosis .bottom li { display:flex; justify-content: space-between; align-items: center; font-size:14px; line-height:21px; margin:8px auto 0; }
+.myshop_diagnosisState .diagnosis figure { width:60%; }
+.myshop_diagnosisState .diagnosis figure img { width:24px; border-radius:50%; }
+.myshop_diagnosisState .diagnosis figure figcaption { display:inline-block; font-size:14px; line-height:24px; color:#333; margin-left:8px; font-family:'Pretendard'; }
+
+.myshop_diagnosisState .diagnosis .mBtn { margin:20px 0 0; }
+
+.myshop_diagnosisState .diagnosis li strong { display:block; margin:0; font-size:14px; line-height:21px; color:#999; font-weight: 400 !important; }
+.myshop_diagnosisState .diagnosis .count { font-size:32px; line-height:48px; color:#0b0a0a; font-weight:600; }

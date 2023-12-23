@@ -1,0 +1,15 @@
+.xans-myshop-couponlist .ec-base-table { font-size: 14px; }
+.xans-myshop-couponlist .ec-base-table table { margin:0; }
+.xans-myshop-couponlist .title { overflow:hidden; margin:48px auto 0; padding:0px; border-bottom:2px solid #000; *zoom:1; }
+.xans-myshop-couponlist .title h3 { float:left; font-size:16px; line-height:48px; color:#0b0a0a; }
+.xans-myshop-couponlist .title p { float:right; font-size:16px; line-height:48px;  color:#666; }
+.xans-myshop-couponlist td.payment,
+.xans-myshop-couponlist td.sale,
+.xans-myshop-couponlist td.mileage { color:#757575; }
+
+.coupon.ec-base-help { border:0; }
+.coupon.ec-base-help > h2, .coupon.ec-base-help > h3 { font-size:16px; line-height:48px; color:#0b0a0a; padding:0 0 20px 20px; border-bottom:2px solid #000; background:#f8f6f4; }
+.coupon.ec-base-help .inner { padding:19px 20px; border:1px solid #eee; border-width:1px 0; }
+.coupon.ec-base-help ul, .coupon.ec-base-help ol { margin:0; }
+
+.mypage.ec-base-help > h2, .mypage.ec-base-help > h3 {padding:0 !important;}

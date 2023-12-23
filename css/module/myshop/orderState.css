@@ -1,0 +1,64 @@
+.xans-myshop-orderstate { padding:0px; background:transparent; margin:0 0 20px; }
+.xans-myshop-orderstate .order_inquire{width: 100%; padding: 0px 0px 25px; border-bottom: 0px solid #dbdbdb;}
+.xans-myshop-orderstate .title { text-align: left;}
+.xans-myshop-orderstate .title h3 { font-size:24px; line-height:60px; font-weight: 700; color:#0b0a0a; padding:0; margin:0 0 12px; }
+.xans-myshop-orderstate .desc { padding:0 0 0 4px; font-weight:normal; font-size:13px; color:#777; }
+.xans-myshop-orderstate .desc em { color:#000; font-style:normal; }
+.xans-myshop-orderstate .state {padding: 27px 0; background:#eee; overflow:hidden; }
+.xans-myshop-orderstate .pdbm{}
+.xans-myshop-orderstate .order {display:flex; justify-content:center; align-items:center;}
+.xans-myshop-orderstate .order li { position:relative; width:20%; padding:16px 0 0 0; /*float:left; width:25%; padding:0 0 4px; margin:0 -1px 0 0; border-right:1px dotted #eee;*/ text-align:center; }
+.xans-myshop-orderstate .order li:after {content:''; position:absolute; right:0; top:0; width:1px; height:100%; background:#C6C2C0;}
+.xans-myshop-orderstate .order li:last-child:after {display:none;}
+
+.xans-myshop-orderstate .order li strong { display:block; margin:0 0 5px 0; font-size:16px; line-height:21px; color:#666; font-weight:300 !important;}
+.xans-myshop-orderstate .order .count span { font-size:32px; line-height:48px; color:#C6C2C0; font-weight:200;}
+.xans-myshop-orderstate .order .count.active span {color:#000; font-weight:500;}
+.xans-myshop-orderstate .cs { float:left; width:20%; }
+.xans-myshop-orderstate .cs li { margin:0 0 5px 57px; letter-spacing:0.04em; word-spacing:4px; }
+.xans-myshop-orderstate .cs strong { font-weight:400 !important; font-size:14px; color:#555; }
+.xans-myshop-orderstate .cs .count { padding:0 0 0 4px; font-weight:bold; color:#000; }
+.xans-myshop-orderstate .cs .icoDot { display:inline-block; width:2px; height:2px; margin:6px 0 0 0; background:#4d4d4d; vertical-align:top; }
+
+.adFeedBack {height:auto; background:#333; padding:80px 0; text-align:center; font-size:16px; color:#FFF; font-weight:700;}
+
+/* .xans-myshop-orderstate { padding:40px 0 20px; background:#fff; background: #eee; margin:0 0 20px; }
+.xans-myshop-orderstate .order_inquire{width: 100%; padding: 0px 0px 25px; border-bottom: 1px solid #dbdbdb;}
+.xans-myshop-orderstate .title { text-align: center; padding:11px 21px; margin:40px 0 10px; }
+.xans-myshop-orderstate .title h3 { font-size:24px; line-height:36px; font-weight: 700; color:#0b0a0a; padding:0; margin:0 0 12px; }
+.xans-myshop-orderstate .desc { padding:0 0 0 4px; font-weight:normal; font-size:13px; color:#777; }
+.xans-myshop-orderstate .desc em { color:#000; font-style:normal; }
+.xans-myshop-orderstate .state { overflow:hidden; }
+.xans-myshop-orderstate .pdbm{padding: 0px 0px 20px;}
+.xans-myshop-orderstate .order { float:left; display:flex; width:100%; max-width:624px; margin:0 auto; }
+.xans-myshop-orderstate .order li { position:relative; width:20%; float:left; width:25%; padding:0 0 4px; margin:0 -1px 0 0; border-right:1px dotted #eee; text-align:center; }
+.xans-myshop-orderstate .order li::before, .xans-myshop-orderstate .order li::after { content:""; position:absolute; right:-10px; width:15px; height:2px; background:#d1d1d1; -webkit-transition: 0.2s ease-in-out; transition: 0.2s ease-in-out; }
+.xans-myshop-orderstate .order li::before { top:18px; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+.xans-myshop-orderstate .order li::after { top:28px; -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); }
+.xans-myshop-orderstate .order li:last-child::before, .xans-myshop-orderstate .order li:last-child::after { display:none; }
+.xans-myshop-orderstate .order li strong { display:block; margin:0; font-size:14px; line-height:21px; color:#999; font-weight: 400 !important; }
+.xans-myshop-orderstate .order .count span { font-size:32px; line-height:48px; color:#0b0a0a; font-weight:600; }
+.xans-myshop-orderstate .cs { float:left; width:20%; }
+.xans-myshop-orderstate .cs li { margin:0 0 5px 57px; letter-spacing:0.04em; word-spacing:4px; }
+.xans-myshop-orderstate .cs strong { font-weight:400 !important; font-size:14px; color:#555; }
+.xans-myshop-orderstate .cs .count { padding:0 0 0 4px; font-weight:bold; color:#000; }
+.xans-myshop-orderstate .cs .icoDot { display:inline-block; width:2px; height:2px; margin:6px 0 0 0; background:#4d4d4d; vertical-align:top; } */
+
+
+/*.xans-myshop-orderstate { margin:20px 0 0; }
+.xans-myshop-orderstate .title { text-align: left; padding:11px 21px; margin:40px 0 10px; }
+.xans-myshop-orderstate .title h3 {display:inline-block; padding:0; font-size:22px; font-weight: 800; color:#222; }
+.xans-myshop-orderstate .title span{float:right; line-height:22px; font-size: 13px;}
+.xans-myshop-orderstate .desc { padding:0 0 0 4px; font-weight:normal; font-size:13px; color:#777; }
+.xans-myshop-orderstate .desc em { color:#000; font-style:normal; }
+.xans-myshop-orderstate .state { overflow:hidden; padding:19px 0; border: 1px solid #ddd; border-width: 1px 0; background: #fff; border-radius:10px;}
+.xans-myshop-orderstate .order { float:left; width:100%; }
+.xans-myshop-orderstate .order li { float:left; width:20%; margin:0 -1px 0 0; border-right:1px dotted #eee; text-align:center; }
+.xans-myshop-orderstate .order li strong { display:block; font-size:16px; font-weight: 400 !important; color:#555; }
+.xans-myshop-orderstate .order .count_bg{/*background: #fff;*/ /*width: 50px; height: 50px; border-radius: 100%; margin: 0 auto 10px;}
+.xans-myshop-orderstate .order .count { font-weight:bold; font-size:24px; color:#4879F5; line-height:50px;}
+.xans-myshop-orderstate .cs { float:left; width:20%; }
+.xans-myshop-orderstate .cs li { margin:0 0 5px 57px; letter-spacing:0.04em; word-spacing:4px; }
+.xans-myshop-orderstate .cs strong { font-weight:400 !important; font-size:14px; color:#555; }
+.xans-myshop-orderstate .cs .count { padding:0 0 0 4px; font-weight:bold; color:#000; }
+.xans-myshop-orderstate .cs .icoDot { display:inline-block; width:2px; height:2px; margin:6px 0 0 0; background:#4d4d4d; vertical-align:top; }*/

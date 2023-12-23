@@ -1,0 +1,108 @@
+@charset "utf-8";
+
+/* 메인 레이아웃css */
+#wrap { position:relative; width:100%; margin:0 auto 0; }
+#wrap .inner_area { position:relative; width:92%; max-width:1280px; margin:0px auto; }
+#main #container { position:relative; margin:0 auto; *zoom:1;}
+#layout.bg { background:#f8f6f4; }
+#layout #container { width:92%; max-width:1280px; min-height: 560px; margin:0 auto; *zoom:1; padding-top:16px; }
+#container:after { content:""; display:block; clear:both; }
+#container #contents { width:100%; margin:0 auto 80px;}
+/*#sidebar { float:left; width:180px; background:#fff; }*/
+#sidebar .banner { padding:0 0 20px; border-bottom:1px solid #e8e8e8; }
+#sidebar .banner p a { display:block; position:relative; height:20px; margin:0 0 0 10px; padding:10px 0 10px 25px; font-size:13px; font-weight:bold; line-height:20px; }
+#contents { max-width:1200px; margin:0 auto;}
+#banner { position:absolute; top:0; left:0; width:90px; }
+
+/* 이미지 줌 */
+.img_zoom { overflow: hidden; }
+.img_zoom a { overflow: hidden; }
+.img_zoom a img { -webkit-transition: all 0.3s ease-in;  -ms-transition: all 0.3s ease-in;  -moz-transition: all 0.3s ease-in;  transition: all 0.3s ease-in;  }
+.img_zoom a:hover img {  -webkit-transition: all 0.3s ease-in; -webkit-transform: scale(1.1); -ms-transition: all 0.3s ease-in; -ms-transform: scale(1.1); -moz-transition: all 0.3s ease-in;  -moz-transform: scale(1.1); transition: all 0.3s ease-in; transform: scale(1.1);}
+
+/* Main */
+#boardArea { overflow:hidden; margin:50px 0 0; border-top:1px solid #ddd; }
+#bannerArea { margin:22px 0 0; }
+#bannerArea h2 { margin:0 0 16px; font-weight:normal; font-size:20px; color:#222; text-align:center; }
+
+/* 탐색경로바 */
+.path { display:none; overflow:hidden; height:30px; line-height:30px; *zoom:1; }
+.path span { overflow:hidden; position:absolute; width:0; height:0; white-space:nowrap; text-indent:100%; }
+.path ol { float:right; }
+.path li { float:left; padding:0 0 0 12px; margin:0 0 0 8px; color:#555; background:url("//img.echosting.cafe24.com/skin/base/layout/ico_path.gif") no-repeat 0 10px; }
+.path li:first-child { background:none; }
+.path li a { color:#555; }
+.path li strong,
+.path li strong a { color:#222; }
+
+/* 타이틀 */
+.titleArea { min-height:30px; margin:50px 0; text-align: center; }
+.titleArea h2 { display:block; color:#0b0a0a; font-size:32px; margin: 0 0 4px; font-weight: 500; letter-spacing:0px; font-family: "Gotham SSm A", "Gotham SSm B","Pretendard";}
+.titleArea p { display: block; position:relative; padding:0; font-size: 16px; font-weight: 300; color:#555; }
+.titleArea ul { padding:5px 0; color:#777; line-height:20px; }
+.titleArea ul li { position:relative; padding:0 0 0 9px; font-size: 14px; }
+.titleArea ul li:before { display:block; position: absolute; top:50%; left:0; content:""; width:2px; height:2px; margin:-2px 0 0 0; background:#939393; }
+
+/* 게시판 메인 */
+.boardMain { overflow:hidden; *zoom:1; }
+.boardMain::after { content:""; display: block; clear: both; }
+.boardMain td img { vertical-align:middle; margin:1px; }
+.boardMain .board { position:relative; }
+.boardMain .board > div { margin: 40px 0; }
+.boardMain .half { display: inline-block; float: left; width: 50%; padding: 0 16px; box-sizing: border-box;}
+.boardMain .leftArea { float:left; width:50%; }
+.boardMain .leftArea .board { margin:0 23px 65px 0; }
+.boardMain .rightArea { float:right; width:50%; }
+.boardMain .rightArea .board { margin:0 0 65px 23px; }
+.boardMain .board h3 { margin:0 0 13px; padding: 0 0 8px; height:28px; font-size:18px; font-weight: 400; color:#333; border-bottom:1px solid #ddd; }
+.boardMain .board .btnLink { position:absolute; top:3px; right:0; }
+.boardMain .board .ec-base-table.typeList td { color:#777; }
+.boardMain .board .ec-base-table.typeList td.title a,
+.boardMain .board .ec-base-table.typeList td.title a:hover { color:#555; font-size: 14px; }
+.boardMain .board .galleryList { overflow:hidden; }
+.boardMain .board .galleryList ul { overflow:hidden; }
+.boardMain .board .galleryList li { float:left; position:relative; width:33.333%; padding:0 8px 12px 8px; word-break:break-all; box-sizing: border-box; }
+.boardMain .board .galleryList li span { display:block; font-size:12px; color:#777; }
+.boardMain .board .galleryList li .imgLink { height:0; padding-bottom:100%; background: url(/web/upload/mynomy/kr/main/logo.png) no-repeat 50% 50%;  background-size: 50%;}
+.boardMain .board .galleryList li .imgLink,
+.boardMain .board .galleryList li .imgLink:hover { display:block; font-size:12px; }
+.boardMain .board .galleryList li .imgLink img { width:100%; }
+.boardMain .board .galleryList li .subject { display: block; font-size: 14px; color: #555; margin: 8px 0;}
+
+/* 퀵뷰 모달 */
+#modalBackpanel { display:none; position:absolute; top:0; left:0; z-index:10000; width:100%; height:100%; background:#000; }
+#modalContainer { display:none; position:absolute; top:100px; left:100px; z-index:10001; width:975px; height:720px; border:1px solid #333; background:#fff; }
+#modalContainer #modalContent { width:100%; height:100%; }
+
+
+/* 상품구매안내 */
+.comnPrd .infoBox { width:100%; border-bottom:1px solid #eee; font-size: 13px; }
+.comnPrd .infoBox:last-child { border-bottom: 0;}
+.comnPrd .infoBox:after { content:''; display:block; clear:both; }
+.comnPrd .infoBox .box { width: 50%; display: inline-block; float: left; box-sizing: border-box;  }
+.comnPrd .infoBox .box .cont { border-bottom:1px dashed #ddd; }
+.comnPrd .infoBox .box .cont:last-child { border-bottom:0; }
+.comnPrd .infoBox .box.full {width:100%; float:none; display:block; clear:both;}
+.comnPrd .infoBox .left{ padding: 24px 16px 24px 8px; }
+.comnPrd .infoBox .right { padding: 24px 8px 24px 16px; border-left: 1px solid #eee;}
+
+.comnPrd .infoBox .contDetail {display:block; margin-bottom:40px; font-size:14px; color:#000; line-height:1.4; word-break:keep-all; padding-left:10px;}
+.comnPrd .infoBox .contDetail p, .infoBox .contDetail span, .infoBox .contDetail div {font-size:14px; color:#000; line-height:1.4; word-break:keep-all;}
+.comnPrd .infoBox .contDetail b {margin-bottom:10px !important;}
+.comnPrd .infoBox .contDetail h3 {font-size:16px; color:#000; padding-left:10px; position:relative; font-weight:600; margin-bottom:10px; margin-left:-10px;}
+.comnPrd .infoBox .contDetail h3:after {content:''; position:absolute; left:0; top:7px; width:3px; height:3px; background:#000; border-radius:50%;}
+.comnPrd .infoBox .contDetail table {padding:0; margin:0; width:100% !important; table-layout:fixed;}
+.comnPrd .infoBox .contDetail table tbody th, .infoBox .contDetail table tbody td {padding:10px !important; font-size:14px; border:1px solid #ccc !important; font-family:'Pretendard' !important;}
+.comnPrd .infoBox .contDetail table tbody th {background:#ccc !important;}
+
+.ec-base-button.typeBorder {padding-right:0 !important;}
+
+.comnPrd .boardCate { position: relative; margin:0 auto 80px; padding-top:80px; }
+.comnPrd .boardCate.fixed {position:fixed; left:50%; top:0px; transform:translate(-50%, 0); width:100%; max-width:1280px; z-index:100; margin:0;}
+.comnPrd .boardCate .board_menu { display:flex; }
+.comnPrd .boardCate .board_menu li { flex:1; height:48px; line-height:48px; border: 1px solid #eee; border-right:0; background:#fff; text-align: center; }
+.comnPrd .boardCate .board_menu li:last-child {border-right:1px solid #eee;}
+.comnPrd .boardCate .board_menu li.on { border:1px solid #000; background:#000; }
+.comnPrd .boardCate .board_menu li.on a { color:#fff; font-weight:500; }
+.comnPrd .boardCate .board_menu li a { display:block; font-size: 16px; color: #999; font-weight: 400;}
+.comnPrd .boardCate .board_menu li a .review_count {display:inline-block; font-size:12px;} 

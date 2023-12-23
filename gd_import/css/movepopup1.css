@@ -1,0 +1,55 @@
+/* ----------------점선 NONE------------ */
+a:focus {outline:none;}
+a {blr:expression(this.onFocus=this.blur());}
+area:focus {outline:none;}
+area {blr:expression(this.onFocus=this.blur());}
+input:focus, img:focus, embed:focus, map:focus {outline:none;}
+
+
+#movepopup { z-index:3000; width:634px; /*padding:10px;*/ overflow:hidden; }
+.BannerBig {
+	overflow:hidden;
+	position:relative;
+	width: 634px;
+	height:338px;
+	/*margin-bottom:7px;*/
+	cursor:pointer;
+	clear:both;
+}
+.BannerBig .images { position:absolute; display:none; }
+
+.BannerSmall { 
+	width:634px;
+	cursor:pointer;
+    background:#fff;
+	*zoom:1;
+}
+.BannerSmall:after { content:""; display:block; clear:both; }
+.BannerSmall li {
+	width:211px;
+	float:left;
+	/*border:1px solid #e7e7e7;
+	margin:0 2px;*/
+    border-right:1px solid #eaeaea;
+    box-sizing:border-box;
+}
+.BannerSmall li:last-child { width:212px; border-right:0; }
+.BannerSmall li a { 
+    color:#858585;
+    font-size:12px;
+    vertical-align: middle;
+    display: table-cell;
+    text-align: center;
+    width: 211px;
+    height: 75px;
+    line-height:16px;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+.BannerSmall li a:hover{text-decoration:none;}
+.BannerSmall li strong {
+    color:#474747;
+}
+.BannerSmall li.labelOverClass { /*border:1px solid #000;*/ background:#eaeaea; }
+
+
+.xans-popup-footer { letter-spacing:-1px; line-height:16px;}
